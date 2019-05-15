@@ -200,7 +200,9 @@ my_wood_acacia,		//4		87
 my_wood_dark_oak,	//5		88
 };
 
+// 위의 코드는 b[0]을 치면 BLOCK_AIR가 생성되는 형식의 배열입니다. 예제: locateBlock(b[0], 0, 0, 0); 이런식이면 0,0,0에 공기블럭 생성됨
+
 
 int main() {
-
+	
 }
