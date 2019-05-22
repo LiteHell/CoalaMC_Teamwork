@@ -2,7 +2,7 @@
 #include <random>
 using namespace std;
 
-int creating_random_number(int min, int max) {
+int create_random_number(int min, int max) {
 	//랜덤넘버 생성기 함수. 함수를 호출하면 min ~ max중 랜덤의 수를 return한다.
 	//한 블록에 어떤 유형의 건물 블록을 채울지 결정할 때 사용
 	/*

@@ -1,2 +1,2 @@
 #pragma once
-int creating_random_number(int min, int max);
+int create_random_number(int min, int max);

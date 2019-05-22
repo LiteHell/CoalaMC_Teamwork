@@ -26,8 +26,12 @@ BlockOrientation calculateOrientation(int x, int z, int sx, int sz, int ex, int 
 	throw (BlockOrientation)-1;
 }
 
-void createBuilding_StoneShrine(int sx, int sy, int sz)
+void createBuilding_StoneShrine(int x, int y, int z)
 {	
+	int sx = x;
+	int sy = y;
+	int sz = z;
+
 	int ex = sx + 25;
 	int ez = sz + 21;
 	int ey = sy + 12;
@@ -100,4 +104,8 @@ void createBuilding_StoneShrine(int sx, int sy, int sz)
 			locateBlock_s(light, x, ey, z);
 		}
 	
+}
+
+void createBuilding_ConcreteModern(int x, int y, int z) {
+
 }
