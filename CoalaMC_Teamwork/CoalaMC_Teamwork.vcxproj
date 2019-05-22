@@ -153,12 +153,16 @@
   <ItemGroup>
     <ClInclude Include="block_constants.h" />
     <ClInclude Include="buildings.h" />
+    <ClInclude Include="JGH.h" />
+    <ClInclude Include="KJH.h" />
     <ClInclude Include="LHM.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="SYJ.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="JGH.cpp" />
+    <ClCompile Include="KJH.cpp" />
     <ClCompile Include="main.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>

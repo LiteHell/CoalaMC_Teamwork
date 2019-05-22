@@ -42,13 +42,16 @@
     <ClInclude Include="SYJ.h">
       <Filter>헤더 파일\buildings</Filter>
     </ClInclude>
+    <ClInclude Include="KJH.h">
+      <Filter>헤더 파일\buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="JGH.h">
+      <Filter>헤더 파일\buildings</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LHM.cpp">
       <Filter>소스 파일\buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="randutils.cpp">
-      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>소스 파일\utils</Filter>
@@ -58,6 +61,15 @@
     </ClCompile>
     <ClCompile Include="SYJ.cpp">
       <Filter>소스 파일\buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="KJH.cpp">
+      <Filter>소스 파일\buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="JGH.cpp">
+      <Filter>소스 파일\buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="randutils.cpp">
+      <Filter>소스 파일\utils</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
