@@ -209,22 +209,28 @@ my_wood_dark_oak,	//5		88
 // 위의 코드는 b[0]을 치면 BLOCK_AIR가 생성되는 형식의 배열입니다. 
 //예제: locateBlock(b[0], 0, 0, 0); 이런식이면 0,0,0에 공기블럭 생성됨
 
-int creating_random_number() {
-	//랜덤넘버 생성기 함수. 함수를 호출하면 1~5중 랜덤의 수를 return한다.
+int creating_random_number(int min, int max) {
+	//랜덤넘버 생성기 함수. 함수를 호출하면 min ~ max중 랜덤의 수를 return한다.
 	//한 블록에 어떤 유형의 건물 블록을 채울지 결정할 때 사용
+	/*
+	$사용법$
+	1. 이 함수를 사용하려면 min과 max를 입력합니다.
+	2. 이후에 min ~ max사이의 값이 랜덤으로 return됩니다. 
+	ex) min = 1, max = 5라면 1 ~ 5사이의 값이 랜덤으로 return.
+	*/
 	random_device rnd;
 	mt19937_64 rng(rnd());
-	uniform_int_distribution<__int64> val(1, 5);
+	uniform_int_distribution<__int64> val(min, max);
 	int n = val(rng);
 	return n;
 }
 
-void LHM_building_1(int x, int y, int z) {
+void LHM_building_1(int x, int y, int z) {		//이호민 빌딩 1 (x, y, z)
 	int tmpx = x, tmpy = y, tmpz = z;
 
 }
 
-void LHM_building_2(int x, int y, int z) {
+void LHM_building_2(int x, int y, int z) {		//이호민 빌딩 2 (x, y, z)
 	int tmpx = x, tmpy = y, tmpz = z;
 
 }
