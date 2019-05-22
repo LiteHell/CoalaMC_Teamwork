@@ -39,6 +39,14 @@ void createBuilding_StoneShrine(int sx, int sy, int sz)
 	BlockID glass = createBlock(BLOCK_GLASS);
 	StairsID stairs = createStairs(STAIRS_STONE_BRICK, false);
 
+	// ¹Ù´Ú
+	for (int x = sx; x <= ex; x++)
+		for (int y = sy; y <= ey; y++)
+			locateBlock_s(my_stone, x, y, sz);
+	
+	sz += 1;
+	ez += 1;
+
 	// ¹Ð±â
 	for (int x = sx; x <= ex; x++)
 		for (int y = sy; y <= ey; y++)
