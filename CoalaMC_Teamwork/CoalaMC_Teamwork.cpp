@@ -219,7 +219,16 @@ int creating_random_number() {
 	return n;
 }
 
+void LHM_building_1(int x, int y, int z) {
+	int tmpx = x, tmpy = y, tmpz = z;
+
+}
+
+void LHM_building_2(int x, int y, int z) {
+	int tmpx = x, tmpy = y, tmpz = z;
+
+}
 
 int main() {
-	
+
 }
