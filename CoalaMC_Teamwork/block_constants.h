@@ -95,7 +95,18 @@ WoodID my_wood_jungle = createWood(WOOD_JUNGLE, STRIP_UP_DOWN);		//3
 WoodID my_wood_acacia = createWood(WOOD_ACACIA, STRIP_UP_DOWN);		//4
 WoodID my_wood_dark_oak = createWood(WOOD_DARK_OAK, STRIP_UP_DOWN);	//5
 
-BlockID b[60] = {
+FenceID my_fence_oak = createFence(FENCE_OAK);						//0
+FenceID my_fence_spruce = createFence(FENCE_SPRUCE);				//1
+FenceID my_fence_birch = createFence(FENCE_BIRCH);					//2
+FenceID my_fence_jungle = createFence(FENCE_JUNGLE);				//3
+FenceID my_fence_dark_oak = createFence(FENCE_DARK_OAK);			//4
+FenceID my_fence_acacia = createFence(FENCE_ACACIA);				//5
+FenceID my_fence_nether_brick = createFence(FENCE_NETHER_BRICK);	//6
+
+PaneID my_pane_glass = createPane(PANE_GLASS);		//0
+PaneID my_pane_iron = createPane(PANE_IRON);		//1
+
+BlockID block[60] = {
 	//블록 변수
 	my_air,						//0		0
 	my_stone,					//1		1
@@ -150,7 +161,7 @@ BlockID b[60] = {
 	my_bone,					//50	50
 };
 
-CarpetID c[20] = {
+CarpetID carpet[20] = {
 	//카펫 변수
 	my_carpet_white,		//0		51
 	my_carpet_orange,		//1		52
@@ -170,7 +181,7 @@ CarpetID c[20] = {
 	my_carpet_black,		//15	66
 };
 
-WoolID wl[20] = {
+WoolID wool[20] = {
 	//양털 변수
 	my_wool_white,		//0		67
 	my_wool_orange,		//1		68
@@ -190,7 +201,7 @@ WoolID wl[20] = {
 	my_wool_black,		//15	82
 };
 
-WoodID wd[10] = {
+WoodID wood[10] = {
 	//나무 변수
 	my_wood_oak,		//0		83
 	my_wood_spruce,		//1		84
@@ -199,3 +210,22 @@ WoodID wd[10] = {
 	my_wood_acacia,		//4		87
 	my_wood_dark_oak,	//5		88
 };
+
+FenceID fence[10] = {
+	//울타리 변수
+	my_fence_oak,			//0		89
+	my_fence_spruce,		//1		90
+	my_fence_birch,			//2		91
+	my_fence_jungle,		//3		92
+	my_fence_dark_oak,		//4		93
+	my_fence_acacia,		//5		94
+	my_fence_nether_brick,	//6		95
+};
+
+PaneID pane[3] = {
+	my_pane_glass,		//0		96
+	my_pane_iron,		//1		97
+};
+
+// 위의 코드는 b[0]을 치면 BLOCK_AIR가 생성되는 형식의 배열입니다. 
+//예제: locateBlock(b[0], 0, 0, 0); 이런식이면 0,0,0에 공기블럭 생성됨
