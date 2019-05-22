@@ -2,8 +2,10 @@
 #include <CoalaMOD.h>
 #include <stdio.h>
 #include <math.h>
+#include <random>
 #include <string.h>
 #pragma comment(lib, "CoalaMOD.lib")
+using namespace std;
 
 
 BlockID my_air = createBlock(BLOCK_AIR);										//0
@@ -100,6 +102,7 @@ WoodID my_wood_acacia = createWood(WOOD_ACACIA, STRIP_UP_DOWN);		//4
 WoodID my_wood_dark_oak = createWood(WOOD_DARK_OAK, STRIP_UP_DOWN);	//5
 
 BlockID b[60] = {
+//블록 변수
 my_air,						//0		0
 my_stone,					//1		1
 my_granite,					//2		2
@@ -154,6 +157,7 @@ my_bone,					//50	50
 };
 
 CarpetID c[20] = {
+//카펫 변수
 my_carpet_white,		//0		51
 my_carpet_orange,		//1		52
 my_carpet_magenta,		//2		53
@@ -173,6 +177,7 @@ my_carpet_black,		//15	66
 };
 
 WoolID wl[20] = {
+//양털 변수
 my_wool_white,		//0		67
 my_wool_orange,		//1		68
 my_wool_magenta,	//2		69
@@ -192,6 +197,7 @@ my_wool_black,		//15	82
 };
 
 WoodID wd[10] = {
+//나무 변수
 my_wood_oak,		//0		83
 my_wood_spruce,		//1		84
 my_wood_birch,		//2		85
@@ -200,7 +206,18 @@ my_wood_acacia,		//4		87
 my_wood_dark_oak,	//5		88
 };
 
-// 위의 코드는 b[0]을 치면 BLOCK_AIR가 생성되는 형식의 배열입니다. 예제: locateBlock(b[0], 0, 0, 0); 이런식이면 0,0,0에 공기블럭 생성됨
+// 위의 코드는 b[0]을 치면 BLOCK_AIR가 생성되는 형식의 배열입니다. 
+//예제: locateBlock(b[0], 0, 0, 0); 이런식이면 0,0,0에 공기블럭 생성됨
+
+int creating_random_number() {
+	//랜덤넘버 생성기 함수. 함수를 호출하면 1~5중 랜덤의 수를 return한다.
+	//한 블록에 어떤 유형의 건물 블록을 채울지 결정할 때 사용
+	random_device rnd;
+	mt19937_64 rng(rnd());
+	uniform_int_distribution<__int64> val(1, 5);
+	int n = val(rng);
+	return n;
+}
 
 
 int main() {
