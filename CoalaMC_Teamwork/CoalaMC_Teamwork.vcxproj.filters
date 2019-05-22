@@ -13,9 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\buildings">
+      <UniqueIdentifier>{948ac006-a4cf-4cb1-b62d-64f0f906c3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\buildings">
+      <UniqueIdentifier>{52682789-6255-48fa-8205-2341efd8691a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\utils">
+      <UniqueIdentifier>{840401c1-068d-4ee1-99f6-198d7a2692aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="LHM.h">
+      <Filter>헤더 파일\buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="buildings.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="block_constants.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -23,8 +44,14 @@
     <ClCompile Include="pch.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CoalaMC_Teamwork.cpp">
+    <ClCompile Include="LHM.cpp">
+      <Filter>소스 파일\buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="randutils.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CoalaMC_Teamwork.cpp">
+      <Filter>소스 파일\utils</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
