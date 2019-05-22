@@ -41,17 +41,17 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="LHM.cpp">
       <Filter>소스 파일\buildings</Filter>
     </ClCompile>
     <ClCompile Include="randutils.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CoalaMC_Teamwork.cpp">
+    <ClCompile Include="pch.cpp">
       <Filter>소스 파일\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
