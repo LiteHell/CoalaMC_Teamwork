@@ -35,7 +35,7 @@ void LHM_building_1(int x, int y, int z) {		//ÀÌÈ£¹Î ºôµù 1 (25, 12, 15)
 	//0ÃþºÎÅÍ 4Ãþ±îÁö ÇÑ ºí·° 0, 1, 2, 3, 4;
 
 	//Ãþ¼ö¸¦ ³­¼ö ¸¸Å­ »ý¼ºÇÏ´Â ¹Ýº¹¹®
-	for (int p = 0; p < creating_random_number(1, 3); p++) {
+	for (int p = 0; p < create_random_number(1, 3); p++) {
 		tmpy = y + (p * 5);
 		for (int q = 0; q < 5; q++) {
 			tmpx = x;
@@ -65,10 +65,12 @@ void LHM_building_1(int x, int y, int z) {		//ÀÌÈ£¹Î ºôµù 1 (25, 12, 15)
 			tmpz = z;
 			for (int j = 0; j < 15; j++) {
 				if (arr[i][q][j] == 0) continue;
-				else if (arr[i][q][j] < 51) locateBlock(b[arr[i][q][j]], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 67) locateCarpet(c[arr[i][q][j] % 51], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 83) locateWool(wl[arr[i][q][j] % 67], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 89) locateWood(wd[arr[i][q][j] % 83], tmpx, tmpy, tmpz);
+				else if (arr[i][q][j] < 51) locateBlock(block[arr[i][q][j]], tmpx, tmpy, tmpz);
+				else if (arr[i][q][j] < 67) locateCarpet(carpet[arr[i][q][j] % 51], tmpx, tmpy, tmpz);
+				else if (arr[i][q][j] < 83) locateWool(wool[arr[i][q][j] % 67], tmpx, tmpy, tmpz);
+				else if (arr[i][q][j] < 89) locateWood(wood[arr[i][q][j] % 83], tmpx, tmpy, tmpz);
+				else if (arr[i][q][j] < 96) locateFence(fence[arr[i][q][j] % 89], tmpx, tmpy, tmpz);
+				else if (arr[i][q][j] < 98) locatePane(pane[arr[i][q][j] % 96], tmpx, tmpy, tmpz);
 				++tmpz;
 			}
 			++tmpx;
@@ -107,10 +109,12 @@ void LHM_building_2(int x, int y, int z) {		//ÀÌÈ£¹Î ºôµù 2 (x, y, z)
 		for (int i = 0; i < 20; i++) {
 			for (int j = 0; j < 12; j++) {
 				if (arr[i][q][j] == 0) continue;
-				else if (arr[i][q][j] < 51) locateBlock(b[arr[i][q][j]], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 67) locateCarpet(c[arr[i][q][j] % 51], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 83) locateWool(wl[arr[i][q][j] % 67], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 89) locateWood(wd[arr[i][q][j] % 83], tmpx, tmpy, tmpz);
+				else if (arr[i][q][j] < 51) locateBlock(block[arr[i][q][j]], tmpx, tmpy, tmpz);
+				else if (arr[i][q][j] < 67) locateCarpet(carpet[arr[i][q][j] % 51], tmpx, tmpy, tmpz);
+				else if (arr[i][q][j] < 83) locateWool(wool[arr[i][q][j] % 67], tmpx, tmpy, tmpz);
+				else if (arr[i][q][j] < 89) locateWood(wood[arr[i][q][j] % 83], tmpx, tmpy, tmpz);
+				else if (arr[i][q][j] < 96) locateFence(fence[arr[i][q][j] % 89], tmpx, tmpy, tmpz);
+				else if (arr[i][q][j] < 98) locatePane(pane[arr[i][q][j] % 96], tmpx, tmpy, tmpz);
 				++tmpz;
 			}
 			++tmpx;
