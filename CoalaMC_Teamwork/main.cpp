@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include "buildings.h"
 #include "utils.h"
+#include "land_mark.h"
 #pragma comment(lib, "CoalaMOD.lib")
 
 /*
