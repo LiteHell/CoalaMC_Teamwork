@@ -106,6 +106,14 @@ FenceID my_fence_nether_brick = createFence(FENCE_NETHER_BRICK);	//6
 PaneID my_pane_glass = createPane(PANE_GLASS);		//0
 PaneID my_pane_iron = createPane(PANE_IRON);		//1
 
+BricksID my_brick = createBricks(BRICKS);									//0
+BricksID my_brick_stone = createBricks(BRICKS_STONE);						//1
+BricksID my_brick_cracked_stone = createBricks(BRICKS_CRACKED_STONE);		//2
+BricksID my_brick_mossy_stone = createBricks(BRICKS_MOSSY_STONE);			//3
+BricksID my_brick_chiseled_stone = createBricks(BRICKS_CHISELED_STONE);		//4
+BricksID my_brick_nether = createBricks(BRICKS_NETHER);						//5
+BricksID my_brick_red_nether = createBricks(BRICKS_RED_NETHER);				//6
+
 BlockID block[60] = {
 	//블록 변수
 	my_air,						//0		0
@@ -223,9 +231,21 @@ FenceID fence[10] = {
 };
 
 PaneID pane[3] = {
+	//유리, 철판 변수
 	my_pane_glass,		//0		96
 	my_pane_iron,		//1		97
 };
+
+BricksID brick[10] = {
+	//브릭 변수
+	my_brick = createBricks(BRICKS),									//0		 98
+	my_brick_stone = createBricks(BRICKS_STONE),						//1		 99
+	my_brick_cracked_stone = createBricks(BRICKS_CRACKED_STONE),		//2		100
+	my_brick_mossy_stone = createBricks(BRICKS_MOSSY_STONE),			//3		101
+	my_brick_chiseled_stone = createBricks(BRICKS_CHISELED_STONE),		//4		102
+	my_brick_nether = createBricks(BRICKS_NETHER),						//5		103
+	my_brick_red_nether = createBricks(BRICKS_RED_NETHER),				//6		104
+}
 
 // 위의 코드는 b[0]을 치면 BLOCK_AIR가 생성되는 형식의 배열입니다. 
 //예제: locateBlock(b[0], 0, 0, 0); 이런식이면 0,0,0에 공기블럭 생성됨
