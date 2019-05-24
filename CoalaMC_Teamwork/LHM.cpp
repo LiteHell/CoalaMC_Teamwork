@@ -114,7 +114,6 @@ BricksID my_brick_chiseled_stone = createBricks(BRICKS_CHISELED_STONE);		//4
 BricksID my_brick_nether = createBricks(BRICKS_NETHER);						//5
 BricksID my_brick_red_nether = createBricks(BRICKS_RED_NETHER);				//6
 
-
 PlanksID my_planks_oak = createPlanks(PLANKS_OAK);					//0
 PlanksID my_planks_spruce = createPlanks(PLANKS_SPRUCE);			//1
 PlanksID my_planks_birch = createPlanks(PLANKS_BIRCH);				//2
