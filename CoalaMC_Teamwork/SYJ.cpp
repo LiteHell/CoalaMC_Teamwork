@@ -1,5 +1,4 @@
 #include <CoalaMOD.h>
-#include "block_constants.h"
 #include "utils.h"
 #pragma comment(lib, "CoalaMOD.lib")
 #define locateBlock_s(block, x, y, z) if (sx <= x && x <= ex && sy <= y && y <= ey && sz <= z && z <= ez) locateBlock(block, x, y, z)
@@ -46,7 +45,7 @@ void createBuilding_StoneShrine(int x, int y, int z)
 	// ¹Ù´Ú
 	for (int x = sx; x <= ex; x++)
 		for (int y = sy; y <= ey; y++)
-			locateBlock_s(my_stone, x, y, sz);
+			//locateBlock_s(my_stone, x, y, sz);
 	
 	sz += 1;
 	ez += 1;
