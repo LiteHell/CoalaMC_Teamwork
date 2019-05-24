@@ -27,14 +27,21 @@ BlockOrientation calculateOrientation(int x, int z, int sx, int sz, int ex, int 
 }
 
 void createBuilding_StoneShrine(int x, int y, int z)
-{	
-	int sx = x;
-	int sy = y;
-	int sz = z;
+{
+	// ¹Ù´Ú
+	for (int fx = x; fx < x + 30; fx++)
+		for (int fy = y; fy < y + 30; fy++)
+			locateBlock(my_stone, fx, fy, z);
 
-	int ex = sx + 25;
-	int ez = sz + 21;
-	int ey = sy + 12;
+	// sx, sy, ez
+	int sx = x + 5;
+	int sy = y + 2;  
+	int sz = z + 9;
+
+	// ex, ey, ez
+	int ex = sx + 26;
+	int ez = sz + 27;
+	int ey = sy + 21;
 
 	// ºí·° ¼±¾ð
 	BricksID bricks = createBricks(BRICKS_STONE);
@@ -43,10 +50,6 @@ void createBuilding_StoneShrine(int x, int y, int z)
 	BlockID glass = createBlock(BLOCK_GLASS);
 	StairsID stairs = createStairs(STAIRS_STONE_BRICK, false);
 
-	// ¹Ù´Ú
-	for (int x = sx; x <= ex; x++)
-		for (int y = sy; y <= ey; y++)
-			locateBlock_s(my_stone, x, y, sz);
 	
 	sz += 1;
 	ez += 1;
@@ -107,5 +110,8 @@ void createBuilding_StoneShrine(int x, int y, int z)
 }
 
 void createBuilding_ConcreteModern(int x, int y, int z) {
+	ConcreteID silverConcrete = createConcrete(COLOR_LIGHT_GRAY, false);
+	ConcreteID grayConcrete = createConcrete(COLOR_GRAY, false);
 
+	// TO-DO : Colored stained glass
 }
