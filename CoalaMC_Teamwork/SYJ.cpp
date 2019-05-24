@@ -1,6 +1,6 @@
 #include <CoalaMOD.h>
-#include "block_constants.h"
 #include "utils.h"
+
 #pragma comment(lib, "CoalaMOD.lib")
 #define locateBlock_s(block, x, y, z) if (sx <= x && x <= ex && sy <= y && y <= ey && sz <= z && z <= ez) locateBlock(block, x, y, z)
 #define locateBricks_s(block, x, y, z) if (sx <= x && x <= ex && sy <= y && y <= ey && sz <= z && z <= ez) locateBricks(block, x, y, z)
@@ -28,10 +28,12 @@ BlockOrientation calculateOrientation(int x, int z, int sx, int sz, int ex, int 
 
 void createBuilding_StoneShrine(int x, int y, int z)
 {
+	BlockID stone = createBlock(BLOCK_STONE);
+
 	// ¹Ù´Ú
 	for (int fx = x; fx < x + 30; fx++)
 		for (int fy = y; fy < y + 30; fy++)
-			locateBlock(my_stone, fx, fy, z);
+			locateBlock(stone, fx, fy, z);
 
 	// sx, sy, ez
 	int sx = x + 5;
