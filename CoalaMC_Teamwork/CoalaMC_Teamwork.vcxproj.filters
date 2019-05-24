@@ -25,6 +25,9 @@
     <Filter Include="소스 파일\land_mark">
       <UniqueIdentifier>{006845da-19c4-4268-8edf-164ae15128a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\road">
+      <UniqueIdentifier>{77c9e11d-be05-4b8e-a28d-fef5ad5c9750}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -49,6 +52,9 @@
       <Filter>헤더 파일\buildings</Filter>
     </ClInclude>
     <ClInclude Include="land_mark.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="road.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -82,6 +88,9 @@
     </ClCompile>
     <ClCompile Include="park.cpp">
       <Filter>소스 파일\land_mark</Filter>
+    </ClCompile>
+    <ClCompile Include="road.cpp">
+      <Filter>소스 파일\road</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
