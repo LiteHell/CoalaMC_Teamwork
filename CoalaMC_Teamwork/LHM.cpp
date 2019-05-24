@@ -58,8 +58,9 @@ void LHM_building_1(int x, int y, int z, int type) {		//이호민 빌딩 1 (25, 12, 1
 		}
 		++tmpy;
 	}
-	++tmpy;
+
 	//층수를 난수 만큼 생성하는 반복문 2층 부터 시작된다.
+	++tmpy;
 	for (int p = 0; p < create_random_number(2, 5); p++) {
 		for (int q = 5; q < 11; q++) {
 			tmpx = x;
@@ -81,7 +82,7 @@ void LHM_building_1(int x, int y, int z, int type) {		//이호민 빌딩 1 (25, 12, 1
 			++tmpy;
 		}
 	}
-
+	/*
 	//지붕을 생성하는 반복문
 	++tmpy;
 	for (int q = 11; q < 12; q++) {
@@ -103,7 +104,7 @@ void LHM_building_1(int x, int y, int z, int type) {		//이호민 빌딩 1 (25, 12, 1
 		}
 		++tmpy;
 	}
-
+	*/
 }
 
 void LHM_building_2(int x, int y, int z) {		//이호민 빌딩 2 (x, y, z)
