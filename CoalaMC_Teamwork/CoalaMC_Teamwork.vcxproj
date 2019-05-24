@@ -154,18 +154,22 @@
     <ClInclude Include="buildings.h" />
     <ClInclude Include="JGH.h" />
     <ClInclude Include="KJH.h" />
+    <ClInclude Include="land_mark.h" />
     <ClInclude Include="LHM.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="SYJ.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="central_tower.cpp" />
     <ClCompile Include="JGH.cpp" />
     <ClCompile Include="KJH.cpp" />
+    <ClCompile Include="LHM_personal_project.cpp" />
     <ClCompile Include="main.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="LHM.cpp" />
+    <ClCompile Include="park.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

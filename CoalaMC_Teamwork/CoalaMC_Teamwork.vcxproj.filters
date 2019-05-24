@@ -22,6 +22,9 @@
     <Filter Include="소스 파일\utils">
       <UniqueIdentifier>{840401c1-068d-4ee1-99f6-198d7a2692aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\land_mark">
+      <UniqueIdentifier>{006845da-19c4-4268-8edf-164ae15128a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -45,6 +48,9 @@
     <ClInclude Include="JGH.h">
       <Filter>헤더 파일\buildings</Filter>
     </ClInclude>
+    <ClInclude Include="land_mark.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LHM.cpp">
@@ -67,6 +73,15 @@
     </ClCompile>
     <ClCompile Include="randutils.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="LHM_personal_project.cpp">
+      <Filter>소스 파일\land_mark</Filter>
+    </ClCompile>
+    <ClCompile Include="central_tower.cpp">
+      <Filter>소스 파일\land_mark</Filter>
+    </ClCompile>
+    <ClCompile Include="park.cpp">
+      <Filter>소스 파일\land_mark</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
