@@ -1,4 +1,3 @@
-#include <math.h>
 #include <random>
 using namespace std;
 
@@ -13,7 +12,7 @@ int create_random_number(int min, int max) {
 	*/
 	random_device rnd;
 	mt19937_64 rng(rnd());
-	uniform_int_distribution<__int64> val(min, max);
+	uniform_int_distribution<int> val(min, max);
 	int n = val(rng);
 	return n;
 }
