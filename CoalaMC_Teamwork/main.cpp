@@ -4,6 +4,7 @@
 #include "buildings.h"
 #include "utils.h"
 #include "land_mark.h"
+#include "road.h"
 #pragma comment(lib, "CoalaMOD.lib")
 
 /*
@@ -20,4 +21,7 @@ int main() {
 	LHM_building_2(1050, 4, 1050, 4);
 	*$@테스트 완료, 집 잘 생성됨, 문 방향 잘 바뀜@$*
 	*/
+
+	create_road(0, 0, 5, 5);
+
 }

@@ -2,7 +2,23 @@
 #include "utils.h"
 #pragma comment(lib, "CoalaMOD.lib")
 
-BlockID my_cobblestone = createBlock(BLOCK_COBBLESTONE);
+BlockID my_cobblestone_road = createBlock(BLOCK_COBBLESTONE);
+
+void roadx(int x, int z, int len) {
+	for (int i = z; i < 7; i++) {
+		for (int j = x; j < len; j++) {
+			locateBlock(my_cobblestone_road, j, 4, i);
+		}
+	}
+}
+
+void roadz(int x, int z, int len) {
+	for (int i = x; i < 7; i++) {
+		for (int j = z; j < len; j++) {
+			locateBlock(my_cobblestone_road, i, 4, j);
+		}
+	}
+}
 
 void create_road(int x, int z, int cntx, int cntz) {
 	//여기에서 x, z입력은 좌표가 아니라 x, z축의 블럭 개수를 의미한다.
@@ -21,20 +37,4 @@ void create_road(int x, int z, int cntx, int cntz) {
 		z += 67;
 	}
 
-}
-
-void roadx(int x, int z, int len) {
-	for (int i = z; i < 7; i++) {
-		for (int j = x; j < len; j++) {
-			locateBlock(my_cobblestone, j, 4, i);
-		}
-	}
-}
-
-void roadz(int x, int z, int len) {
-	for (int i = x; i < 7; i++) {
-		for (int j = z; j < len; j++) {
-			locateBlock(my_cobblestone, i, 4, j);
-		}
-	}
 }
