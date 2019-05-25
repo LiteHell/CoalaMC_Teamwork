@@ -4,7 +4,7 @@
 #pragma comment(lib, "CoalaMOD.lib")
 
 
-void roadx(int x, int z, int len) {
+void roadx(int x, int y, int z, int len) {
 	for (int i = z; i < z + 7; i++) {
 		for (int j = x; j < x + len; j++) {
 			locateBlock(block[12 + create_random_number(0, 1) * 13], j, 4, i);
@@ -12,7 +12,7 @@ void roadx(int x, int z, int len) {
 	}
 }
 
-void roadz(int x, int z, int len) {
+void roadz(int x, int y, int z, int len) {
 	for (int i = x; i < x + 7; i++) {
 		for (int j = z; j < z + len; j++) {
 			locateBlock(block[12 + create_random_number(0, 1) * 13], i, 4, j);
@@ -20,7 +20,7 @@ void roadz(int x, int z, int len) {
 	}
 }
 
-void create_road(int x, int z, int cntx, int cntz) {
+void create_road(int x, int y, int z, int cntx, int cntz) {
 	//여기에서 x, z입력은 시작 좌표이고 각각 +방향으로 늘어난다.
 	//cntx, cntz는 각각 x, z방향의 블록 개수이다.
 	//각 블럭의 크기는 60 * 60의 크기이다.
@@ -29,13 +29,13 @@ void create_road(int x, int z, int cntx, int cntz) {
 
 	for (int i = 0; i < cntx + 1; i++) {
 		//printf("%d %d %d\n", tmpx, z, i);
-		roadx(x, tmpz, (cntx * 60) + ((cntx + 1) * 7));
+		roadx(x, y, tmpz, (cntx * 60) + ((cntx + 1) * 7));
 		tmpz += 67;
 	}
 
 	for (int i = 0; i < cntz + 1; i++) {
 		//printf("***%d %d %d\n", x, tmpz, i);
-		roadz(tmpx, z, (cntz * 60) + ((cntz + 1) * 7));
+		roadz(tmpx, y, z, (cntz * 60) + ((cntz + 1) * 7));
 		tmpx += 67;
 	}
 
