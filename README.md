@@ -49,14 +49,16 @@
     - cntx, cntz는 각각 x축의 블럭의 갯수, z축의 블럭의 갯수를 의미합니다.
         + 여기에서의 블럭은 마인크래프트의 블럭이 아니라 건물 여러개를 합친 한 '블럭'을 의미합니다.
 * roadx함수
-    - 이 함수는 create_road함수에서 호출되며 x축 방향으로 폭이 7, 길이가 (cntx * 60) + ((cntx + 1) * 7)인 길을 생성합니다.
+    - 이 함수는 create_road함수에서 호출되며 x축 방향으로 폭이 7, 길이가 <code>(cntx * 60) + ((cntx + 1) * 7)</code>인 길을 생성합니다.
     - (cntx * 60) + ((cntx + 1) * 7)이 길이는 한 '블럭'의 크기가 60 * 60의 크기라는 것과 길의 폭이 7이라는 것을 고려한 것입니다.
     - 이 함수는 길의 block을 cobblestone과 mossy_cobblestone중 1개로 골라 랜덤으로 생성합니다.
         + 때문에 이끼낀 조약돌과 조약돌의 조합으로 랜덤한 길이 생성됩니다.
         + 여기에도 역시 create_random_number function이 이용되었습니다.
+        + <code>block[12 + create_random_number(0, 1) * 13]</code>이것을 이용해 랜덤으로 선택합니다.
+            = <code>block[12]<code>는 그냥 cobblestone이고 <code>block[25]</code>는 mossy_cobblestone입니다. 여기서 0과 1중 1개를 랜덤으로 뽑아오고 0일때는 그냥 12를 1일때는 25가 되게 해서 cobblestone과 mossy_cobblestone중 랜덤으로 고를 수 있도록 설계했습니다.
 * roadz함수
     - 이 함수의 기능은 roadx함수와 같고 축이 z축으로 바뀌었을 뿐입니다.
-    - 길의 폭은 7로 똑같지만 축이 z축으로 바뀌었으므로 길의 길이는 (cntz * 60) + ((cntz + 1) * 7)가 됩니다.
+    - 길의 폭은 7로 똑같지만 축이 z축으로 바뀌었으므로 길의 길이는 <code>(cntz * 60) + ((cntz + 1) * 7)</code>가 됩니다.
     
 * road.cpp안에 있다.
 * 제작자 - 이호민
