@@ -16,3 +16,9 @@ int create_random_number(int min, int max) {
 	int n = val(rng);
 	return n;
 }
+
+bool create_random_bool()
+{
+	int a = create_random_number(1, 100);
+	return a % 2 == 0;
+}
