@@ -111,9 +111,52 @@ void createBuilding_StoneShrine(int x, int y, int z)
 	
 }
 
+typedef BlockID StainedGlassID;
+DEF_CREATE_BLOCK_WITH_COLOR(StainedGlass);
+
 void createBuilding_ConcreteModern(int x, int y, int z) {
 	ConcreteID silverConcrete = createConcrete(COLOR_LIGHT_GRAY, false);
-	ConcreteID grayConcrete = createConcrete(COLOR_GRAY, false);
+	ConcreteID blackConcrete = createConcrete(COLOR_BLACK, false);
+	ConcreteID grayConcrete = createConcrete(COLOR_LIGHT_GRAY, false);
+	BlockID grass = createBlock(BLOCK_GRASS);
+	BlockID glass = createBlock(BLOCK_GLASS);
 
-	// TO-DO : Colored stained glass
+	// floor
+	const int groundY = y;
+	for (int fx = x; fx < x + 20; fx++)
+		for (int fz = z; fz < z + 20; fz++)
+			locateBlock(grass, x, groundY, z);
+
+	// create Building
+	y += 1;
+
+	const int floorHeight = 4, floorCount = 7;
+	bool floorOut = true;
+
+	// 類 論晦 (1類 -> 2類 -> 3類 -> ...)
+	for (int i = 0; i < floorHeight * floorCount; i += floorHeight) {
+		int sx = x, ex = x + 20,
+			sz = z, ez = z + 10;
+		if (!floorOut) {
+			sx += 1;
+			ex -= 1;
+			sz += 1;
+			ez -= 1;
+		}
+
+		// 類 虜菟晦
+		for (int fy = y + i; fy < y + i + floorHeight; y++)
+			for (int fx = sx; fx < ex; fx++)
+				for (int fz = sz; fz < ez; fz++)
+					if (create_random_bool())
+						locateBlock(glass, fx, fy, fz);
+					else
+						locateConcrete(floorOut ? silverConcrete : blackConcrete, fx, fy, fz);
+		
+		for (int fx = sx; fx < ex; fx++)
+			for (int fz = sz; fz < ez; fz++)
+				locateBlock(grayConcrete, fx, y + floorHeight * floorCount, fz);
+
+		floorOut = !floorOut;
+	}
 }
