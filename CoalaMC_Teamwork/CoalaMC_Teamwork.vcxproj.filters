@@ -57,13 +57,13 @@
     <ClInclude Include="road.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="LHM_constants.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LHM.cpp">
       <Filter>소스 파일\buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>소스 파일\utils</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
@@ -91,6 +91,9 @@
     </ClCompile>
     <ClCompile Include="road.cpp">
       <Filter>소스 파일\road</Filter>
+    </ClCompile>
+    <ClCompile Include="LHM_constants.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

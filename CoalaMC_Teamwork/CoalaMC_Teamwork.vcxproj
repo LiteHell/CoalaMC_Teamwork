@@ -156,6 +156,7 @@
     <ClInclude Include="KJH.h" />
     <ClInclude Include="land_mark.h" />
     <ClInclude Include="LHM.h" />
+    <ClInclude Include="LHM_constants.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="road.h" />
     <ClInclude Include="SYJ.h" />
@@ -165,18 +166,13 @@
     <ClCompile Include="central_tower.cpp" />
     <ClCompile Include="JGH.cpp" />
     <ClCompile Include="KJH.cpp" />
+    <ClCompile Include="LHM_constants.cpp" />
     <ClCompile Include="LHM_personal_project.cpp" />
     <ClCompile Include="main.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="LHM.cpp" />
     <ClCompile Include="park.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="randutils.cpp" />
     <ClCompile Include="road.cpp" />
     <ClCompile Include="SYJ.cpp" />
