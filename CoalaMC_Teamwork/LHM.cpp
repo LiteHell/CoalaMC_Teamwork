@@ -3,9 +3,6 @@
 #include "LHM_constants.h"
 #pragma comment(lib, "CoalaMOD.lib")
 
-// 위의 코드는 b[0]을 치면 BLOCK_AIR가 생성되는 형식의 배열입니다. 
-//예제: locateBlock(b[0], 0, 0, 0); 이런식이면 0,0,0에 공기블럭 생성됨
-
 void LHM_building_1(int x, int y, int z, int type) {
 	//이호민 빌딩 1 (25, 11~23, 15)
 	//type에 따라 1, 2타입은 짧은 쪽에 문이 있는 타입 3, 4타입은 긴 쪽에 문이 있는 타입입니다.
