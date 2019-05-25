@@ -55,7 +55,7 @@
         + 때문에 이끼낀 조약돌과 조약돌의 조합으로 랜덤한 길이 생성됩니다.
         + 여기에도 역시 create_random_number function이 이용되었습니다.
         + <code>block[12 + create_random_number(0, 1) * 13]</code>이것을 이용해 랜덤으로 선택합니다.
-            = <code>block[12]<code>는 그냥 cobblestone이고 <code>block[25]</code>는 mossy_cobblestone입니다. 여기서 0과 1중 1개를 랜덤으로 뽑아오고 0일때는 그냥 12를 1일때는 25가 되게 해서 cobblestone과 mossy_cobblestone중 랜덤으로 고를 수 있도록 설계했습니다.
+            = <code>block[12]<code>는 그냥 cobblestone이고 <code>block[25]</code>는 mossy_cobblestone입니다. 여기서 0과 1중 1개를 랜덤으로                 뽑아오고 0일때는 그냥 12를 1일때는 25가 되게 해서 cobblestone과 mossy_cobblestone중 랜덤으로 고를 수 있도록 설계했습니다.
 * roadz함수
     - 이 함수의 기능은 roadx함수와 같고 축이 z축으로 바뀌었을 뿐입니다.
     - 길의 폭은 7로 똑같지만 축이 z축으로 바뀌었으므로 길의 길이는 <code>(cntz * 60) + ((cntz + 1) * 7)</code>가 됩니다.
