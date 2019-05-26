@@ -32,17 +32,17 @@ void createBuilding_StoneShrine(int x, int y, int z)
 
 	// ¹Ù´Ú
 	for (int fx = x; fx < x + 30; fx++)
-		for (int fy = y; fy < y + 30; fy++)
-			locateBlock(stone, fx, fy, z);
+		for (int fz = z; fz < z + 30; fz++)
+			locateBlock(stone, fx, y, fz);
 
 	// sx, sy, ez
 	int sx = x + 5;
-	int sy = y + 2;  
+	int sy = y + 1;
 	int sz = z + 9;
 
 	// ex, ey, ez
 	int ex = sx + 26;
-	int ez = sz + 27;
+	int ez = sz + 26;
 	int ey = sy + 21;
 
 	// ºí·° ¼±¾ð
@@ -115,22 +115,22 @@ typedef BlockID StainedGlassID;
 DEF_CREATE_BLOCK_WITH_COLOR(StainedGlass);
 
 void createBuilding_ConcreteModern(int x, int y, int z) {
-	ConcreteID silverConcrete = createConcrete(COLOR_LIGHT_GRAY, false);
-	ConcreteID blackConcrete = createConcrete(COLOR_BLACK, false);
-	ConcreteID grayConcrete = createConcrete(COLOR_LIGHT_GRAY, false);
+	ConcreteID silverConcrete = createConcrete(COLOR_LIGHT_GRAY, true);
+	ConcreteID blackConcrete = createConcrete(COLOR_BLACK, true);
+	ConcreteID grayConcrete = createConcrete(COLOR_GRAY, true);
 	BlockID grass = createBlock(BLOCK_GRASS);
 	BlockID glass = createBlock(BLOCK_GLASS);
 
-	// floor
+	// ¹Ù´Ú
 	const int groundY = y;
 	for (int fx = x; fx < x + 20; fx++)
-		for (int fz = z; fz < z + 20; fz++)
-			locateBlock(grass, x, groundY, z);
+		for (int fz = z; fz < z + 10; fz++)
+			locateBlock(grass, fx, groundY, fz);
 
-	// create Building
+	// °Ç¹° ¸¸µé±â ½ÃÀÛ
 	y += 1;
 
-	const int floorHeight = 4, floorCount = 7;
+	const int floorHeight = 4, floorCount = 5 + create_random_number(1,2)*2;
 	bool floorOut = true;
 
 	// Ãþ ½×±â (1Ãþ -> 2Ãþ -> 3Ãþ -> ...)
@@ -145,18 +145,19 @@ void createBuilding_ConcreteModern(int x, int y, int z) {
 		}
 
 		// Ãþ ¸¸µé±â
-		for (int fy = y + i; fy < y + i + floorHeight; y++)
+		for (int fy = y + i; fy < y + i + floorHeight; fy++)
 			for (int fx = sx; fx < ex; fx++)
 				for (int fz = sz; fz < ez; fz++)
-					if (create_random_bool())
-						locateBlock(glass, fx, fy, fz);
-					else
-						locateConcrete(floorOut ? silverConcrete : blackConcrete, fx, fy, fz);
-		
-		for (int fx = sx; fx < ex; fx++)
-			for (int fz = sz; fz < ez; fz++)
-				locateBlock(grayConcrete, fx, y + floorHeight * floorCount, fz);
-
+					if (fz == sz || fz == ez - 1 || fx == sx || fx == ex - 1)
+						if (create_random_bool())
+							locateBlock(glass, fx, fy, fz);
+						else
+							locateConcrete(floorOut ? silverConcrete : blackConcrete, fx, fy, fz);
 		floorOut = !floorOut;
 	}
+
+	// ÁöºØ ¸¸µé±â
+	for (int fx = x; fx < x + 20; fx++)
+		for (int fz = z; fz < z + 10; fz++)
+			locateConcrete(grayConcrete, fx, y + floorHeight * floorCount, fz);
 }

@@ -35,6 +35,14 @@
 
 # 신연진이 맡은 건물
 
+* CreateBuiling_StoneShrine
+  * x, y, z를 받는다.
+  * (27, 22, 28) 크기의 건물이다.
+
+* CreateBuilding_ModernConcrete
+  * x, y, z를 받는다.
+  * (20, 29~37, 10) 크기의 건물이다.
+  * 유리 위치는 랜덤하게 생성된다.
 
 # 김지훈이 맡은 건물
 

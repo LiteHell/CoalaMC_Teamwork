@@ -32,6 +32,13 @@ void locate_building_block(int x, int y, int z, int n) {
 
 int main() {
 	/*
+	createBuilding_StoneShrine(100, 3, 100);
+	createBuilding_ConcreteModern(150, 3, 150);
+	return 0;
+	*테스트 완료.
+	*/
+
+	/*
 	LHM_building_1(100, 4, 100, 4);
 	LHM_building_2(150, 4, 150, 4);
 	LHM_room(0, 0, 0, 41, 25, 25);
