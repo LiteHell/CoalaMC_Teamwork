@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="buildings.h" />
+    <ClInclude Include="building_block.h" />
     <ClInclude Include="JGH.h" />
     <ClInclude Include="KJH.h" />
     <ClInclude Include="land_mark.h" />
@@ -163,6 +164,7 @@
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="building_block.cpp" />
     <ClCompile Include="central_tower.cpp" />
     <ClCompile Include="JGH.cpp" />
     <ClCompile Include="KJH.cpp" />

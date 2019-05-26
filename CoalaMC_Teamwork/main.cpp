@@ -16,6 +16,20 @@
 
 //한 블록의 가로 세로는 60 * 60칸이다.
 //길의 폭은 칸이며 건물의 둘레에 울타리를 설치한다.
+
+void locate_building_block(int x, int y, int z, int n) {
+	if (n == 1)
+		building_block_1(x, y, z);
+	if (n == 2)
+		building_block_2(x, y, z);
+	if (n == 3)
+		building_block_3(x, y, z);
+	if (n == 4)
+		building_block_4(x, y, z);
+	if (n == 5)
+		building_block_5(x, y, z);
+}
+
 int main() {
 	/*
 	LHM_building_1(100, 4, 100, 4);
@@ -25,6 +39,25 @@ int main() {
 	*$@테스트 완료, 집 잘 생성됨, 문 방향 잘 바뀜@$*
 	*/
 
-	create_road(0, 4, 0, 10, 10);
+	//이 변수를 조정하면 길과 건물의 변수 모두 통일되게 조정된다.
+	int allx = 3000, ally = 4, allz = 3000;
+
+	int Bblockx = 7, Bblockz = 5;
+
+	//도로를 먼저 생성한 후 건물들을 생성한다.
+	create_road(allx, ally, allz, Bblockx, Bblockz);
+
+	//건물들의 시작 좌표는 도로 좌표에서 x + 7, y, z + 7이다.
+	//ex) 10, 4, 10의 경우 17, 4, 17에서 시작해야 한다.
+	int tmpx = allx + 7, tmpy = ally, tmpz = allz + 7;
+	int x = tmpx, y = tmpy, z = tmpz;
+	for (int i = 0; i < Bblockx; i++) {
+		z = tmpz;
+		for (int j = 0; j < Bblockz; j++) {
+			locate_building_block(x, y, z, create_random_number(1, 5));
+			z += 67;
+		}
+		x += 67;
+	}
 
 }

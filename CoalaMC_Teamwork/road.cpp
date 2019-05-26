@@ -27,13 +27,13 @@ void create_road(int x, int y, int z, int cntx, int cntz) {
 	//±æÀÇ ÆøÀº 7Ä­ÀÌ´Ù.
 	int tmpx = x, tmpz = z;
 
-	for (int i = 0; i < cntx + 1; i++) {
+	for (int i = 0; i < cntz + 1; i++) {
 		//printf("%d %d %d\n", tmpx, z, i);
 		roadx(x, y, tmpz, (cntx * 60) + ((cntx + 1) * 7));
 		tmpz += 67;
 	}
 
-	for (int i = 0; i < cntz + 1; i++) {
+	for (int i = 0; i < cntx + 1; i++) {
 		//printf("***%d %d %d\n", x, tmpz, i);
 		roadz(tmpx, y, z, (cntz * 60) + ((cntz + 1) * 7));
 		tmpx += 67;
