@@ -1,14 +1,10 @@
-#include <CoalaMOD.h>
-#include "utils.h"
-#pragma comment(lib, "CoalaMOD.lib")
-//건물 제작 함수를 만들어주시면 됩니다.
-//main함수를 쓸 필요는 없습니다.
 #define _CRT_SECURE_NO_WARNINGS
+
 #include"pch.h"
 #include<CoalaMOD.h>
 #pragma comment(lib, "CoalaMOD.lib")
 
-int main() 
+int main()
 {
 	int sx = 0; int sy = 0; int sz = 0; int x, y, z; int a, b, c;
 	BlockID STONE = createBlock(BLOCK_STONE);
@@ -16,6 +12,7 @@ int main()
 	BlockID GOLD = createBlock(BLOCK_GOLD);
 	BlockID WOOL = createWool(COLOR_LIGHT_BLUE);
 	BlockID WHITE = createWool(COLOR_WHITE);
+	BlockID FLOOR = createBlock(BLOCK_DIORITE);
 	scanf("%d %d %d", &x, &y, &z);
 	a = 0; b = 0; c = 0;
 	for (sy = 29; sy < 31; sy++) {//두 빌딩을 연결하는 배 형태를 만드는 코드
@@ -53,9 +50,9 @@ int main()
 			locateBlock(STONE, x + sx + 8, 4 + sy, z + sz);
 		}
 	}
-	
+
 	sy = 0; sx = 0;
-	for (; sy < 22; sy+=5) {
+	for (; sy < 22; sy += 5) {
 		for (int a = 4; a < 7; a++)
 		{
 			for (sx = 6, sz = 0; sx < 11; sx++) {
@@ -65,13 +62,13 @@ int main()
 			sx = 4;
 			for (sz = 4; sz < 11; sz++)
 			{
-				locateBlock(WOOL, x + sx, sy+a, z + sz);
-				locateBlock(WOOL, x + sx + 8, sy+a, z + sz);
+				locateBlock(WOOL, x + sx, sy + a, z + sz);
+				locateBlock(WOOL, x + sx + 8, sy + a, z + sz);
 			}
 		}
 	}
 	//빌딩의 유리를 만드는 코드
-	
+
 	b = 13;
 
 	for (; sy < 25; sy++) {// 기본 빌딩 틀을 만드는 코드
@@ -91,17 +88,39 @@ int main()
 	for (; sy < 22; sy += 5) {
 		for (int a = 4; a < 7; a++)
 		{
-			for (sx = 6+b, sz = 0; sx < 11+b; sx++) {
+			for (sx = 6 + b, sz = 0; sx < 11 + b; sx++) {
 				locateBlock(WOOL, x + sx, sy + a, z + sz);
 				locateBlock(WOOL, x + sx, sy + a, z + sz + 14);
 			}
-			sx = 4+b;
+			sx = 4 + b;
 			for (sz = 4; sz < 11; sz++)
 			{
 				locateBlock(WOOL, x + sx, sy + a, z + sz);
 				locateBlock(WOOL, x + sx + 8, sy + a, z + sz);
 			}
 		}
+	}
+	sx = 0; sz = 0;
+	for (int i = 1; i < 28; i++) {
+		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
+	}
+	for (int i = 1; i < 28; i++) {
+		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
+	}
+	for (int i = 1; i < 28; i++) {
+		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
+	}
+	for (int i = 1; i < 28; i++) {
+		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
+	}
+	for (int i = 1; i < 28; i++) {
+		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
+	}
+	for (int i = 1; i < 28; i++) {
+		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
+	}
+	for (int i = 1; i < 28; i++) {
+		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
 	}
 	//빌딩의 유리를 만드는 코드
 	return 0;
