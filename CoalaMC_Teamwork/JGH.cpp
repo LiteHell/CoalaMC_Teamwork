@@ -8,7 +8,7 @@
 #include<CoalaMOD.h>
 #pragma comment(lib, "CoalaMOD.lib")
 
-int main()
+int main() 
 {
 	int sx = 0; int sy = 0; int sz = 0; int x, y, z; int a, b, c;
 	BlockID STONE = createBlock(BLOCK_STONE);
