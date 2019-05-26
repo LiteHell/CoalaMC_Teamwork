@@ -3,6 +3,30 @@
 #include "LHM_constants.h"
 #pragma comment(lib, "CoalaMOD.lib")
 
+void select_block_constants(int n, int tmpx, int tmpy, int tmpz, int random_wool_color) {
+	if (n == 0) {}
+	else if (n < 51) locateBlock(block[n], tmpx, tmpy, tmpz);
+	else if (n < 67) locateCarpet(carpet[n % 51], tmpx, tmpy, tmpz);
+	else if (n < 83) locateWool(wool[(n + random_wool_color) % 67], tmpx, tmpy, tmpz);
+	else if (n < 89) locateWood(wood[n % 83], tmpx, tmpy, tmpz);
+	else if (n < 96) locateFence(fence[n % 89], tmpx, tmpy, tmpz);
+	else if (n < 98) locatePane(pane[n % 96], tmpx, tmpy, tmpz);
+	else if (n < 105) locateBricks(brick[n % 98], tmpx, tmpy, tmpz);
+	else if (n < 111) locatePlanks(plank[n % 105], tmpx, tmpy, tmpz);
+}
+
+/*
+//if (arr[i][q][j] == 0) continue;
+if (arr[i][q][j] < 51) locateBlock(block[arr[i][q][j]], tmpx, tmpy, tmpz);
+else if (arr[i][q][j] < 67) locateCarpet(carpet[arr[i][q][j] % 51], tmpx, tmpy, tmpz);
+else if (arr[i][q][j] < 83) locateWool(wool[(arr[i][q][j] + random_wool_color) % 67], tmpx, tmpy, tmpz);
+else if (arr[i][q][j] < 89) locateWood(wood[arr[i][q][j] % 83], tmpx, tmpy, tmpz);
+else if (arr[i][q][j] < 96) locateFence(fence[arr[i][q][j] % 89], tmpx, tmpy, tmpz);
+else if (arr[i][q][j] < 98) locatePane(pane[arr[i][q][j] % 96], tmpx, tmpy, tmpz);
+else if (arr[i][q][j] < 105) locateBricks(brick[arr[i][q][j] % 98], tmpx, tmpy, tmpz);
+else if (arr[i][q][j] < 111) locatePlanks(plank[arr[i][q][j] % 105], tmpx, tmpy, tmpz);
+*/
+
 void LHM_building_1(int x, int y, int z, int type) {
 	//이호민 빌딩 1 (25, 11~23, 15)
 	//type에 따라 1, 2타입은 짧은 쪽에 문이 있는 타입 3, 4타입은 긴 쪽에 문이 있는 타입입니다.
@@ -44,15 +68,7 @@ void LHM_building_1(int x, int y, int z, int type) {
 		for (int i = 0; i < 25; i++) {
 			tmpz = z;
 			for (int j = 0; j < 15; j++) {
-				//if (arr[i][q][j] == 0) continue;
-				if (arr[i][q][j] < 51) locateBlock(block[arr[i][q][j]], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 67) locateCarpet(carpet[arr[i][q][j] % 51], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 83) locateWool(wool[(arr[i][q][j] + random_wool_color) % 67], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 89) locateWood(wood[arr[i][q][j] % 83], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 96) locateFence(fence[arr[i][q][j] % 89], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 98) locatePane(pane[arr[i][q][j] % 96], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 105) locateBricks(brick[arr[i][q][j] % 98], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 111) locatePlanks(plank[arr[i][q][j] % 105], tmpx, tmpy, tmpz);
+				select_block_constants(arr[i][q][j], tmpx, tmpy, tmpz, random_wool_color);
 				++tmpz;
 			}
 			++tmpx;
@@ -67,15 +83,7 @@ void LHM_building_1(int x, int y, int z, int type) {
 			for (int i = 0; i < 25; i++) {
 				tmpz = z;
 				for (int j = 0; j < 15; j++) {
-					//if (arr[i][q][j] == 0) continue;
-					if (arr[i][q][j] < 51) locateBlock(block[arr[i][q][j]], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 67) locateCarpet(carpet[arr[i][q][j] % 51], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 83) locateWool(wool[(arr[i][q][j] + random_wool_color) % 67], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 89) locateWood(wood[arr[i][q][j] % 83], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 96) locateFence(fence[arr[i][q][j] % 89], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 98) locatePane(pane[arr[i][q][j] % 96], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 105) locateBricks(brick[arr[i][q][j] % 98], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 111) locatePlanks(plank[arr[i][q][j] % 105], tmpx, tmpy, tmpz);
+					select_block_constants(arr[i][q][j], tmpx, tmpy, tmpz, random_wool_color);
 					++tmpz;
 				}
 				++tmpx;
@@ -90,15 +98,7 @@ void LHM_building_1(int x, int y, int z, int type) {
 		for (int i = 0; i < 25; i++) {
 			tmpz = z;
 			for (int j = 0; j < 15; j++) {
-				//if (arr[i][q][j] == 0) continue;
-				if (arr[i][q][j] < 51) locateBlock(block[arr[i][q][j]], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 67) locateCarpet(carpet[arr[i][q][j] % 51], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 83) locateWool(wool[(arr[i][q][j] + random_wool_color) % 67], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 89) locateWood(wood[arr[i][q][j] % 83], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 96) locateFence(fence[arr[i][q][j] % 89], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 98) locatePane(pane[arr[i][q][j] % 96], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 105) locateBricks(brick[arr[i][q][j] % 98], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 111) locatePlanks(plank[arr[i][q][j] % 105], tmpx, tmpy, tmpz);
+				select_block_constants(arr[i][q][j], tmpx, tmpy, tmpz, random_wool_color);
 				++tmpz;
 			}
 			++tmpx;
@@ -213,15 +213,7 @@ void LHM_building_2(int x, int y, int z, int type) {
 		for (int i = 0; i < 15; i++) {
 			tmpz = z;
 			for (int j = 0; j < 15; j++) {
-				//if (arr[i][q][j] == 0) continue;
-				if (arr[i][q][j] < 51) locateBlock(block[arr[i][q][j]], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 67) locateCarpet(carpet[arr[i][q][j] % 51], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 83) locateWool(wool[(arr[i][q][j] + random_wool_color) % 67], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 89) locateWood(wood[arr[i][q][j] % 83], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 96) locateFence(fence[arr[i][q][j] % 89], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 98) locatePane(pane[arr[i][q][j] % 96], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 105) locateBricks(brick[arr[i][q][j] % 98], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 111) locatePlanks(plank[arr[i][q][j] % 105], tmpx, tmpy, tmpz);
+				select_block_constants(arr[i][q][j], tmpx, tmpy, tmpz, random_wool_color);
 				++tmpz;
 			}
 			++tmpx;
@@ -236,15 +228,7 @@ void LHM_building_2(int x, int y, int z, int type) {
 			for (int i = 0; i < 15; i++) {
 				tmpz = z;
 				for (int j = 0; j < 15; j++) {
-					//if (arr[i][q][j] == 0) continue;
-					if (arr[i][q][j] < 51) locateBlock(block[arr[i][q][j]], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 67) locateCarpet(carpet[arr[i][q][j] % 51], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 83) locateWool(wool[(arr[i][q][j] + random_wool_color) % 67], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 89) locateWood(wood[arr[i][q][j] % 83], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 96) locateFence(fence[arr[i][q][j] % 89], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 98) locatePane(pane[arr[i][q][j] % 96], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 105) locateBricks(brick[arr[i][q][j] % 98], tmpx, tmpy, tmpz);
-					else if (arr[i][q][j] < 111) locatePlanks(plank[arr[i][q][j] % 105], tmpx, tmpy, tmpz);
+					select_block_constants(arr[i][q][j], tmpx, tmpy, tmpz, random_wool_color);
 					++tmpz;
 				}
 				++tmpx;
@@ -259,15 +243,7 @@ void LHM_building_2(int x, int y, int z, int type) {
 		for (int i = 0; i < 15; i++) {
 			tmpz = z;
 			for (int j = 0; j < 15; j++) {
-				//if (arr[i][q][j] == 0) continue;
-				if (arr[i][q][j] < 51) locateBlock(block[arr[i][q][j]], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 67) locateCarpet(carpet[arr[i][q][j] % 51], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 83) locateWool(wool[(arr[i][q][j] + random_wool_color) % 67], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 89) locateWood(wood[arr[i][q][j] % 83], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 96) locateFence(fence[arr[i][q][j] % 89], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 98) locatePane(pane[arr[i][q][j] % 96], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 105) locateBricks(brick[arr[i][q][j] % 98], tmpx, tmpy, tmpz);
-				else if (arr[i][q][j] < 111) locatePlanks(plank[arr[i][q][j] % 105], tmpx, tmpy, tmpz);
+				select_block_constants(arr[i][q][j], tmpx, tmpy, tmpz, random_wool_color);
 				++tmpz;
 			}
 			++tmpx;
