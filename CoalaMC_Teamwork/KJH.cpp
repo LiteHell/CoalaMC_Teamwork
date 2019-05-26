@@ -7,7 +7,7 @@
 
 void createBuilding_KJH(int sx, int sy, int sz) // sy는 4로 해 주세요
 {
-		BlockID glass = createBlock(BLOCK_GLASS);
+	BlockID glass = createBlock(BLOCK_GLASS);
 	BlockID iron = createBlock(BLOCK_IRON);
 	DoorID door = createDoor(DOOR_OAK, true, HINGE_LEFT);
 
@@ -17,18 +17,18 @@ void createBuilding_KJH(int sx, int sy, int sz) // sy는 4로 해 주세요
 		createWool(COLOR_GREEN),
 		createWool(COLOR_ORANGE)
 	};
-	
-	/*테스트용
+/* 테스트용 변수 설정
 	int sx, sy, sz;
 
 	sx = 300;
 	sy = 4;
 	sz = 300;
-	*/
-	
+*/
 	const int size = 21;
+	
 	int ex, ez;
 	int ey_glass;
+	int mx, my, mz;
 
 	int building;
 	int wool_color;
@@ -36,7 +36,10 @@ void createBuilding_KJH(int sx, int sy, int sz) // sy는 4로 해 주세요
 	ex = sx + size - 1;
 	ez = sz + size - 1;
 	ey_glass = sy + 3;
-
+	
+	mx = (sx + ex) / 2;
+	mz = (sz + ez) / 2;
+	
 	// 벽 생성
 	for (int y = sy; y <= ey_glass - 1; y++)
 	{
@@ -83,24 +86,31 @@ void createBuilding_KJH(int sx, int sy, int sz) // sy는 4로 해 주세요
 	
 	int sx_b, sy_b, sz_b;
 	int ex_b, ey_b, ez_b;
-
+	
 	//첫번? 도형 sx+1, ey_glass+1, sz+1 ~ (sx+ex)/2 - 1, ey_glass + size/2 - 1, (sz+ez)/2 -1
 	//첫번째의 맞은편 도형 
 	for (int i = 0; i < 8; i++)
 	{
 		wool_color = create_random_number(0, 3);
 		building = create_random_number(1, 4);
+		
 		switch (i)
 		{
 		case 0:
 			sx_b = sx + 1, sy_b = ey_glass + 1, sz_b = sz + 1;
-			ex_b = (sx + ex) / 2 - 1, ey_b = ey_glass + size / 2 - 1, (sz + ez) / 2 - 1;
+			ex_b = mx - 1, ey_b = ey_glass + size / 2 - 1, ez_b = mz - 1;
 			break;
 		case 1:
+			sx_b = mx + 1, sy_b = ey_glass + 1, sz_b = sz + 1;
+			ex_b = ex - 1, ey_b = ey_glass + size / 2 - 1, ez_b = mz - 1;
 			break;
 		case 2:
+			sx_b = sx + 1, sy_b = ey_glass + 1, sz_b = mz + 1;
+			ex_b = mx - 1, ey_b = ey_glass + size / 2 - 1, ez_b = ez - 1;
 			break;
 		case 3:
+			sx_b = mx + 1, sy_b = ey_glass + 1, sz_b = mz + 1;
+			ex_b = ex - 1, sy_b = ey_glass + size / 2 - 1, ez_b = ez - 1;
 			break;
 		case 4:
 			break;
