@@ -5,6 +5,7 @@
 #include "utils.h"
 #include "land_mark.h"
 #include "road.h"
+#include "building_block.h"
 #pragma comment(lib, "CoalaMOD.lib")
 
 /*
