@@ -1,12 +1,10 @@
-#define _CRT_SECURE_NO_WARNINGS
-
-#include"pch.h"
 #include<CoalaMOD.h>
 #pragma comment(lib, "CoalaMOD.lib")
 
-void createBuilding_MARINA()
+void createBuilding_MARINA(int x, int y, int z)
 {
-	int sx = 0; int sy = 0; int sz = 0; int x, y, z; int a, b, c;
+	int sx = 0; int sy = 0; int sz = 0; int a, b, c;
+	//int x, y, z;
 	BlockID STONE = createBlock(BLOCK_STONE);
 	BlockID WATER = createBlock(BLOCK_LAPIS_LAZULI);
 	BlockID GOLD = createBlock(BLOCK_GOLD);
@@ -16,7 +14,7 @@ void createBuilding_MARINA()
 	BlockID CEILING = createBlock(BLOCK_BEDROCK);
 	BlockID DOOR = createDoor(DOOR_IRON);
 	BlockID EMPTY = createBlock(BLOCK_AIR);
-	scanf("%d %d %d", &x, &y, &z);
+	//scanf("%d %d %d", &x, &y, &z);
 	a = 0; b = 0; c = 0;
 	for (sy = 45; sy < 47; sy++) {//두 빌딩을 연결하는 배 형태를 만드는 코드
 		for (; sx < 15; sx++) { locateBlock(WHITE, x + sx, sy, z + sz); }
