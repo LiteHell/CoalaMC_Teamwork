@@ -1,127 +1,188 @@
-#define _CRT_SECURE_NO_WARNINGS
-
-#include"pch.h"
-#include<CoalaMOD.h>
+#include <CoalaMOD.h>
+#include "utils.h"
+#include "KJH.h"
 #pragma comment(lib, "CoalaMOD.lib")
+//°Ç¹° Á¦ÀÛ ÇÔ¼ö¸¦ ¸¸µé¾îÁÖ½Ã¸é µË´Ï´Ù.
+//mainÇÔ¼ö¸¦ ¾µ ÇÊ¿ä´Â ¾ø½À´Ï´Ù.
 
-int main()
+void createBuilding_JGH(int sx, int sy, int sz) // sy´Â 4·Î ÇØ ÁÖ¼¼¿ä
 {
-	int sx = 0; int sy = 0; int sz = 0; int x, y, z; int a, b, c;
-	BlockID STONE = createBlock(BLOCK_STONE);
-	BlockID WATER = createBlock(BLOCK_LAPIS_LAZULI);
-	BlockID GOLD = createBlock(BLOCK_GOLD);
-	BlockID WOOL = createWool(COLOR_LIGHT_BLUE);
-	BlockID WHITE = createWool(COLOR_WHITE);
-	BlockID FLOOR = createBlock(BLOCK_DIORITE);
-	scanf("%d %d %d", &x, &y, &z);
-	a = 0; b = 0; c = 0;
-	for (sy = 29; sy < 31; sy++) {//ë‘ ë¹Œë”©ì„ ì—°ê²°í•˜ëŠ” ë°° í˜•íƒœë¥¼ ë§Œë“œëŠ” ì½”ë“œ
-		for (; sx < 15; sx++) { locateBlock(WHITE, x + sx, sy, z + sz); }
-		for (; sx < 18; sx++) { locateBlock(WHITE, x + sx, sy, z + sz + 1); }
-		for (; sx < 20; sx++) { locateBlock(WHITE, x + sx, sy, z + sz + 2); }
-		for (; sx < 22; sx++) { locateBlock(WHITE, x + sx, sy, z + sz + 3); }
-		for (; sx < 24; sx++) { locateBlock(WHITE, x + sx, sy, z + sz + 4); }
-		for (; sx < 26; sx++) { locateBlock(WHITE, x + sx, sy, z + sz + 5); }
-		for (; sx < 28; sx++) { locateBlock(WHITE, x + sx, sy, z + sz + 6); }
-		locateBlock(WHITE, x + sx, 29, z + sz + 7);
-		locateBlock(WHITE, x + sx, 30, z + sz + 7);
-		sx = 0; sz = 0;
-		for (; sx < 15; sx++) { locateBlock(WHITE, x + sx, sy, z + sz + 14); }
-		for (; sx < 18; sx++) { locateBlock(WHITE, x + sx, sy, z + sz + 13); }
-		for (; sx < 20; sx++) { locateBlock(WHITE, x + sx, sy, z + sz + 12); }
-		for (; sx < 22; sx++) { locateBlock(WHITE, x + sx, sy, z + sz + 11); }
-		for (; sx < 24; sx++) { locateBlock(WHITE, x + sx, sy, z + sz + 10); }
-		for (; sx < 26; sx++) { locateBlock(WHITE, x + sx, sy, z + sz + 9); }
-		for (; sx < 28; sx++) { locateBlock(WHITE, x + sx, sy, z + sz + 8); }
-		sx = 0; sz = 0;
-		for (; sz < 15; sz++) { locateBlock(WHITE, x, sy, z + sz); }
-		sx = 0; sz = 0;
-	}
-	sy = 0;
-	for (; sy < 25; sy++) {// ê¸°ë³¸ ë¹Œë”© í‹€ì„ ë§Œë“œëŠ” ì½”ë“œ
-		sx = 4; sz = 0;
-		for (; sx < 13; sx++) {
-			locateBlock(STONE, x + sx, 4 + sy, z + sz);
-			locateBlock(STONE, x + sx, 4 + sy, z + sz + 14);
-		}
-		for (sx = 4; sz < 15; sz++)
+	BlockID glass = createBlock(BLOCK_GLASS);
+	BlockID iron = createBlock(BLOCK_IRON);
+	DoorID door = createDoor(DOOR_OAK, true, HINGE_LEFT);
+
+	WoolID wool[4] = {
+		createWool(COLOR_WHITE),
+		createWool(COLOR_YELLOW),
+		createWool(COLOR_GREEN),
+		createWool(COLOR_ORANGE)
+	};
+/*Å×½ºÆ®¿ë º¯¼ö ¼³Á¤
+	int sx, sy, sz;
+
+	sx = 600;
+	sy = 4;
+	sz = 800;
+*/
+	const int size = 21;
+	
+	int ex, ez;
+	int ey_glass;
+	int mx, my, mz;
+
+	int sx_b, sy_b, sz_b;
+	int ex_b, ey_b, ez_b;
+
+	int building;
+	int wool_color;
+
+	ex = sx + size - 1;
+	ez = sz + size - 1;
+	ey_glass = sy + 3;
+	
+	mx = (sx + ex) / 2;
+	mz = (sz + ez) / 2;
+	
+	// º® »ý¼º
+	for (int y = sy; y <= ey_glass - 1; y++)
+	{
+		for (int x = sx; x <= ex; x++)
 		{
-			locateBlock(STONE, x + sx, 4 + sy, z + sz);
-			locateBlock(STONE, x + sx + 8, 4 + sy, z + sz);
+			locateBlock(glass, x, y, sz);
+		}
+		for (int x = sx; x <= ex; x++)
+		{
+			locateBlock(glass, x, y, ez);
+		}
+		for (int z = sz; z <= ez; z++)
+		{
+			locateBlock(glass, sx, y, z);
+		}
+		for (int z = sz; z <= ez; z++)
+		{
+			locateBlock(glass, ex, y, z);
 		}
 	}
 
-	sy = 0; sx = 0;
-	for (; sy < 22; sy += 5) {
-		for (int a = 4; a < 7; a++)
+	//¹Ù´Ú, ÃµÀå »ý¼º
+	for (int x = sx; x <= ex; x++)
+	{
+		for (int z = sz; z <= ez; z++)
 		{
-			for (sx = 6, sz = 0; sx < 11; sx++) {
-				locateBlock(WOOL, x + sx, sy + a, z + sz);
-				locateBlock(WOOL, x + sx, sy + a, z + sz + 14);
-			}
-			sx = 4;
-			for (sz = 4; sz < 11; sz++)
+			locateBlock(iron, x, sy - 1, z);
+		}
+	}
+	for (int x = sx; x <= ex; x++)
+	{
+		for (int z = sz; z <= ez; z++)
+		{
+			locateBlock(glass, x, ey_glass, z);
+		}
+	}
+
+	//¹® »ý¼º
+	installDoor(door, (sx + ex) / 2, sy, sz, FACING_EAST);
+	installDoor(door, (sx + ex) / 2, sy, ez, FACING_WEST);
+	installDoor(door, sx, sy, (sz + ez) / 2, FACING_NORTH);
+	installDoor(door, ex, sy, (sz + ez) / 2, FACING_NORTH);
+	
+	//µµÇüµé »ý¼º
+	for (int i = 0; i < 8; i++)
+	{
+		wool_color = create_random_number(0, 3);
+		building = create_random_number(1, 4);
+		
+		switch (i)
+		{
+		case 0:
+			sx_b = sx + 1, sy_b = ey_glass + 1, sz_b = sz + 1;
+			ex_b = mx - 1, ey_b = ey_glass + size / 2 - 1, ez_b = mz - 1;
+			break;
+		case 1:
+			sx_b = mx + 1, sy_b = ey_glass + 1, sz_b = sz + 1;
+			ex_b = ex - 1, ey_b = ey_glass + size / 2 - 1, ez_b = mz - 1;
+			break;
+		case 2:
+			sx_b = sx + 1, sy_b = ey_glass + 1, sz_b = mz + 1;
+			ex_b = mx - 1, ey_b = ey_glass + size / 2 - 1, ez_b = ez - 1;
+			break;
+		case 3:
+			sx_b = mx + 1, sy_b = ey_glass + 1, sz_b = mz + 1;
+			ex_b = ex - 1, ey_b = ey_glass + size / 2 - 1, ez_b = ez - 1;
+			break;
+		case 4:
+			sx_b = sx + 1, sy_b = ey_glass + size/2 + 1, sz_b = sz + 1;
+			ex_b = mx - 1, ey_b = ey_glass + size - 1, ez_b = mz - 1;
+			break;
+		case 5:
+			sx_b = mx + 1, sy_b = ey_glass + size/2 + 1, sz_b = sz + 1;
+			ex_b = ex - 1, ey_b = ey_glass + size - 1, ez_b = mz - 1;
+			break;
+		case 6:
+			sx_b = sx + 1, sy_b = ey_glass + size/2 + 1, sz_b = mz + 1;
+			ex_b = mx - 1, ey_b = ey_glass + size - 1, ez_b = ez - 1;
+			break;
+		case 7:
+			sx_b = mx + 1, sy_b = ey_glass + size/2 + 1, sz_b = mz + 1;
+			ex_b = ex - 1, ey_b = ey_glass + size - 1, ez_b = ez - 1;
+			break;
+		default:
+			continue;
+		}
+
+		switch (building)
+		{
+		case 1:
+			for (int x = sx_b; x <= ex_b; x++)
 			{
-				locateBlock(WOOL, x + sx, sy + a, z + sz);
-				locateBlock(WOOL, x + sx + 8, sy + a, z + sz);
+				for (int y = sy_b; y <= ey_b; y++)
+				{
+					for (int z = sz_b; z <= ez_b; z++)
+					{
+						locateWool(wool[wool_color], x, y, z);
+					}
+				}
 			}
-		}
-	}
-	//ë¹Œë”©ì˜ ìœ ë¦¬ë¥¼ ë§Œë“œëŠ” ì½”ë“œ
-
-	b = 13;
-
-	for (; sy < 25; sy++) {// ê¸°ë³¸ ë¹Œë”© í‹€ì„ ë§Œë“œëŠ” ì½”ë“œ
-		sz = 0;
-		for (sx = 17; sx < 26; sx++) {
-			locateBlock(STONE, x + sx, 4 + sy, z + sz);
-			locateBlock(STONE, x + sx, 4 + sy, z + sz + 14);
-		}
-		for (sx = 17; sz < 15; sz++)
-		{
-			locateBlock(STONE, x + sx, 4 + sy, z + sz);
-			locateBlock(STONE, x + sx + 8, 4 + sy, z + sz);
-		}
-	}
-
-	sy = 0; sx = b;
-	for (; sy < 22; sy += 5) {
-		for (int a = 4; a < 7; a++)
-		{
-			for (sx = 6 + b, sz = 0; sx < 11 + b; sx++) {
-				locateBlock(WOOL, x + sx, sy + a, z + sz);
-				locateBlock(WOOL, x + sx, sy + a, z + sz + 14);
-			}
-			sx = 4 + b;
-			for (sz = 4; sz < 11; sz++)
+			break;
+		case 2:
+			for (int x = sx_b; x <= ex_b; x++)
 			{
-				locateBlock(WOOL, x + sx, sy + a, z + sz);
-				locateBlock(WOOL, x + sx + 8, sy + a, z + sz);
+				for (int y = sy_b; y <= ey_b; y++)
+				{
+					for (int z = sz_b; z <= ez_b; z++)
+					{
+						locateWool(wool[wool_color], x, y, z);
+					}
+				}
 			}
+			break;
+		case 3:
+			for (int x = sx_b; x <= ex_b; x++)
+			{
+				for (int y = sy_b; y <= ey_b; y++)
+				{
+					for (int z = sz_b; z <= ez_b; z++)
+					{
+						locateWool(wool[wool_color], x, y, z);
+					}
+				}
+			}
+			break;
+		case 4:
+			for (int x = sx_b; x <= ex_b; x++)
+			{
+				for (int y = sy_b; y <= ey_b; y++)
+				{
+					for (int z = sz_b; z <= ez_b; z++)
+					{
+						locateWool(wool[wool_color], x, y, z);
+					}
+				}
+			}
+			break;
+		default:
+			continue;
 		}
 	}
-	sx = 0; sz = 0;
-	for (int i = 1; i < 28; i++) {
-		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
-	}
-	for (int i = 1; i < 28; i++) {
-		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
-	}
-	for (int i = 1; i < 28; i++) {
-		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
-	}
-	for (int i = 1; i < 28; i++) {
-		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
-	}
-	for (int i = 1; i < 28; i++) {
-		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
-	}
-	for (int i = 1; i < 28; i++) {
-		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
-	}
-	for (int i = 1; i < 28; i++) {
-		locateBlock(FLOOR, x + sx + i, 29, z + sz + 7);
-	}
-	//ë¹Œë”©ì˜ ìœ ë¦¬ë¥¼ ë§Œë“œëŠ” ì½”ë“œ
-	return 0;
+	return;
 }

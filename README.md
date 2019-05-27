@@ -53,7 +53,7 @@ x,y,z값을 입력한다.(y값은 영향이 없다)
 
 # 장기훈이 맡은 건물
 
-* createBuilding_KJH(int sx, int sy, int sz)
+* createBuilding_JGH(int sx, int sy, int sz)
     * 장기훈의 건물을 제작한다.
 	* sx, sy, sz는 건물 생성의 시작점의 좌표이다.
 	* 시작점의 좌표로부터 x축의 +방향으로, z축의 +방향으로 건물을 생성한다.
