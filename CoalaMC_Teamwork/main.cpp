@@ -43,6 +43,7 @@ int main() {
 	LHM_building_2(150, 4, 150, 4);
 	LHM_room(0, 0, 0, 41, 25, 25);
 	create_road(0, 0, 10, 10);
+	park_lake(600, 3, 600, 30, 30);
 	//*$@테스트 완료, 집 잘 생성됨, 문 방향 잘 바뀜@$*
 	*/
 
@@ -51,7 +52,7 @@ int main() {
 	//이변수는 x, z축의 블럭 수를 지정하는 변수입니다.
 	//이 변수만 조정하면 전체적으로 적용되게 됩니다.
 	int Bblockx = 7, Bblockz = 5;
-
+	
 	//도로를 먼저 생성한 후 건물들을 생성한다.
 	create_road(allx, ally, allz, Bblockx, Bblockz);
 
