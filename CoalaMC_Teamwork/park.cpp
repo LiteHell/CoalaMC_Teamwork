@@ -26,7 +26,7 @@ void park_lake(int x, int y, int z, int min, int max) {
 	//단 각도의 approximation을 90도로 잡고 min과 max의 차이를 크게 잡으면 꽤 멋진 대칭 조형물이 나옴
 	const double pi = 3.14159265358979;
 	const double radian = pi / 18000;
-	int qx, qz;
+
 	for (double q = 0; q < 9000; q++) {
 		//0도 부터 90도까지를 정의
 		int tmp_random = create_random_number(min, max);
@@ -64,6 +64,7 @@ void park_lake(int x, int y, int z, int min, int max) {
 			}
 		}
 	}
+
 	for (int i = 0; i < create_random_number(min, max); i++) {
 		locateWater(createWater(), x, y, z + i);
 		locateWater(createWater(), x, y, z - i);
