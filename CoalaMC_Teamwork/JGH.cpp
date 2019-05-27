@@ -20,9 +20,9 @@ void createBuilding_JGH(int sx, int sy, int sz) // sy는 4로 해 주세요
 /*테스트용 변수 설정
 	int sx, sy, sz;
 
-	sx = 600;
+	sx = 100;
 	sy = 4;
-	sz = 800;
+	sz = 700;
 */
 	const int size = 21;
 	
@@ -32,6 +32,7 @@ void createBuilding_JGH(int sx, int sy, int sz) // sy는 4로 해 주세요
 
 	int sx_b, sy_b, sz_b;
 	int ex_b, ey_b, ez_b;
+	int mx_b, my_b, mz_b;
 
 	int building;
 	int wool_color;
@@ -130,6 +131,8 @@ void createBuilding_JGH(int sx, int sy, int sz) // sy는 4로 해 주세요
 			continue;
 		}
 
+		mx_b = (sx_b + ex_b) / 2, my_b = (sy_b + ey_b) / 2, mz_b = (sz_b + ez_b) / 2;
+
 		switch (building)
 		{
 		case 1:
@@ -151,7 +154,10 @@ void createBuilding_JGH(int sx, int sy, int sz) // sy는 4로 해 주세요
 				{
 					for (int z = sz_b; z <= ez_b; z++)
 					{
-						locateWool(wool[wool_color], x, y, z);
+						if (pow((x - mx_b), 2) + pow((y - my_b), 2) + pow((z - mz_b), 2) >= pow((size / 4 - 2), 2) && pow((x - mx_b), 2) + pow((y - my_b), 2) + pow((z - mz_b), 2) <= pow((size / 4 - 1 ), 2))
+						{
+							locateWool(wool[wool_color], x, y, z);
+						}
 					}
 				}
 			}
