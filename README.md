@@ -48,6 +48,7 @@
 
 
 # 장기훈이 맡은 건물
+
 * createBuilding_KJH(int sx, int sy, int sz)
     - 장기훈의 건물을 제작한다.
 	- sx, sy, sz는 건물 생성의 시작점의 좌표이다.
