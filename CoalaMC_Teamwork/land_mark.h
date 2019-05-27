@@ -2,3 +2,7 @@
 
 void LHM_room(int sx, int sy, int sz, int ex, int ey, int ez);
 void park(int x, int y, int z);
+void park_tree_1(int x, int y, int z);
+void park_tree_2(int x, int y, int z);
+void park_tree_3(int x, int y, int z);
+void park_tree_4(int x, int y, int z);
