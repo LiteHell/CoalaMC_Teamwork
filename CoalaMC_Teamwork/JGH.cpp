@@ -17,12 +17,12 @@ void createBuilding_JGH(int sx, int sy, int sz) // sy는 4로 해 주세요
 		createWool(COLOR_GREEN),
 		createWool(COLOR_ORANGE)
 	};
-/*테스트용 변수 설정
+/*
 	int sx, sy, sz;
 
-	sx = 100;
+	sx = 0;
 	sy = 4;
-	sz = 700;
+	sz = -100;
 */
 	const int size = 21;
 	
@@ -88,10 +88,11 @@ void createBuilding_JGH(int sx, int sy, int sz) // sy는 4로 해 주세요
 	installDoor(door, ex, sy, (sz + ez) / 2, FACING_NORTH);
 	
 	//도형들 생성
+	int j;
 	for (int i = 0; i < 8; i++)
 	{
 		wool_color = create_random_number(0, 3);
-		building = create_random_number(1, 4);
+		building = create_random_number(1, 3);
 		
 		switch (i)
 		{
@@ -135,7 +136,7 @@ void createBuilding_JGH(int sx, int sy, int sz) // sy는 4로 해 주세요
 
 		switch (building)
 		{
-		case 1:
+		case 1: //정육면체
 			for (int x = sx_b; x <= ex_b; x++)
 			{
 				for (int y = sy_b; y <= ey_b; y++)
@@ -147,7 +148,7 @@ void createBuilding_JGH(int sx, int sy, int sz) // sy는 4로 해 주세요
 				}
 			}
 			break;
-		case 2:
+		case 2: //구 
 			for (int x = sx_b; x <= ex_b; x++)
 			{
 				for (int y = sy_b; y <= ey_b; y++)
@@ -162,28 +163,18 @@ void createBuilding_JGH(int sx, int sy, int sz) // sy는 4로 해 주세요
 				}
 			}
 			break;
-		case 3:
-			for (int x = sx_b; x <= ex_b; x++)
+		case 3: //피라미드
+			j = 0;
+			for (int y = sy_b; y<= ey_b; y++)
 			{
-				for (int y = sy_b; y <= ey_b; y++)
+				for (int x = sx_b+j; x <= ex_b-j; x++)
 				{
-					for (int z = sz_b; z <= ez_b; z++)
+					for (int z = sz_b + j; z <= ez_b-j; z++)
 					{
 						locateWool(wool[wool_color], x, y, z);
 					}
 				}
-			}
-			break;
-		case 4:
-			for (int x = sx_b; x <= ex_b; x++)
-			{
-				for (int y = sy_b; y <= ey_b; y++)
-				{
-					for (int z = sz_b; z <= ez_b; z++)
-					{
-						locateWool(wool[wool_color], x, y, z);
-					}
-				}
+				if (y%2 == 0) j++;
 			}
 			break;
 		default:
