@@ -6,10 +6,47 @@
 #pragma comment(lib, "CoalaMOD.lib")
 
 void park_tree_1(int x, int y, int z) {
-	
+	int wood_random = create_random_number(0, 5);
+	int plant_random = create_random_number(6, 11);
+	int height = create_random_number(5, 8);
+	int leaveHeight = create_random_number(3, 5);
+	int leaveStart = height - leaveHeight + 1;
+	if (leaveStart < 2) leaveStart = 1;
+
+	for (int i = 0; i < height; i++)
+		locateWood(wood[wood_random], x, y + i, z);
+	for (int i = leaveStart; i < leaveStart + leaveHeight - 2; i++)
+		for (int lx = x - 2; lx <= x + 2; lx++)
+			for (int lz = z - 2; lz <= z + 2; lz++)
+				if ((ABS(lx - x) != 2 || ABS(lz - z) != 2) && (lx != x || lz != z))
+					locatePlant(plant[plant_random], lx, y + i, lz);
+	for (int i = leaveStart + leaveHeight - 2; i < leaveStart + leaveHeight; i++)
+		for (int lx = x - 1; lx <= x + 1; lx++)
+			for (int lz = z - 1; lz <= z + 1; lz++)
+				if ((ABS(lx - x) != 1 || ABS(lz - z) != 1 || i == leaveStart + leaveHeight - 2) && (i == leaveStart + leaveHeight - 2 ? (lx != x || lz != z) : true))
+					locatePlant(plant[plant_random], lx, y + i, lz);
+
 }
 
 void park_tree_2(int x, int y, int z) {
+	int wood_random = create_random_number(0, 5);
+	int plant_random = create_random_number(6, 11);
+	int height = create_random_number(4, 7);
+	int leaveHeight = 3;
+	int leaveStart = height - leaveHeight + 1;
+
+	for (int i = 0; i < height; i++)
+		locateWood(wood[wood_random], x, y + i, z);
+	for (int i = leaveStart; i < leaveStart + leaveHeight - 1; i++)
+		for (int lx = x - 2; lx <= x + 2; lx++)
+			for (int lz = z - 2; lz <= z + 2; lz++)
+				if ((ABS(lx - x) != 2 || ABS(lz - z) != 2) && (lx != x || lz != z))
+					locatePlant(plant[plant_random], lx, y + i, lz);
+	locatePlant(plant[plant_random], x - 1, y + leaveStart + leaveHeight - 1, z);
+	locatePlant(plant[plant_random], x + 1, y + leaveStart + leaveHeight - 1, z);
+	locatePlant(plant[plant_random], x, y + leaveStart + leaveHeight - 1, z - 1);
+	locatePlant(plant[plant_random], x, y + leaveStart + leaveHeight - 1, z + 1);
+	locatePlant(plant[plant_random], x, y + leaveStart + leaveHeight - 1, z);
 
 }
 
@@ -34,6 +71,7 @@ void park_tree_3(int x, int y, int z) {
 			for (int lz = z - 1; lz <= z + 1; lz++)
 				if ((ABS(lx - x) != 1 || ABS(lz - z) != 1 || i == leaveStart + leaveHeight - 2) && (i == leaveStart + leaveHeight - 2 ? (lx != x || lz != z) : true))
 					locatePlant(leaf, lx, y + i, lz);
+
 }
 
 void park_tree_4(int x, int y, int z) {
