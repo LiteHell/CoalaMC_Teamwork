@@ -2,124 +2,184 @@
 #include "LHM_constants.h"
 #pragma comment(lib, "CoalaMOD.lib")
 
-BlockID my_air = createBlock(BLOCK_AIR);										//0			  0
-BlockID my_stone = createBlock(BLOCK_STONE);									//1			  1
-BlockID my_granite = createBlock(BLOCK_GRANITE);								//2			  2
-BlockID my_polished_granite = createBlock(BLOCK_POLISHED_GRANITE);				//3			  3
-BlockID my_diorite = createBlock(BLOCK_DIORITE);								//4			  4
-BlockID my_polished_diorite = createBlock(BLOCK_POLISHED_DIORITE);				//5			  5
-BlockID my_andesite = createBlock(BLOCK_ANDESITE);								//6			  6
-BlockID my_polished_andesite = createBlock(BLOCK_POLISHED_ANDESITE);			//7			  7
-BlockID my_grass = createBlock(BLOCK_GRASS);									//8			  8
-BlockID my_dirt = createBlock(BLOCK_DIRT);										//9			  9
-BlockID my_coarse_dirt = createBlock(BLOCK_COARSE_DIRT);						//10		 10
-BlockID my_podzol = createBlock(BLOCK_PODZOL);									//11		 11
-BlockID my_cobblestone = createBlock(BLOCK_COBBLESTONE);						//12		 12
-BlockID my_bedrock = createBlock(BLOCK_BEDROCK);								//13		 13
-BlockID my_sand = createBlock(BLOCK_SAND);										//14		 14
-BlockID my_red_sand = createBlock(BLOCK_RED_SAND);								//15		 15
-BlockID my_gravel = createBlock(BLOCK_GRAVEL);									//16		 16
-BlockID my_glass = createBlock(BLOCK_GLASS);									//17		 17
-BlockID my_lapis_lazuli = createBlock(BLOCK_LAPIS_LAZULI);						//18		 18
-BlockID my_sand_stone = createBlock(BLOCK_SAND_STONE);							//19		 19
-BlockID my_chiseled_sand_stone = createBlock(BLOCK_CHISELED_SAND_STONE);		//20		 20
-BlockID my_smooth_sand_stone = createBlock(BLOCK_SMOOTH_SAND_STONE);			//21		 21
-BlockID my_gold = createBlock(BLOCK_GOLD);										//22		 22
-BlockID my_iron = createBlock(BLOCK_IRON);										//23		 23
-BlockID my_tnt = createBlock(BLOCK_TNT);										//24		 24
-BlockID my_mossy_cobblestone = createBlock(BLOCK_MOSSY_COBBLESTONE);			//25		 25
-BlockID my_obsidian = createBlock(BLOCK_OBSIDIAN);								//26		 26
-BlockID my_diamond = createBlock(BLOCK_DIAMOND);								//27		 27
-BlockID my_clay = createBlock(BLOCK_CLAY);										//28		 28
-BlockID my_netherrack = createBlock(BLOCK_NETHERRACK);							//29		 29
-BlockID my_soul_sand = createBlock(BLOCK_SOUL_SAND);							//30		 30
-BlockID my_glowstone = createBlock(BLOCK_GLOWSTONE);							//31		 31
-BlockID my_stained_glass = createBlock(BLOCK_STAINED_GLASS);					//32		 32
-BlockID my_melon = createBlock(BLOCK_MELON);									//33		 33
-BlockID my_mycelium = createBlock(BLOCK_MYCELIUM);								//34		 34
-BlockID my_end_stone = createBlock(BLOCK_END_STONE);							//35		 35
-BlockID my_emerald = createBlock(BLOCK_EMERALD);								//36		 36
-BlockID my_nether_quartz = createBlock(BLOCK_NETHER_QUARTZ);					//37		 37
-BlockID my_slime = createBlock(BLOCK_SLIME);									//38		 38
-BlockID my_prismarine = createBlock(BLOCK_PRISMARINE);							//39		 39
-BlockID my_hey_bale = createBlock(BLOCK_HAY_BALE);								//40		 40
-BlockID my_coal = createBlock(BLOCK_COAL);										//41		 41
-BlockID my_red_sandstone = createBlock(BLOCK_RED_SANDSTONE);					//42		 42
-BlockID my_chiseled_red_santstone = createBlock(BLOCK_CHISELED_RED_SANDSTONE);	//43		 43
-BlockID my_smooth_red_sandstone = createBlock(BLOCK_SMOOTH_RED_SANDSTONE);		//44		 44
-BlockID my_purpur = createBlock(BLOCK_PURPUR);									//45		 45
-BlockID my_purpur_pillar = createBlock(BLOCK_PURPUR_PILLAR);					//46		 46
-BlockID my_grass_path = createBlock(BLOCK_GRASS_PATH);							//47		 47
-BlockID my_magma = createBlock(BLOCK_MAGMA);									//48		 48
-BlockID my_nether_wart = createBlock(BLOCK_NETHER_WART);						//49		 49
-BlockID my_bone = createBlock(BLOCK_BONE);										//50		 50
+BlockID my_air = createBlock(BLOCK_AIR);												//0			  0
+BlockID my_stone = createBlock(BLOCK_STONE);											//1			  1
+BlockID my_granite = createBlock(BLOCK_GRANITE);										//2			  2
+BlockID my_polished_granite = createBlock(BLOCK_POLISHED_GRANITE);						//3			  3
+BlockID my_diorite = createBlock(BLOCK_DIORITE);										//4			  4
+BlockID my_polished_diorite = createBlock(BLOCK_POLISHED_DIORITE);						//5			  5
+BlockID my_andesite = createBlock(BLOCK_ANDESITE);										//6			  6
+BlockID my_polished_andesite = createBlock(BLOCK_POLISHED_ANDESITE);					//7			  7
+BlockID my_grass = createBlock(BLOCK_GRASS);											//8			  8
+BlockID my_dirt = createBlock(BLOCK_DIRT);												//9			  9
+BlockID my_coarse_dirt = createBlock(BLOCK_COARSE_DIRT);								//10		 10
+BlockID my_podzol = createBlock(BLOCK_PODZOL);											//11		 11
+BlockID my_cobblestone = createBlock(BLOCK_COBBLESTONE);								//12		 12
+BlockID my_bedrock = createBlock(BLOCK_BEDROCK);										//13		 13
+BlockID my_sand = createBlock(BLOCK_SAND);												//14		 14
+BlockID my_red_sand = createBlock(BLOCK_RED_SAND);										//15		 15
+BlockID my_gravel = createBlock(BLOCK_GRAVEL);											//16		 16
+BlockID my_glass = createBlock(BLOCK_GLASS);											//17		 17
+BlockID my_lapis_lazuli = createBlock(BLOCK_LAPIS_LAZULI);								//18		 18
+BlockID my_sand_stone = createBlock(BLOCK_SAND_STONE);									//19		 19
+BlockID my_chiseled_sand_stone = createBlock(BLOCK_CHISELED_SAND_STONE);				//20		 20
+BlockID my_smooth_sand_stone = createBlock(BLOCK_SMOOTH_SAND_STONE);					//21		 21
+BlockID my_gold = createBlock(BLOCK_GOLD);												//22		 22
+BlockID my_iron = createBlock(BLOCK_IRON);												//23		 23
+BlockID my_tnt = createBlock(BLOCK_TNT);												//24		 24
+BlockID my_mossy_cobblestone = createBlock(BLOCK_MOSSY_COBBLESTONE);					//25		 25
+BlockID my_obsidian = createBlock(BLOCK_OBSIDIAN);										//26		 26
+BlockID my_diamond = createBlock(BLOCK_DIAMOND);										//27		 27
+BlockID my_clay = createBlock(BLOCK_CLAY);												//28		 28
+BlockID my_netherrack = createBlock(BLOCK_NETHERRACK);									//29		 29
+BlockID my_soul_sand = createBlock(BLOCK_SOUL_SAND);									//30		 30
+BlockID my_glowstone = createBlock(BLOCK_GLOWSTONE);									//31		 31
+BlockID my_stained_glass = createBlock(BLOCK_STAINED_GLASS);							//32		 32
+BlockID my_melon = createBlock(BLOCK_MELON);											//33		 33
+BlockID my_mycelium = createBlock(BLOCK_MYCELIUM);										//34		 34
+BlockID my_end_stone = createBlock(BLOCK_END_STONE);									//35		 35
+BlockID my_emerald = createBlock(BLOCK_EMERALD);										//36		 36
+BlockID my_nether_quartz = createBlock(BLOCK_NETHER_QUARTZ);							//37		 37
+BlockID my_slime = createBlock(BLOCK_SLIME);											//38		 38
+BlockID my_prismarine = createBlock(BLOCK_PRISMARINE);									//39		 39
+BlockID my_hey_bale = createBlock(BLOCK_HAY_BALE);										//40		 40
+BlockID my_coal = createBlock(BLOCK_COAL);												//41		 41
+BlockID my_red_sandstone = createBlock(BLOCK_RED_SANDSTONE);							//42		 42
+BlockID my_chiseled_red_santstone = createBlock(BLOCK_CHISELED_RED_SANDSTONE);			//43		 43
+BlockID my_smooth_red_sandstone = createBlock(BLOCK_SMOOTH_RED_SANDSTONE);				//44		 44
+BlockID my_purpur = createBlock(BLOCK_PURPUR);											//45		 45
+BlockID my_purpur_pillar = createBlock(BLOCK_PURPUR_PILLAR);							//46		 46
+BlockID my_grass_path = createBlock(BLOCK_GRASS_PATH);									//47		 47
+BlockID my_magma = createBlock(BLOCK_MAGMA);											//48		 48
+BlockID my_nether_wart = createBlock(BLOCK_NETHER_WART);								//49		 49
+BlockID my_bone = createBlock(BLOCK_BONE);												//50		 50
 
-CarpetID my_carpet_white = createCarpet(COLOR_WHITE);							//0			 51
-CarpetID my_carpet_orange = createCarpet(COLOR_ORANGE);							//1			 52
-CarpetID my_carpet_magenta = createCarpet(COLOR_MAGENTA);						//2			 53
-CarpetID my_carpet_light_blue = createCarpet(COLOR_LIGHT_BLUE);					//3			 54
-CarpetID my_carpet_yellow = createCarpet(COLOR_YELLOW);							//4			 55
-CarpetID my_carpet_lime = createCarpet(COLOR_LIME);								//5			 56
-CarpetID my_carpet_pink = createCarpet(COLOR_PINK);								//6			 57
-CarpetID my_carpet_gray = createCarpet(COLOR_GRAY);								//7			 58
-CarpetID my_carpet_light_gray = createCarpet(COLOR_LIGHT_GRAY);					//8			 59
-CarpetID my_carpet_cyan = createCarpet(COLOR_CYAN);								//9			 60
-CarpetID my_carpet_purple = createCarpet(COLOR_PURPLE);							//10		 61
-CarpetID my_carpet_blue = createCarpet(COLOR_BLUE);								//11		 62
-CarpetID my_carpet_brown = createCarpet(COLOR_BROWN);							//12		 63
-CarpetID my_carpet_green = createCarpet(COLOR_GREEN);							//13		 64
-CarpetID my_carpet_red = createCarpet(COLOR_RED);								//14		 65
-CarpetID my_carpet_black = createCarpet(COLOR_BLACK);							//15		 66
+CarpetID my_carpet_white = createCarpet(COLOR_WHITE);									//0			 51
+CarpetID my_carpet_orange = createCarpet(COLOR_ORANGE);									//1			 52
+CarpetID my_carpet_magenta = createCarpet(COLOR_MAGENTA);								//2			 53
+CarpetID my_carpet_light_blue = createCarpet(COLOR_LIGHT_BLUE);							//3			 54
+CarpetID my_carpet_yellow = createCarpet(COLOR_YELLOW);									//4			 55
+CarpetID my_carpet_lime = createCarpet(COLOR_LIME);										//5			 56
+CarpetID my_carpet_pink = createCarpet(COLOR_PINK);										//6			 57
+CarpetID my_carpet_gray = createCarpet(COLOR_GRAY);										//7			 58
+CarpetID my_carpet_light_gray = createCarpet(COLOR_LIGHT_GRAY);							//8			 59
+CarpetID my_carpet_cyan = createCarpet(COLOR_CYAN);										//9			 60
+CarpetID my_carpet_purple = createCarpet(COLOR_PURPLE);									//10		 61
+CarpetID my_carpet_blue = createCarpet(COLOR_BLUE);										//11		 62
+CarpetID my_carpet_brown = createCarpet(COLOR_BROWN);									//12		 63
+CarpetID my_carpet_green = createCarpet(COLOR_GREEN);									//13		 64
+CarpetID my_carpet_red = createCarpet(COLOR_RED);										//14		 65
+CarpetID my_carpet_black = createCarpet(COLOR_BLACK);									//15		 66
 
-WoolID my_wool_white = createWool(COLOR_WHITE);									//0			 67
-WoolID my_wool_orange = createWool(COLOR_ORANGE);								//1			 68
-WoolID my_wool_magenta = createWool(COLOR_MAGENTA);								//2			 69
-WoolID my_wool_light_blue = createWool(COLOR_LIGHT_BLUE);						//3			 70
-WoolID my_wool_yellow = createWool(COLOR_YELLOW);								//4			 71
-WoolID my_wool_lime = createWool(COLOR_LIME);									//5			 72
-WoolID my_wool_pink = createWool(COLOR_PINK);									//6			 73
-WoolID my_wool_gray = createWool(COLOR_GRAY);									//7			 74
-WoolID my_wool_light_gray = createWool(COLOR_LIGHT_GRAY);						//8			 75
-WoolID my_wool_cyan = createWool(COLOR_CYAN);									//9			 76
-WoolID my_wool_purple = createWool(COLOR_PURPLE);								//10		 77
-WoolID my_wool_blue = createWool(COLOR_BLUE);									//11		 78
-WoolID my_wool_brown = createWool(COLOR_BROWN);									//12		 79
-WoolID my_wool_green = createWool(COLOR_GREEN);									//13		 80
-WoolID my_wool_red = createWool(COLOR_RED);										//14		 81
-WoolID my_wool_black = createWool(COLOR_BLACK);									//15		 82
+WoolID my_wool_white = createWool(COLOR_WHITE);											//0			 67
+WoolID my_wool_orange = createWool(COLOR_ORANGE);										//1			 68
+WoolID my_wool_magenta = createWool(COLOR_MAGENTA);										//2			 69
+WoolID my_wool_light_blue = createWool(COLOR_LIGHT_BLUE);								//3			 70
+WoolID my_wool_yellow = createWool(COLOR_YELLOW);										//4			 71
+WoolID my_wool_lime = createWool(COLOR_LIME);											//5			 72
+WoolID my_wool_pink = createWool(COLOR_PINK);											//6			 73
+WoolID my_wool_gray = createWool(COLOR_GRAY);											//7			 74
+WoolID my_wool_light_gray = createWool(COLOR_LIGHT_GRAY);								//8			 75
+WoolID my_wool_cyan = createWool(COLOR_CYAN);											//9			 76
+WoolID my_wool_purple = createWool(COLOR_PURPLE);										//10		 77
+WoolID my_wool_blue = createWool(COLOR_BLUE);											//11		 78
+WoolID my_wool_brown = createWool(COLOR_BROWN);											//12		 79
+WoolID my_wool_green = createWool(COLOR_GREEN);											//13		 80
+WoolID my_wool_red = createWool(COLOR_RED);												//14		 81
+WoolID my_wool_black = createWool(COLOR_BLACK);											//15		 82
 
-WoodID my_wood_oak = createWood(WOOD_OAK, STRIP_UP_DOWN);						//0			 83
-WoodID my_wood_spruce = createWood(WOOD_SPRUCE, STRIP_UP_DOWN);					//1			 84
-WoodID my_wood_birch = createWood(WOOD_BIRCH, STRIP_UP_DOWN);					//2			 85
-WoodID my_wood_jungle = createWood(WOOD_JUNGLE, STRIP_UP_DOWN);					//3			 86
-WoodID my_wood_acacia = createWood(WOOD_ACACIA, STRIP_UP_DOWN);					//4			 87
-WoodID my_wood_dark_oak = createWood(WOOD_DARK_OAK, STRIP_UP_DOWN);				//5			 88
+WoodID my_wood_oak = createWood(WOOD_OAK, STRIP_UP_DOWN);								//0			 83
+WoodID my_wood_spruce = createWood(WOOD_SPRUCE, STRIP_UP_DOWN);							//1			 84
+WoodID my_wood_birch = createWood(WOOD_BIRCH, STRIP_UP_DOWN);							//2			 85
+WoodID my_wood_jungle = createWood(WOOD_JUNGLE, STRIP_UP_DOWN);							//3			 86
+WoodID my_wood_acacia = createWood(WOOD_ACACIA, STRIP_UP_DOWN);							//4			 87
+WoodID my_wood_dark_oak = createWood(WOOD_DARK_OAK, STRIP_UP_DOWN);						//5			 88
 
-FenceID my_fence_oak = createFence(FENCE_OAK);									//0			 89
-FenceID my_fence_spruce = createFence(FENCE_SPRUCE);							//1			 90
-FenceID my_fence_birch = createFence(FENCE_BIRCH);								//2			 91
-FenceID my_fence_jungle = createFence(FENCE_JUNGLE);							//3			 92
-FenceID my_fence_dark_oak = createFence(FENCE_DARK_OAK);						//4			 93
-FenceID my_fence_acacia = createFence(FENCE_ACACIA);							//5			 94
-FenceID my_fence_nether_brick = createFence(FENCE_NETHER_BRICK);				//6			 95
+FenceID my_fence_oak = createFence(FENCE_OAK);											//0			 89
+FenceID my_fence_spruce = createFence(FENCE_SPRUCE);									//1			 90
+FenceID my_fence_birch = createFence(FENCE_BIRCH);										//2			 91
+FenceID my_fence_jungle = createFence(FENCE_JUNGLE);									//3			 92
+FenceID my_fence_dark_oak = createFence(FENCE_DARK_OAK);								//4			 93
+FenceID my_fence_acacia = createFence(FENCE_ACACIA);									//5			 94
+FenceID my_fence_nether_brick = createFence(FENCE_NETHER_BRICK);						//6			 95
 
-PaneID my_pane_glass = createPane(PANE_GLASS);									//0			 96
-PaneID my_pane_iron = createPane(PANE_IRON);									//1			 97
+PaneID my_pane_glass = createPane(PANE_GLASS);											//0			 96
+PaneID my_pane_iron = createPane(PANE_IRON);											//1			 97
 
-BricksID my_brick = createBricks(BRICKS);										//0			 98
-BricksID my_brick_stone = createBricks(BRICKS_STONE);							//1			 99
-BricksID my_brick_cracked_stone = createBricks(BRICKS_CRACKED_STONE);			//2			100
-BricksID my_brick_mossy_stone = createBricks(BRICKS_MOSSY_STONE);				//3			101
-BricksID my_brick_chiseled_stone = createBricks(BRICKS_CHISELED_STONE);			//4			102
-BricksID my_brick_nether = createBricks(BRICKS_NETHER);							//5			103
-BricksID my_brick_red_nether = createBricks(BRICKS_RED_NETHER);					//6			104
+BricksID my_brick = createBricks(BRICKS);												//0			 98
+BricksID my_brick_stone = createBricks(BRICKS_STONE);									//1			 99
+BricksID my_brick_cracked_stone = createBricks(BRICKS_CRACKED_STONE);					//2			100
+BricksID my_brick_mossy_stone = createBricks(BRICKS_MOSSY_STONE);						//3			101
+BricksID my_brick_chiseled_stone = createBricks(BRICKS_CHISELED_STONE);					//4			102
+BricksID my_brick_nether = createBricks(BRICKS_NETHER);									//5			103
+BricksID my_brick_red_nether = createBricks(BRICKS_RED_NETHER);							//6			104
 
-PlanksID my_planks_oak = createPlanks(PLANKS_OAK);								//0			105
-PlanksID my_planks_spruce = createPlanks(PLANKS_SPRUCE);						//1			106
-PlanksID my_planks_birch = createPlanks(PLANKS_BIRCH);							//2			107
-PlanksID my_planks_jungle = createPlanks(PLANKS_JUNGLE);						//3			108
-PlanksID my_planks_acacia = createPlanks(PLANKS_ACACIA);						//4			109
-PlanksID my_planks_dark_oak = createPlanks(PLANKS_DARK_OAK);					//5			110
+PlanksID my_planks_oak = createPlanks(PLANKS_OAK);										//0			105
+PlanksID my_planks_spruce = createPlanks(PLANKS_SPRUCE);								//1			106
+PlanksID my_planks_birch = createPlanks(PLANKS_BIRCH);									//2			107
+PlanksID my_planks_jungle = createPlanks(PLANKS_JUNGLE);								//3			108
+PlanksID my_planks_acacia = createPlanks(PLANKS_ACACIA);								//4			109
+PlanksID my_planks_dark_oak = createPlanks(PLANKS_DARK_OAK);							//5			110
+
+PlantID my_plant_oak_sapling = createPlant(PLANT_OAK_SAPLING);							//0			111
+PlantID my_plant_spruce_sapling = createPlant(PLANT_SPRUCE_SAPLING);					//1			112
+PlantID my_plant_birch_sapling = createPlant(PLANT_BIRCH_SAPLING);						//2			113
+PlantID my_plant_jungle_sapling = createPlant(PLANT_JUNGLE_SAPLING);					//3			114
+PlantID my_plant_acacia_sapling = createPlant(PLANT_ACACIA_SAPLING);					//4			115
+PlantID my_plant_dark_oak_sapling = createPlant(PLANT_DARK_OAK_SAPLING);				//5			116
+PlantID my_plant_oak_leaves = createPlant(PLANT_OAK_LEAVES);							//6			117
+PlantID my_plant_spruce_leaves = createPlant(PLANT_SPRUCE_LEAVES);						//7			118
+PlantID my_plant_birch_leaves = createPlant(PLANT_BIRCH_LEAVES);						//8			119
+PlantID my_plant_jungle_leaves = createPlant(PLANT_JUNGLE_LEAVES);						//9			120
+PlantID my_plant_acacia_leaves = createPlant(PLANT_ACACIA_LEAVES);						//10		121
+PlantID my_plant_dark_oak_leaves = createPlant(PLANT_DARK_OAK_LEAVES);					//11		122
+PlantID my_plant_grass = createPlant(PLANT_GRASS);										//12		123
+PlantID my_plant_dead_bush = createPlant(PLANT_DEAD_BUSH);								//13		124
+PlantID my_plant_brown_mushroom_block = createPlant(PLANT_BROWN_MUSHROOM_BLOCK);		//14		125
+PlantID my_plant_red_mushroom_block = createPlant(PLANT_RED_MUSHROOM_BLOCK);			//15		126
+PlantID my_plant_wheat = createPlant(PLANT_WHEAT);										//16		127
+PlantID my_plant_cactus = createPlant(PLANT_CACTUS);									//17		128
+PlantID my_plant_sugar_cane = createPlant(PLANT_SUGAR_CANE);							//18		129
+PlantID my_plant_brown_mushroom = createPlant(PLANT_BROWN_MUSHROOM);					//19		130
+PlantID my_plant_red_mushroom = createPlant(PLANT_RED_MUSHROOM);						//20		131
+PlantID my_plant_vines = createPlant(PLANT_VINES);										//21		132
+PlantID my_plant_lily_pad = createPlant(PLANT_LILY_PAD);								//22		133
+PlantID my_plant_carrot = createPlant(PLANT_CARROT);									//23		134
+PlantID my_plant_potato = createPlant(PLANT_POTATO);									//24		135
+PlantID my_plant_chorus = createPlant(PLANT_CHORUS);									//25		136
+
+FlowerID my_flower_dandelion = createFlower(FLOWER_DANDELION);							//0			137
+FlowerID my_flower_poppy = createFlower(FLOWER_POPPY);									//1			138
+FlowerID my_flower_blue_orchid = createFlower(FLOWER_BLUE_ORCHID);						//2			139
+FlowerID my_flower_allium = createFlower(FLOWER_ALLIUM);								//3			140
+FlowerID my_flower_azure_bluet = createFlower(FLOWER_AZURE_BLUET);						//4			141
+FlowerID my_flower_red_tulip = createFlower(FLOWER_RED_TULIP);							//5			142
+FlowerID my_flower_orange_tulip = createFlower(FLOWER_ORANGE_TULIP);					//6			143
+FlowerID my_flower_white_tulip = createFlower(FLOWER_WHITE_TULIP);						//7			144
+FlowerID my_flower_pink_tulip = createFlower(FLOWER_PINK_TULIP);						//8			145
+FlowerID my_flower_oxeye_tulip = createFlower(FLOWER_OXEYE_TULIP);						//9			146
+FlowerID my_flower_sunflower = createFlower(FLOWER_SUNFLOWER);							//10		147
+FlowerID my_flower_lilac = createFlower(FLOWER_LILAC);									//11		148
+FlowerID my_flower_double_tallgrass = createFlower(FLOWER_DOUBLE_TALLGRASS);			//12		149
+FlowerID my_flower_large_fern = createFlower(FLOWER_LARGE_FERN);						//13		150
+FlowerID my_flower_rose_bush = createFlower(FLOWER_ROSE_BUSH);							//14		151
+FlowerID my_flower_peony = createFlower(FLOWER_PEONY);									//15		152
+FlowerID my_flower_chorus = createFlower(FLOWER_CHORUS);								//16		153
+
+FlowerPotID my_flower_pot_empty = createFlowerPot(FLOWER_POT_EMPTY);					//0			154
+FlowerPotID my_flower_pot_poppy = createFlowerPot(FLOWER_POT_POPPY);					//1			155
+FlowerPotID my_flower_pot_dandelion = createFlowerPot(FLOWER_POT_DANDELION);			//2			156
+FlowerPotID my_flower_pot_oak_sapling = createFlowerPot(FLOWER_POT_OAK_SAPLING);		//3			157
+FlowerPotID my_flower_pot_spruce_sapling = createFlowerPot(FLOWER_POT_SPRUCE_SAPLING);	//4			158
+FlowerPotID my_flower_pot_birch_sapling = createFlowerPot(FLOWER_POT_BIRCH_SAPLING);	//5			159
+FlowerPotID my_flower_pot_jungle_sapling = createFlowerPot(FLOWER_POT_JUNGLE_SAPLING);	//6			160
+FlowerPotID my_flower_pot_red_mushroom = createFlowerPot(FLOWER_POT_RED_MUSHROOM);		//7			161
+FlowerPotID my_flower_pot_brown_mushroom = createFlowerPot(FLOWER_POT_BROWN_MUSHROOM);	//8			162
+FlowerPotID my_flower_pot_cactus = createFlowerPot(FLOWER_POT_CACTUS);					//9			163
+FlowerPotID my_flower_pot_dead_bush = createFlowerPot(FLOWER_POT_DEAD_BUSH);			//10		164
+FlowerPotID my_flower_pot_fern = createFlowerPot(FLOWER_POT_FERN);						//11		165
+FlowerPotID my_flower_pot_acacia = createFlowerPot(FLOWER_POT_ACACIA);					//12		166
+FlowerPotID my_flower_pot_dark_oak = createFlowerPot(FLOWER_POT_DARK_OAK);				//13		167
 
 BlockID block[60] = {
 	//블록 변수
@@ -255,10 +315,80 @@ BricksID brick[10] = {
 };
 
 PlanksID plank[10] = {
+	//가공된 나무 블럭 변수
 	my_planks_oak,			//0		105
 	my_planks_spruce,		//1		106
 	my_planks_birch,		//2		107
 	my_planks_jungle,		//3		108
 	my_planks_acacia,		//4		109
 	my_planks_dark_oak,		//5		110
+};
+
+PlantID plant[30] = {
+	//식물 변수
+	my_plant_oak_sapling,						//0			111
+	my_plant_spruce_sapling,					//1			112
+	my_plant_birch_sapling,						//2			113
+	my_plant_jungle_sapling,					//3			114
+	my_plant_acacia_sapling,					//4			115
+	my_plant_dark_oak_sapling,					//5			116
+	my_plant_oak_leaves,						//6			117
+	my_plant_spruce_leaves,						//7			118
+	my_plant_birch_leaves,						//8			119
+	my_plant_jungle_leaves,						//9			120
+	my_plant_acacia_leaves,						//10		121
+	my_plant_dark_oak_leaves,					//11		122
+	my_plant_grass,								//12		123
+	my_plant_dead_bush,							//13		124
+	my_plant_brown_mushroom_block,				//14		125
+	my_plant_red_mushroom_block,				//15		126
+	my_plant_wheat,								//16		127
+	my_plant_cactus,							//17		128
+	my_plant_sugar_cane,						//18		129
+	my_plant_brown_mushroom,					//19		130
+	my_plant_red_mushroom,						//20		131
+	my_plant_vines,								//21		132
+	my_plant_lily_pad,							//22		133
+	my_plant_carrot,							//23		134
+	my_plant_potato,							//24		135
+	my_plant_chorus,							//25		136
+};
+
+FlowerID flower[20] = {
+	//꽃 변수
+	my_flower_dandelion,						//0			137
+	my_flower_poppy,							//1			138
+	my_flower_blue_orchid,						//2			139
+	my_flower_allium,							//3			140
+	my_flower_azure_bluet,						//4			141
+	my_flower_red_tulip,						//5			142
+	my_flower_orange_tulip,						//6			143
+	my_flower_white_tulip,						//7			144
+	my_flower_pink_tulip,						//8			145
+	my_flower_oxeye_tulip,						//9			146
+	my_flower_sunflower,						//10		147
+	my_flower_lilac,							//11		148
+	my_flower_double_tallgrass,					//12		149
+	my_flower_large_fern,						//13		150
+	my_flower_rose_bush,						//14		151
+	my_flower_peony,							//15		152
+	my_flower_chorus,							//16		153
+};
+
+FlowerPotID flowerpot[15] = {
+	//꽃받침 변수
+	my_flower_pot_empty,					//0			154
+	my_flower_pot_poppy,					//1			155
+	my_flower_pot_dandelion,				//2			156
+	my_flower_pot_oak_sapling,				//3			157
+	my_flower_pot_spruce_sapling,			//4			158
+	my_flower_pot_birch_sapling,			//5			159
+	my_flower_pot_jungle_sapling,			//6			160
+	my_flower_pot_red_mushroom,				//7			161
+	my_flower_pot_brown_mushroom,			//8			162
+	my_flower_pot_cactus,					//9			163
+	my_flower_pot_dead_bush,				//10		164
+	my_flower_pot_fern,						//11		165
+	my_flower_pot_acacia,					//12		166
+	my_flower_pot_dark_oak,					//13		167
 };
