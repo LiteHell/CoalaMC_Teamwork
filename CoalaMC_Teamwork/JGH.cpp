@@ -183,3 +183,8 @@ void createBuilding_JGH(int sx, int sy, int sz) // sy는 4로 해 주세요
 	}
 	return;
 }
+
+void createBuilding_JGH_SECOND(int sx, int sy, int sz)
+{
+	return;
+}
