@@ -195,3 +195,74 @@ void createBuilding_MARINA(int x, int y, int z)
 		locateBlock(EMPTY, x + 8, 47, z + 8);
 		locateBlock(EMPTY, x + 8, 46, z + 8);
 	}
+
+/* 수정할 코드 
+#define _CRT_SECURE_NO_WARNINGS
+#include"pch.h"
+#include<stdio.h>
+#include<CoalaMOD.h>
+#pragma comment (lib, "CoalaMOD.lib")
+
+int main(void)
+{
+	BlockID GOLD = createBlock(BLOCK_GOLD);
+	BlockID RED = createBlock(BLOCK_NETHER_WART);
+	BlockID WALL = createBlock(BLOCK_MELON);
+	BlockID GLASS = createBlock(BLOCK_GLASS);
+	BlockID GRASS = createBlock(BLOCK_GRASS);
+	BlockID WOOL = createWool(COLOR_YELLOW);
+	BlockID POOL = createBlock(BLOCK_NETHERRACK);
+	BlockID WATER = createBlock(BLOCK_LAPIS_LAZULI);
+	BlockID FLOOR = createBlock(BLOCK_STONE);
+	int sx, sy, sz; int x, y, z;
+	scanf("%d %d %d", &x, &y, &z);
+	sx = 0; sy = 4; sz = 0;
+	for (sy = 4; sy < 9; sy++) {
+		for (sx = 1, sz = 0; sx < 11; sx++) { locateBlock(GOLD, x + sx, sy, z + sz); }
+		for (sx = 1, sz = 0; sx < 11; sx++) { locateBlock(GOLD, x + sx, sy, z + sz + 27); }
+		for (sx = 0, sz = 1; sz < 27; sz++) { locateBlock(GOLD, x + sx, sy, z + sz); }
+		for (sx = 0, sz = 1; sz < 27; sz++) { locateBlock(GOLD, x + sx + 11, sy, z + sz); }
+
+	}
+	for (sx = 1, sz = 0; sx < 11; sx++) { locateBlock(RED, x + sx, sy, z + sz); }
+	for (sx = 1, sz = 0; sx < 11; sx++) { locateBlock(RED, x + sx, sy, z + sz + 27); }
+	for (sx = 0, sz = 1; sz < 27; sz++) { locateBlock(RED, x + sx, sy, z + sz); }
+	for (sx = 0, sz = 1; sz < 27; sz++) { locateBlock(RED, x + sx + 11, sy, z + sz); }
+
+	for (sy = 10; sy < 14; sy++) {
+		for (sx = 1, sz = 0; sx < 11; sx++) { locateBlock(GLASS, x + sx, sy, z + sz); }
+		for (sx = 1, sz = 0; sx < 11; sx++) { locateBlock(GLASS, x + sx, sy, z + sz + 27); }
+		for (sx = 0, sz = 1; sz < 27; sz++) { locateBlock(WALL, x + sx, sy, z + sz); }
+		for (sx = 0, sz = 1; sz < 27; sz++) { locateBlock(GLASS, x + sx + 11, sy, z + sz); }
+	}
+	for (sx = 0; sx < 11; sx++)
+	{
+		for (sz = 0; sz < 27; sz++) { locateBlock(WALL, x + sx, sy, z + sz); }
+	}
+	for (int a = 7; a >= 0; a--) {
+		for (sx = 7 - a; sx <= a; sx++) {
+			for (sz = 7 - a; sz <= a; sz++) {
+				locateBlock(WOOL, x + sx + 2, sy + 8 - a, z + sz + 2);
+			}
+		}
+	}
+	sy = sy + 1;
+	for (sx = 2; sx < 10; sx++) {
+		locateBlock(POOL, x + sx, sy, z + 14);
+		locateBlock(POOL, x + sx, sy, z + 24);
+	}
+	for (sz = 14; sz < 25; sz++) {
+		locateBlock(POOL, x + 2, sy, z + sz);
+		locateBlock(POOL, x + 9, sy, z + sz);
+
+	}
+	for (sz = 15; sz < 24; sz++) {
+		for (sx = 3; sx < 9; sx++)
+			locateBlock(WATER, x + sx, sy, z + sz);
+	}
+	for (sx = 1; sx < 11; sx++) {
+		for (sz = 1; sz < 27; sz++) { locateBlock(FLOOR, x + sx, 4, z + sz);  locateBlock(GRASS, x + sx, 9, z + sz);
+		}
+	}
+}
+*/
