@@ -121,6 +121,66 @@ extern PlanksID my_planks_jungle;							//3			108
 extern PlanksID my_planks_acacia;							//4			109
 extern PlanksID my_planks_dark_oak;							//5			110
 
+extern PlantID my_plant_oak_sapling;						//0			111
+extern PlantID my_plant_spruce_sapling;						//1			112
+extern PlantID my_plant_birch_sapling;						//2			113
+extern PlantID my_plant_jungle_sapling;						//3			114
+extern PlantID my_plant_acacia_sapling;						//4			115
+extern PlantID my_plant_dark_oak_sapling;					//5			116
+extern PlantID my_plant_oak_leaves;							//6			117
+extern PlantID my_plant_spruce_leaves;						//7			118
+extern PlantID my_plant_birch_leaves;						//8			119
+extern PlantID my_plant_jungle_leaves;						//9			120
+extern PlantID my_plant_acacia_leaves;						//10		121
+extern PlantID my_plant_dark_oak_leaves;					//11		122
+extern PlantID my_plant_grass;								//12		123
+extern PlantID my_plant_dead_bush;							//13		124
+extern PlantID my_plant_brown_mushroom_block;				//14		125
+extern PlantID my_plant_red_mushroom_block;					//15		126
+extern PlantID my_plant_wheat;								//16		127
+extern PlantID my_plant_cactus;								//17		128
+extern PlantID my_plant_sugar_cane;							//18		129
+extern PlantID my_plant_brown_mushroom;						//19		130
+extern PlantID my_plant_red_mushroom;						//20		131
+extern PlantID my_plant_vines;								//21		132
+extern PlantID my_plant_lily_pad;							//22		133
+extern PlantID my_plant_carrot;								//23		134
+extern PlantID my_plant_potato;								//24		135
+extern PlantID my_plant_chorus;								//25		136
+
+extern FlowerID my_flower_dandelion;						//0			137
+extern FlowerID my_flower_poppy;							//1			138
+extern FlowerID my_flower_blue_orchid;						//2			139
+extern FlowerID my_flower_allium;							//3			140
+extern FlowerID my_flower_azure_bluet;						//4			141
+extern FlowerID my_flower_red_tulip;						//5			142
+extern FlowerID my_flower_orange_tulip;						//6			143
+extern FlowerID my_flower_white_tulip;						//7			144
+extern FlowerID my_flower_pink_tulip;						//8			145
+extern FlowerID my_flower_oxeye_tulip;						//9			146
+extern FlowerID my_flower_sunflower;						//10		147
+extern FlowerID my_flower_lilac;							//11		148
+extern FlowerID my_flower_double_tallgrass;					//12		149
+extern FlowerID my_flower_large_fern;						//13		150
+extern FlowerID my_flower_rose_bush;						//14		151
+extern FlowerID my_flower_peony;							//15		152
+extern FlowerID my_flower_chorus;							//16		153
+
+extern FlowerPotID my_flower_pot_empty;						//0			154
+extern FlowerPotID my_flower_pot_poppy;						//1			155
+extern FlowerPotID my_flower_pot_dandelion;					//2			156
+extern FlowerPotID my_flower_pot_oak_sapling;				//3			157
+extern FlowerPotID my_flower_pot_spruce_sapling;			//4			158
+extern FlowerPotID my_flower_pot_birch_sapling;				//5			159
+extern FlowerPotID my_flower_pot_jungle_sapling;			//6			160
+extern FlowerPotID my_flower_pot_red_mushroom;				//7			161
+extern FlowerPotID my_flower_pot_brown_mushroom;			//8			162
+extern FlowerPotID my_flower_pot_cactus;					//9			163
+extern FlowerPotID my_flower_pot_dead_bush;					//10		164
+extern FlowerPotID my_flower_pot_fern;						//11		165
+extern FlowerPotID my_flower_pot_acacia;					//12		166
+extern FlowerPotID my_flower_pot_dark_oak;					//13		167
+
 extern BlockID block[60];
 
 extern CarpetID carpet[20];
@@ -136,3 +196,9 @@ extern PaneID pane[3];
 extern BricksID brick[10];
 
 extern PlanksID plank[10];
+
+extern PlantID plant[30];
+
+extern FlowerID flower[20];
+
+extern FlowerPotID flowerpot[15];

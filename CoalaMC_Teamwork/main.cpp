@@ -48,10 +48,10 @@ int main() {
 	*/
 
 	//이 변수를 조정하면 길과 건물의 변수 모두 통일되게 조정된다.
-	int allx = 3000, ally = 4, allz = 3000;
+	int allx = 100, ally = 4, allz = 100;
 	//이변수는 x, z축의 블럭 수를 지정하는 변수입니다.
 	//이 변수만 조정하면 전체적으로 적용되게 됩니다.
-	int Bblockx = 7, Bblockz = 5;
+	int Bblockx = 5, Bblockz = 3;
 	
 	//도로를 먼저 생성한 후 건물들을 생성한다.
 	create_road(allx, ally, allz, Bblockx, Bblockz);
@@ -68,5 +68,10 @@ int main() {
 		}
 		x += 67;
 	}
+
+	park_tree_1(10, 4, 10);
+	park_tree_2(10, 4, 10);
+	park_tree_3(30, 4, 10);
+	park_tree_4(40, 4, 10);
 
 }
