@@ -89,7 +89,7 @@ x,y,z값을 입력한다.(y값은 영향이 없다)
 
 # LHM_constants.h 해더
 * 이 해더는 이호민이 건물을 생성할 때 3차원 배열에 들어있는 숫자를 적절한 정해진 block으로 전환하기 위해 만들어진 해더입니다.
-* 총 0 ~ 110까지 지정되어있고 Block, Carpet, Wool, Wood, Fence, Pane, Bricks, Planks로 구성되있습니다.
+* 총 0 ~ 110까지 지정되어있고 Block, Carpet, Wool, Wood, Fence, Pane, Bricks, Planks, plant, flower, flowerpot로 구성되있습니다.
 * 사용하기 위해선 <code>#include "LHM_constants.h"</code>를 맨 위에 작성해주면 된다. 그리고 각주에 써있는 숫자를 참고해 block을 불러올 수 있다.
 
 * 초기 제작자 - 이호민
