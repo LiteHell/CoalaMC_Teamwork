@@ -144,8 +144,8 @@ void park_lake(int x, int y, int z, int min, int max) {
 
 	for (int i = 0; i < create_random_number(min, max); i++) {
 		locateWater(createWater(), x, y, z + i);
-		locateWater(createWater(), x, y, z - i);
-		locateWater(createWater(), x + i + 1, y, z);
+		locateWater(createWater(), x, y, z - i - 1);
+		locateWater(createWater(), x + i, y, z);
 		locateWater(createWater(), x - i - 1, y, z);
 	}
 }
