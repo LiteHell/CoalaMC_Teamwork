@@ -58,7 +58,7 @@ int main() {
 	int allx = 100, ally = 4, allz = 100;
 	//이변수는 x, z축의 블럭 수를 지정하는 변수입니다.
 	//이 변수만 조정하면 전체적으로 적용되게 됩니다.
-	int Bblockx = 5, Bblockz = 3;
+	int Bblockx = 20, Bblockz = 50;
 	
 	//도로를 먼저 생성한 후 건물들을 생성한다.
 	create_road(allx, ally, allz, Bblockx, Bblockz);
@@ -77,12 +77,12 @@ int main() {
 	}
 
 	//공원을 만들기 위한 좌표를 선택하는 반복문이다. 랜덤의 위치에 생성합니다.
-	tmpx = allx + 7, tmpy = ally, tmpz = allz + 7;
-	x = tmpx, y = tmpy, z = tmpz;
+	tmpx = allx + 7; tmpy = ally; tmpz = allz + 7;
+	x = tmpx; y = tmpy; z = tmpz;
 	for (int i = 0; i < Bblockx/2; i++) {
 		z = tmpz;
 		for (int j = 0; j < Bblockz/2; j++) {
-			if (!create_random_number) {
+			if (!create_random_number(0, 0)) {
 				park(x, y, z);
 			}
 			z += 134;
