@@ -79,9 +79,11 @@ int main() {
 	//공원을 만들기 위한 좌표를 선택하는 반복문이다. 랜덤의 위치에 생성합니다.
 	tmpx = allx + 7; tmpy = ally; tmpz = allz + 7;
 	x = tmpx; y = tmpy; z = tmpz;
-	for (int i = 0; i < Bblockx/2; i++) {
+	x += 134;
+	z += 134;
+	for (int i = 0; i < Bblockx/2 - 1; i++) {
 		z = tmpz;
-		for (int j = 0; j < Bblockz/2; j++) {
+		for (int j = 0; j < Bblockz/2 - 1; j++) {
 			if (!create_random_number(0, 0)) {
 				park(x, y, z);
 			}
