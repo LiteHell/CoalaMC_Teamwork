@@ -195,16 +195,7 @@ void createBuilding_MARINA(int x, int y, int z)
 		locateBlock(EMPTY, x + 8, 47, z + 8);
 		locateBlock(EMPTY, x + 8, 46, z + 8);
 	}
-
-/* 수정할 코드 
-#define _CRT_SECURE_NO_WARNINGS
-#include"pch.h"
-#include<stdio.h>
-#include<CoalaMOD.h>
-#pragma comment (lib, "CoalaMOD.lib")
-
-int main(void)
-{
+void createBuilding_HAPPY(int x, int y, int z) {
 	BlockID GOLD = createBlock(BLOCK_GOLD);
 	BlockID RED = createBlock(BLOCK_NETHER_WART);
 	BlockID WALL = createBlock(BLOCK_MELON);
@@ -214,8 +205,8 @@ int main(void)
 	BlockID POOL = createBlock(BLOCK_NETHERRACK);
 	BlockID WATER = createBlock(BLOCK_LAPIS_LAZULI);
 	BlockID FLOOR = createBlock(BLOCK_STONE);
-	int sx, sy, sz; int x, y, z;
-	scanf("%d %d %d", &x, &y, &z);
+	BlockID EMPTY = createBlock(BLOCK_AIR);
+	int sx, sy, sz;
 	sx = 0; sy = 4; sz = 0;
 	for (sy = 4; sy < 9; sy++) {
 		for (sx = 1, sz = 0; sx < 11; sx++) { locateBlock(GOLD, x + sx, sy, z + sz); }
@@ -261,8 +252,13 @@ int main(void)
 			locateBlock(WATER, x + sx, sy, z + sz);
 	}
 	for (sx = 1; sx < 11; sx++) {
-		for (sz = 1; sz < 27; sz++) { locateBlock(FLOOR, x + sx, 4, z + sz);  locateBlock(GRASS, x + sx, 9, z + sz);
+		for (sz = 1; sz < 27; sz++) {
+			locateBlock(FLOOR, x + sx, 3, z + sz);  locateBlock(GRASS, x + sx, 9, z + sz);
 		}
 	}
+	for (sy = 4; sy < 7; sy++) {
+		locateBlock(EMPTY, x + 11, sy, z + 3);
+		locateBlock(EMPTY, x + 11, sy, z + 4);
+		locateBlock(EMPTY, x + 11, sy, z + 5);
+	}
 }
-*/
