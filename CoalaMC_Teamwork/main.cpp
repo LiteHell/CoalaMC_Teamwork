@@ -85,7 +85,7 @@ int main() {
 	for (int i = 0; i < Bblockx/2; i++) {
 		z = tmpz;
 		for (int j = 0; j < Bblockz/2; j++) {
-			if (!create_random_number(0, 0)) {
+			if (!create_random_number(0, 15)) {
 				reset_park_position(x, y, z);
 				park(x, y, z);
 			}
