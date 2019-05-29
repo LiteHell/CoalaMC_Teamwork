@@ -58,7 +58,7 @@ int main() {
 	int allx = 100, ally = 4, allz = 100;
 	//이변수는 x, z축의 블럭 수를 지정하는 변수입니다.
 	//이 변수만 조정하면 전체적으로 적용되게 됩니다.
-	int Bblockx = 20, Bblockz = 50;
+	int Bblockx = 5, Bblockz = 7;
 	
 	//도로를 먼저 생성한 후 건물들을 생성한다.
 	create_road(allx, ally, allz, Bblockx, Bblockz);
