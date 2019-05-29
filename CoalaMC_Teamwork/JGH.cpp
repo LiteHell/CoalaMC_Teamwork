@@ -195,7 +195,7 @@ void createBuilding_JGH_SECOND(int sx, int sy, int sz) // sy는 4로 하는 것이 여�
 	DoorID door = createDoor(DOOR_OAK, true, HINGE_LEFT);
 
 	const int size = 21; // size는 홀수로
-
+	int planks_num = create_random_number(0, 2);
 
 	//건물 생성
 	int ex = sx + size - 1, ey = sy + size - 1, ez = sz + size - 1;
@@ -205,15 +205,40 @@ void createBuilding_JGH_SECOND(int sx, int sy, int sz) // sy는 4로 하는 것이 여�
 		{
 			locateBlock(glass, x, y, sz);
 			locateBlock(glass, x, y, ez);
+
 			if (x == sx + i || x == ex - i)
 			{
 				for (int z = sz; z <= ez; z++)
 				{
 					locateBlock(glass, x, y, z);
 				}
+
+				locateBlock(planks_array[planks_num], x, y, sz);
+				locateBlock(planks_array[planks_num], x, y, ez);
+			}
+
+			if (sx + i == ex - i)
+			{
+				for (int z = sz+1; z <= ez-1; z++)
+				{
+					locateBlock(planks_array[planks_num], x, y, z);
+				}
 			}
 		}
 	}
 
+	for (int z = sz+1; z <= ez-1; z++)
+	{
+		locateBlock(planks_array[planks_num], sx, sy, z);
+		locateBlock(planks_array[planks_num], ex, sy, z);
+	}
+
+	for (int x = sx; x <= ex; x++)
+	{
+		for (int z = sz; z <= ez; z++)
+		{
+			locateBlock(planks_array[planks_num], x, sy - 1, z);
+		}
+	}
 	return;
 }
