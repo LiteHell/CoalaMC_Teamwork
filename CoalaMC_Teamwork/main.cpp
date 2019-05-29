@@ -55,7 +55,7 @@ int main() {
 	*/
 
 	//이 변수를 조정하면 길과 건물의 변수 모두 통일되게 조정된다.
-	int allx = 1000, ally = 4, allz = 1000;
+	int allx = 0, ally = 4, allz = 0;
 	//이변수는 x, z축의 블럭 수를 지정하는 변수입니다.
 	//이 변수만 조정하면 전체적으로 적용되게 됩니다.
 	int Bblockx = 10, Bblockz = 15;

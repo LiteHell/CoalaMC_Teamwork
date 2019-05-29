@@ -162,7 +162,7 @@ void park_lake(int x, int y, int z, int min, int max) {
 
 //공원이 만들어지는 공간을 초기화하는 함수
 void reset_park_position(int x, int y, int z) {
-	for (int i = y; i < y + 50; i++) {
+	for (int i = y - 2; i < y + 50; i++) {
 		for (int j = x; j < x + 127; j++) {
 			for (int k = z; k < z + 127; k++) {
 				locateBlock(block[0], j, i, k);

@@ -21,24 +21,29 @@ void locate_fence(int x, int y, int z) {
 void building_block_1(int x, int y, int z) {
 	//locateBeacon(createBeacon(), x, y, z);
 	locate_fence(x, y, z);
+	LHM_building_1(x, y, z, 1);
 }
 
 void building_block_2(int x, int y, int z) {
 	//locateBeacon(createBeacon(), x, y, z);
 	locate_fence(x, y, z);
+	LHM_building_2(x, y, z, 1);
 }
 
 void building_block_3(int x, int y, int z) {
 	//locateBeacon(createBeacon(), x, y, z);
 	locate_fence(x, y, z);
+	createBuilding_MARINA(x, y, z);
 }
 
 void building_block_4(int x, int y, int z) {
 	//locateBeacon(createBeacon(), x, y, z);
 	locate_fence(x, y, z);
+	createBuilding_HAPPY(x, y, z);
 }
 
 void building_block_5(int x, int y, int z) {
 	//locateBeacon(createBeacon(), x, y, z);
 	locate_fence(x, y, z);
+	createBuilding_JGH(x, y, z);
 }
