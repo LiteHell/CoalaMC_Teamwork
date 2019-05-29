@@ -187,6 +187,7 @@ void createBuilding_JGH(int sx, int sy, int sz) // sy는 4로 해 주세요
 void createBuilding_JGH_SECOND(int sx, int sy, int sz) // sy는 4로 하는 것이 여러모로 이로워요
 {
 	BlockID glass = createBlock(BLOCK_GLASS);
+	BlockID air = createBlock(BLOCK_AIR);
 	BlockID planks_array[] = {
 		createPlanks(PLANKS_OAK),
 		createPlanks(PLANKS_SPRUCE),
@@ -205,7 +206,7 @@ void createBuilding_JGH_SECOND(int sx, int sy, int sz) // sy는 4로 하는 것이 여�
 		{
 			locateBlock(glass, x, y, sz);
 			locateBlock(glass, x, y, ez);
-
+			
 			if (x == sx + i || x == ex - i)
 			{
 				for (int z = sz; z <= ez; z++)
@@ -240,5 +241,11 @@ void createBuilding_JGH_SECOND(int sx, int sy, int sz) // sy는 4로 하는 것이 여�
 			locateBlock(planks_array[planks_num], x, sy - 1, z);
 		}
 	}
+
+	locateBlock(air, (sx + ex) / 2, sy, sz);	
+	locateBlock(air, (sx + ex) / 2, sy, ez);
+	installDoor(door, (sx + ex) / 2, sy, sz, FACING_EAST);
+	installDoor(door, (sx + ex) / 2, sy, ez, FACING_WEST);
+	
 	return;
 }
