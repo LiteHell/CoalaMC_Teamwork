@@ -128,6 +128,10 @@ void park_lake(int x, int y, int z, int min, int max) {
 				locateWater(createWater(), int(tmpx), y, tmpzm);
 				locateWater(createWater(), int(tmpx), y, tmpzp);
 				locateWater(createWater(), int(i), y, tmpzm);
+				locateWater(createWater(), int(i), y - 1, tmpzp);
+				locateWater(createWater(), int(tmpx), y - 1, tmpzm);
+				locateWater(createWater(), int(tmpx), y - 1, tmpzp);
+				locateWater(createWater(), int(i), y - 1, tmpzm);
 				++tmpzp;
 				--tmpzm;
 				tmpx -= cos(q * radian) * tmp_random / repec_tmp_cos;
@@ -144,6 +148,10 @@ void park_lake(int x, int y, int z, int min, int max) {
 				locateWater(createWater(), tmpxm, y, int(tmpz));
 				locateWater(createWater(), tmpxp, y, int(tmpz));
 				locateWater(createWater(), tmpxm, y, int(i));
+				locateWater(createWater(), tmpxp, y - 1, int(i));
+				locateWater(createWater(), tmpxm, y - 1, int(tmpz));
+				locateWater(createWater(), tmpxp, y - 1, int(tmpz));
+				locateWater(createWater(), tmpxm, y - 1, int(i));
 				++tmpxp;
 				--tmpxm;
 				tmpz -= sin(q * radian) * tmp_random / repec_tmp_sin;
@@ -157,6 +165,10 @@ void park_lake(int x, int y, int z, int min, int max) {
 		locateWater(createWater(), x, y, z - i - 1);
 		locateWater(createWater(), x + i, y, z);
 		locateWater(createWater(), x - i - 1, y, z);
+		locateWater(createWater(), x, y - 1, z + i);
+		locateWater(createWater(), x, y - 1, z - i - 1);
+		locateWater(createWater(), x + i, y - 1, z);
+		locateWater(createWater(), x - i - 1, y - 1, z);
 	}
 }
 
@@ -180,6 +192,7 @@ void park(int x, int y, int z) {
 	//잔디블록으로 바닥을 체우는 함수입니다.
 	for (int j = x; j < x + 127; j++) {
 		for (int k = z; k < z + 127; k++) {
+			locateBlock(block[8], j, y - 1, k);
 			locateBlock(block[8], j, y, k);
 		}
 	}
