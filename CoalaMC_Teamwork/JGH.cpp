@@ -184,7 +184,36 @@ void createBuilding_JGH(int sx, int sy, int sz) // sy는 4로 해 주세요
 	return;
 }
 
-void createBuilding_JGH_SECOND(int sx, int sy, int sz)
+void createBuilding_JGH_SECOND(int sx, int sy, int sz) // sy는 4로 하는 것이 여러모로 이로워요
 {
+	BlockID glass = createBlock(BLOCK_GLASS);
+	BlockID planks_array[] = {
+		createPlanks(PLANKS_OAK),
+		createPlanks(PLANKS_SPRUCE),
+		createPlanks(PLANKS_DARK_OAK)
+	};
+	DoorID door = createDoor(DOOR_OAK, true, HINGE_LEFT);
+
+	const int size = 21; // size는 홀수로
+
+
+	//건물 생성
+	int ex = sx + size - 1, ey = sy + size - 1, ez = sz + size - 1;
+	for (int y = sy, i=0; i <= (size-1)/2 && y <= ey; i++, y++)
+	{
+		for (int x = sx+i; x <= ex-i; x++)
+		{
+			locateBlock(glass, x, y, sz);
+			locateBlock(glass, x, y, ez);
+			if (x == sx + i || x == ex - i)
+			{
+				for (int z = sz; z <= ez; z++)
+				{
+					locateBlock(glass, x, y, z);
+				}
+			}
+		}
+	}
+
 	return;
 }
