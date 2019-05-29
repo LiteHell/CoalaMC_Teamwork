@@ -150,11 +150,27 @@ void park_lake(int x, int y, int z, int min, int max) {
 	}
 }
 
+void reset_park_position(int x, int y, int z) {
+	for (int i = y; i < y + 50; i++) {
+		for (int j = x; j < x + 127; j++) {
+			for (int k = z; k < z + 127; k++) {
+				locateBlock(block[0], j, i, k);
+			}
+		}
+	}
+}
+
 void park(int x, int y, int z) {
 	//공원을 만드는 함수입니다.
 	//공원의 크기는 127 * 127로 건물 '블럭'의 4배의 면적을 가지고 있습니다.
 	locateBeacon(createBeacon(), x, y, z);
+	for (int j = x; j < x + 127; j++) {
+		for (int k = z; k < z + 127; k++) {
+			locateBlock(block[8], j, y, k);
+		}
+	}
 	//좌표를 선택하는 반복문입니다.
+	++y;
 	for (int i = x; i < x + 127; i++) {
 		for (int j = z; j < z + 127; j++) {
 
