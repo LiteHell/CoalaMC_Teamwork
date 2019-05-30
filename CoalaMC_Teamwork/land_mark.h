@@ -9,3 +9,4 @@ void park_tree_4(int x, int y, int z);
 void park_lake(int x, int y, int z, int min, int max);
 void locate_park_tree(int x, int y, int z);
 void reset_park_position(int x, int y, int z);
+void createBuilding_Tall_ConcreteModern(int x, int y, int z);
