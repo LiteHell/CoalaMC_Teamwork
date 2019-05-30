@@ -8,6 +8,7 @@
 
 void locate_fence(int x, int y, int z) {
 	//울타리를 만드는 함수
+	//가로수를 만두는 함수 추가
 	for (int i = x - 1; i < x + 61; i++) {
 		locateFence(fence[0], i, y + 1, z - 1);
 		locateFence(fence[0], i, y + 1, z + 60);
