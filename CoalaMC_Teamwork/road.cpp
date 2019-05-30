@@ -3,11 +3,22 @@
 #include "LHM_constants.h"
 #pragma comment(lib, "CoalaMOD.lib")
 
+/*
+void spawn_villager(int x, int y, int z) {
+	locateMob(mob[46], x, y, z);
+}
+*/
 
 void roadx(int x, int y, int z, int len) {
 	for (int i = z; i < z + 7; i++) {
 		for (int j = x; j < x + len; j++) {
-			locateBlock(block[12 + create_random_number(0, 1) * 13], j, 4, i);
+			/*
+			if (i != z && i != z + 6) {
+				if (!create_random_number(0, 20))
+					spawn_villager(j, y + 1, i);
+			}
+			*/
+			locateBlock(block[12 + create_random_number(0, 1) * 13], j, y, i);
 		}
 	}
 }
@@ -15,7 +26,13 @@ void roadx(int x, int y, int z, int len) {
 void roadz(int x, int y, int z, int len) {
 	for (int i = x; i < x + 7; i++) {
 		for (int j = z; j < z + len; j++) {
-			locateBlock(block[12 + create_random_number(0, 1) * 13], i, 4, j);
+			/*
+			if (i != x && i != x + 6) {
+				if (!create_random_number(0, 20))
+					spawn_villager(i, y + 1, j);
+			}
+			*/
+			locateBlock(block[12 + create_random_number(0, 1) * 13], i, y, j);
 		}
 	}
 }
