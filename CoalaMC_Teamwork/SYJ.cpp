@@ -26,14 +26,64 @@ BlockOrientation calculateOrientation(int x, int z, int sx, int sz, int ex, int 
 	throw (BlockOrientation)-1;
 }
 
+void createBuilding_BlackWhite(int x, int y, int z) {
+	int sx = x, sy = y, sz = z, ex = x + 29, ey = y + 36, ez = z + 29;
+	ConcreteID blackConcrete = createConcrete(COLOR_BLACK, true);
+	ConcreteID whiteConcrete = createConcrete(COLOR_WHITE, true);
+	BlockID glass = createBlock(BLOCK_GLASS);
+	BlockID air = createBlock(BLOCK_AIR);
+
+	bool isGlass = false;
+	for (int fy = sy; fy <= ey; fy++) {
+		for (int fx = sx; fx <= ex; fx++)
+			for (int fz = sz; fz <= ez; fz++)
+				if (fx == sx || fx == ex || fz == sz || fz == ez)
+					if (isGlass)
+						locateBlock(glass, fx, fy, fz);
+					else
+						locateConcrete(blackConcrete, fx, fy, fz);
+		isGlass = !isGlass;
+	}
+	sx += 1; sz += 1; ex -= 1; ez -= 1;
+
+	isGlass = false;
+	for (int fy = sy; fy <= ey; fy++) {
+		for (int fx = sx; fx <= ex; fx++)
+			for (int fz = sz; fz <= ez; fz++)
+				if (fx == sx || fx == ex || fz == sz || fz == ez)
+					if (isGlass)
+						locateBlock(glass, fx, fy, fz);
+					else
+						locateConcrete(whiteConcrete, fx, fy, fz);
+		isGlass = !isGlass;
+	}
+
+	sx -= 1; sz -= 1; ex += 1; ez += 1;
+
+	for(int xa = 0; xa <= ex - sx; xa++)
+		for (int za = 0; za <= ez - sz; za++) 
+			if (xa == 0 || xa == 29 || za == 0 || za == 29)
+			{
+				if ((10 <= xa && xa < 20) || (10 <= za && za < 20))
+					for (int fy = sy; fy <= ey; fy++)
+						locateBlock(air, x + xa, fy, z + za);
+			}
+
+	// roof
+	for (int fx = sx + 1; fx < ex; fx++)
+		for (int fz = sz + 1; fz < ez; fz++)
+			locateBlock(glass, fx, ey, fz);
+
+	// ¹Ù´Ú
+	for (int fx = sx; fx <= ex; fx++)
+		for (int fz = sz; fz <= ez; fz++)
+			locateBlock(whiteConcrete, fx, y - 1, fz);
+}
+
 void createBuilding_StoneShrine(int x, int y, int z)
 {
 	BlockID stone = createBlock(BLOCK_STONE);
-
-	// ¹Ù´Ú
-	for (int fx = x; fx < x + 30; fx++)
-		for (int fz = z; fz < z + 30; fz++)
-			locateBlock(stone, fx, y, fz);
+	y -= 1;
 
 	// sx, sy, ez
 	int sx = x + 5;
@@ -122,14 +172,12 @@ void createBuilding_ConcreteModern(int x, int y, int z) {
 	BlockID glass = createBlock(BLOCK_GLASS);
 
 	// ¹Ù´Ú
-	const int groundY = y;
+	const int groundY = y - 1;
 	for (int fx = x; fx < x + 20; fx++)
 		for (int fz = z; fz < z + 10; fz++)
 			locateBlock(grass, fx, groundY, fz);
 
 	// °Ç¹° ¸¸µé±â ½ÃÀÛ
-	y += 1;
-
 	const int floorHeight = 4, floorCount = 5 + create_random_number(1,2)*2;
 	bool floorOut = true;
 
