@@ -181,6 +181,56 @@ FlowerPotID my_flower_pot_fern = createFlowerPot(FLOWER_POT_FERN);						//11		16
 FlowerPotID my_flower_pot_acacia = createFlowerPot(FLOWER_POT_ACACIA);					//12		166
 FlowerPotID my_flower_pot_dark_oak = createFlowerPot(FLOWER_POT_DARK_OAK);				//13		167
 
+MobID my_mob_stray = createMob(MOB_STRAY);												//0			168
+MobID my_mob_husk = createMob(MOB_HUSK);												//1			169
+MobID my_mob_zombie_villager = createMob(MOB_ZOMBIE_VILLAGER);							//2			170
+MobID my_mob_evocation_illager = createMob(MOB_EVOCATION_ILLAGER);						//3			171
+MobID my_mob_vex = createMob(MOB_VEX);													//4			172
+MobID my_mob_vindication_illager = createMob(MOB_VINDICATION_ILLAGER);					//5			173
+MobID my_mob_illusion_illager = createMob(MOB_ILLUSION_ILLAGER);						//6			174
+MobID my_mob_creeper = createMob(MOB_CREEPER);											//7			175
+MobID my_mob_skeleton = createMob(MOB_SKELETON);										//8			176
+MobID my_mob_spider = createMob(MOB_SPIDER);											//9			177
+MobID my_mob_giant = createMob(MOB_GIANT);												//10		178
+MobID my_mob_zombie = createMob(MOB_ZOMBIE);											//11		179
+MobID my_mob_slime = createMob(MOB_SLIME);												//12		180
+MobID my_mob_ghast = createMob(MOB_GHAST);												//13		181
+MobID my_mob_zombie_pigman = createMob(MOB_ZOMBIE_PIGMAN);								//14		182
+MobID my_mob_enderman = createMob(MOB_ENDERMAN);										//15		183
+MobID my_mob_cave_spider = createMob(MOB_CAVE_SPIDER);									//16		184
+MobID my_mob_silverfish = createMob(MOB_SILVERFISH);									//17		185
+MobID my_mob_blaze = createMob(MOB_BLAZE);												//18		186
+MobID my_mob_magma_cube = createMob(MOB_MAGMA_CUBE);									//19		187
+MobID my_mob_ender_dragon = createMob(MOB_ENDER_DRAGON);								//20		188
+MobID my_mob_wither = createMob(MOB_WITHER);											//21		189
+MobID my_mob_witch = createMob(MOB_WITCH);												//22		190
+MobID my_mob_endermite = createMob(MOB_ENDERMITE);										//23		191
+MobID my_mob_guardian = createMob(MOB_GUARDIAN);										//24		192
+MobID my_mob_shulker = createMob(MOB_SHULKER);											//25		193
+MobID my_mob_skeleton_horse = createMob(MOB_SKELETON_HORSE);							//26		194
+MobID my_mob_zombie_horse = createMob(MOB_ZOMBIE_HORSE);								//27		195
+MobID my_mob_donkey = createMob(MOB_DONKEY);											//28		196
+MobID my_mob_mule = createMob(MOB_MULE);												//29		197
+MobID my_mob_bat = createMob(MOB_BAT);													//30		198
+MobID my_mob_pig = createMob(MOB_PIG);													//31		199
+MobID my_mob_sheep = createMob(MOB_SHEEP);												//32		200
+MobID my_mob_cow = createMob(MOB_COW);													//33		201
+MobID my_mob_chicken = createMob(MOB_CHICKEN);											//34		202
+MobID my_mob_squid = createMob(MOB_SQUID);												//35		203
+MobID my_mob_wolf = createMob(MOB_WOLF);												//36		204
+MobID my_mob_mooshroom = createMob(MOB_MOOSHROOM);										//37		205
+MobID my_mob_snowman = createMob(MOB_SNOWMAN);											//38		206
+MobID my_mob_ocelot = createMob(MOB_OCELOT);											//39		207
+MobID my_mob_villager_golem = createMob(MOB_VILLAGER_GOLEM);							//40		208
+MobID my_mob_horse = createMob(MOB_HORSE);												//41		209
+MobID my_mob_rabbit = createMob(MOB_RABBIT);											//42		210
+MobID my_mob_polar_bear = createMob(MOB_POLAR_BEAR);									//43		211
+MobID my_mob_llama = createMob(MOB_LLAMA);												//44		212
+MobID my_mob_parrot = createMob(MOB_PARROT);											//45		213
+MobID my_mob_villager = createMob(MOB_VILLAGER);										//46		214
+MobID my_mob_elder_guardian = createMob(MOB_ELDER_GUARDIAN);							//47		215
+MobID my_mob_wither_skeleton = createMob(MOB_WITHER_SKELETON);							//48		216
+
 BlockID block[60] = {
 	//블록 변수
 	my_air,									//0			  0
@@ -391,4 +441,57 @@ FlowerPotID flowerpot[15] = {
 	my_flower_pot_fern,						//11		165
 	my_flower_pot_acacia,					//12		166
 	my_flower_pot_dark_oak,					//13		167
+};
+
+MobID mob[50] = {
+	//몹 변수
+	my_mob_stray,							//0			168
+	my_mob_husk,							//1			169
+	my_mob_zombie_villager,					//2			170
+	my_mob_evocation_illager,				//3			171
+	my_mob_vex,								//4			172
+	my_mob_vindication_illager,				//5			173
+	my_mob_illusion_illager,				//6			174
+	my_mob_creeper,							//7			175
+	my_mob_skeleton,						//8			176
+	my_mob_spider,							//9			177
+	my_mob_giant,							//10		178
+	my_mob_zombie,							//11		179
+	my_mob_slime,							//12		180
+	my_mob_ghast,							//13		181
+	my_mob_zombie_pigman,					//14		182
+	my_mob_enderman,						//15		183
+	my_mob_cave_spider,						//16		184
+	my_mob_silverfish,						//17		185
+	my_mob_blaze,							//18		186
+	my_mob_magma_cube,						//19		187
+	my_mob_ender_dragon,					//20		188
+	my_mob_wither,							//21		189
+	my_mob_witch,							//22		190
+	my_mob_endermite,						//23		191
+	my_mob_guardian,						//24		192
+	my_mob_shulker,							//25		193
+	my_mob_skeleton_horse,					//26		194
+	my_mob_zombie_horse,					//27		195
+	my_mob_donkey,							//28		196
+	my_mob_mule,							//29		197
+	my_mob_bat,								//30		198
+	my_mob_pig,								//31		199
+	my_mob_sheep,							//32		200
+	my_mob_cow,								//33		201
+	my_mob_chicken,							//34		202
+	my_mob_squid,							//35		203
+	my_mob_wolf,							//36		204
+	my_mob_mooshroom,						//37		205
+	my_mob_snowman,							//38		206
+	my_mob_ocelot,							//39		207
+	my_mob_villager_golem,					//40		208
+	my_mob_horse,							//41		209
+	my_mob_rabbit,							//42		210
+	my_mob_polar_bear,						//43		211
+	my_mob_llama,							//44		212
+	my_mob_parrot,							//45		213
+	my_mob_villager,						//46		214
+	my_mob_elder_guardian,					//47		215
+	my_mob_wither_skeleton,					//48		216
 };

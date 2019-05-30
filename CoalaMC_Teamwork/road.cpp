@@ -3,6 +3,9 @@
 #include "LHM_constants.h"
 #pragma comment(lib, "CoalaMOD.lib")
 
+void spawn_villager(int x, int y, int z) {
+
+}
 
 void roadx(int x, int y, int z, int len) {
 	for (int i = z; i < z + 7; i++) {
