@@ -119,7 +119,7 @@ void locate_park_tree(int x, int y, int z) {
 	수정이 매우 어려움 이 함수를 리펙토링시 주의 요망
 	사용법은 제작자 이호민에게 문의
 	*/
-	int min = 20, max = 20;
+	int min = 55, max = 55;
 	const double pi = 3.14159265358979;
 	const double radian = pi / 180;
 
@@ -130,15 +130,17 @@ void locate_park_tree(int x, int y, int z) {
 		double repec_tmp_sin = cos(q * radian) * tmp_random == 0 ? 1 : cos(q * radian) * tmp_random;
 		double repec_tmp_cos = sin(q * radian) * tmp_random == 0 ? 1 : sin(q * radian) * tmp_random;
 		if (cos(q * radian) > sin(q * radian)) {
-			int tmpzp = z;
-			int tmpzm = z;
+			int tmpzp = z + 35;
+			int tmpzm = z - 35;
 			double tmpx = x;
 			//printf("1 %llf %llf\n", cos(q * radian) * tmp_random, cos(q * radian) * tmp_random / sin(q * radian) * tmp_random);
 			for (double i = x + 35; i < x + cos(q * radian) * tmp_random; i += cos(q * radian) * tmp_random / repec_tmp_cos) {
-				select_tree(int(i), y, tmpzp, create_random_number(1, 4));
-				select_tree(int(tmpx), y, tmpzm, create_random_number(1, 4));
-				select_tree(int(tmpx), y, tmpzp, create_random_number(1, 4));
-				select_tree(int(i), y, tmpzm, create_random_number(1, 4));
+				if (!create_random_number(0, 2)) {
+					select_tree(int(i), y, tmpzp, create_random_number(1, 4));
+					select_tree(int(tmpx), y, tmpzm, create_random_number(1, 4));
+					select_tree(int(tmpx), y, tmpzp, create_random_number(1, 4));
+					select_tree(int(i), y, tmpzm, create_random_number(1, 4));
+				}
 				++tmpzp;
 				--tmpzm;
 				tmpx -= cos(q * radian) * tmp_random / repec_tmp_cos;
@@ -146,15 +148,17 @@ void locate_park_tree(int x, int y, int z) {
 			}
 		}
 		else if (cos(q * radian) < sin(q * radian)) {
-			int tmpxp = x;
-			int tmpxm = x;
+			int tmpxp = x + 35;
+			int tmpxm = x - 35;
 			double tmpz = z;
 			//printf("2 %llf %llf\n", sin(q * radian) * tmp_random, sin(q * radian) * tmp_random / cos(q * radian) * tmp_random);
 			for (double i = z + 35; i < z + sin(q * radian) * tmp_random; i += sin(q * radian) * tmp_random / repec_tmp_sin) {
-				select_tree(tmpxp, y, int(i), create_random_number(1, 4));
-				select_tree(tmpxm, y, int(tmpz), create_random_number(1, 4));
-				select_tree(tmpxp, y, int(tmpz), create_random_number(1, 4));
-				select_tree(tmpxm, y, int(i), create_random_number(1, 4));
+				if (!create_random_number(0, 5)) {
+					select_tree(tmpxp, y, int(i), create_random_number(1, 4));
+					select_tree(tmpxm, y, int(tmpz), create_random_number(1, 4));
+					select_tree(tmpxp, y, int(tmpz), create_random_number(1, 4));
+					select_tree(tmpxm, y, int(i), create_random_number(1, 4));
+				}
 				++tmpxp;
 				--tmpxm;
 				tmpz -= sin(q * radian) * tmp_random / repec_tmp_sin;
@@ -177,9 +181,9 @@ void park_lake(int x, int y, int z, int min, int max) {
 	*/
 
 	const double pi = 3.14159265358979;
-	const double radian = pi / 18000;
+	const double radian = pi / 3600;
 
-	for (double q = 0; q < 9000; q++) {
+	for (double q = 0; q < 1800; q++) {
 		//0도 부터 90도까지를 정의
 		int tmp_random = create_random_number(min, max);
 		//printf("%llf %llf\n", cos(q * radian), sin(q * radian));
