@@ -181,6 +181,7 @@ FlowerPotID my_flower_pot_fern = createFlowerPot(FLOWER_POT_FERN);						//11		16
 FlowerPotID my_flower_pot_acacia = createFlowerPot(FLOWER_POT_ACACIA);					//12		166
 FlowerPotID my_flower_pot_dark_oak = createFlowerPot(FLOWER_POT_DARK_OAK);				//13		167
 
+/*
 MobID my_mob_stray = createMob(MOB_STRAY);												//0			168
 MobID my_mob_husk = createMob(MOB_HUSK);												//1			169
 MobID my_mob_zombie_villager = createMob(MOB_ZOMBIE_VILLAGER);							//2			170
@@ -230,6 +231,7 @@ MobID my_mob_parrot = createMob(MOB_PARROT);											//45		213
 MobID my_mob_villager = createMob(MOB_VILLAGER);										//46		214
 MobID my_mob_elder_guardian = createMob(MOB_ELDER_GUARDIAN);							//47		215
 MobID my_mob_wither_skeleton = createMob(MOB_WITHER_SKELETON);							//48		216
+*/
 
 BlockID block[60] = {
 	//블록 변수
@@ -443,6 +445,7 @@ FlowerPotID flowerpot[15] = {
 	my_flower_pot_dark_oak,					//13		167
 };
 
+/*
 MobID mob[50] = {
 	//몹 변수
 	my_mob_stray,							//0			168
@@ -495,3 +498,4 @@ MobID mob[50] = {
 	my_mob_elder_guardian,					//47		215
 	my_mob_wither_skeleton,					//48		216
 };
+*/

@@ -44,11 +44,11 @@ void locate_fence(int x, int y, int z) {
 
 void locate_tree_road(int x, int y, int z) {
 	//나무를 만드는 함수
-	for (int i = x - 1; i < x + 61; i+=5) {
+	for (int i = x - 1; i < x + 61; i+=7) {
 		road_tree(i, y + 1, z - 1);
 		road_tree(i, y + 1, z + 60);
 	}
-	for (int i = z - 1; i < z + 61; i+=5) {
+	for (int i = z - 1; i < z + 61; i+=7) {
 		road_tree(x - 1, y + 1, i);
 		road_tree(x + 60, y + 1, i);
 	}
