@@ -8,4 +8,5 @@ void park_tree_3(int x, int y, int z);
 void park_tree_4(int x, int y, int z);
 void park_lake(int x, int y, int z, int min, int max);
 void locate_park_tree(int x, int y, int z);
+void select_tree(int x, int y, int z, int rand);
 void reset_park_position(int x, int y, int z);

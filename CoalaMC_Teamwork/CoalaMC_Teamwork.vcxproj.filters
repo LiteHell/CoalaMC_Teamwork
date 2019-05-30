@@ -63,6 +63,9 @@
     <ClInclude Include="building_block.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="coalamod.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LHM.cpp">

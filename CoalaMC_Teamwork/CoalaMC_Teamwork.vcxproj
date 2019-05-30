@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="buildings.h" />
     <ClInclude Include="building_block.h" />
+    <ClInclude Include="coalamod.h" />
     <ClInclude Include="JGH.h" />
     <ClInclude Include="KJH.h" />
     <ClInclude Include="land_mark.h" />

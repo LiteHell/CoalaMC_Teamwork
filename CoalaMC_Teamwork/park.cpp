@@ -98,6 +98,73 @@ void park_tree_4(int x, int y, int z) {
 
 }
 
+void select_tree(int x, int y, int z, int n) {
+	if (n == 1)
+		park_tree_1(x, y, z);
+	if (n == 2)
+		park_tree_2(x, y, z);
+	if (n == 3)
+		park_tree_3(x, y, z);
+	if (n == 4)
+		park_tree_4(x, y, z);
+}
+
+//나무를 만드는 함수
+void locate_park_tree(int x, int y, int z) {
+	//using polar coordinate
+	//랜덤 구현 실패, 별로 변형이 없음, 그냥 원형으로 해야하는 것으로 보임.
+	//단 각도의 approximation을 90도로 잡고 min과 max의 차이를 크게 잡으면 꽤 멋진 대칭 조형물이 나옴
+
+	/*
+	수정이 매우 어려움 이 함수를 리펙토링시 주의 요망
+	사용법은 제작자 이호민에게 문의
+	*/
+	int min = 20, max = 20;
+	const double pi = 3.14159265358979;
+	const double radian = pi / 180;
+
+	for (double q = 0; q < 90; q++) {
+		//0도 부터 90도까지를 정의
+		int tmp_random = create_random_number(min, max);
+		//printf("%llf %llf\n", cos(q * radian), sin(q * radian));
+		double repec_tmp_sin = cos(q * radian) * tmp_random == 0 ? 1 : cos(q * radian) * tmp_random;
+		double repec_tmp_cos = sin(q * radian) * tmp_random == 0 ? 1 : sin(q * radian) * tmp_random;
+		if (cos(q * radian) > sin(q * radian)) {
+			int tmpzp = z;
+			int tmpzm = z;
+			double tmpx = x;
+			//printf("1 %llf %llf\n", cos(q * radian) * tmp_random, cos(q * radian) * tmp_random / sin(q * radian) * tmp_random);
+			for (double i = x + 35; i < x + cos(q * radian) * tmp_random; i += cos(q * radian) * tmp_random / repec_tmp_cos) {
+				select_tree(int(i), y, tmpzp, create_random_number(1, 4));
+				select_tree(int(tmpx), y, tmpzm, create_random_number(1, 4));
+				select_tree(int(tmpx), y, tmpzp, create_random_number(1, 4));
+				select_tree(int(i), y, tmpzm, create_random_number(1, 4));
+				++tmpzp;
+				--tmpzm;
+				tmpx -= cos(q * radian) * tmp_random / repec_tmp_cos;
+				//printf("1-1\n");
+			}
+		}
+		else if (cos(q * radian) < sin(q * radian)) {
+			int tmpxp = x;
+			int tmpxm = x;
+			double tmpz = z;
+			//printf("2 %llf %llf\n", sin(q * radian) * tmp_random, sin(q * radian) * tmp_random / cos(q * radian) * tmp_random);
+			for (double i = z + 35; i < z + sin(q * radian) * tmp_random; i += sin(q * radian) * tmp_random / repec_tmp_sin) {
+				select_tree(tmpxp, y, int(i), create_random_number(1, 4));
+				select_tree(tmpxm, y, int(tmpz), create_random_number(1, 4));
+				select_tree(tmpxp, y, int(tmpz), create_random_number(1, 4));
+				select_tree(tmpxm, y, int(i), create_random_number(1, 4));
+				++tmpxp;
+				--tmpxm;
+				tmpz -= sin(q * radian) * tmp_random / repec_tmp_sin;
+				//printf("1-2\n");
+			}
+		}
+	}
+
+}
+
 //호수를 만드는 함수
 void park_lake(int x, int y, int z, int min, int max) {
 	//using polar coordinate
@@ -172,62 +239,6 @@ void park_lake(int x, int y, int z, int min, int max) {
 	}
 }
 
-//나무를 만드는 함수
-void locate_park_tree(int x, int y, int z) {
-	//using polar coordinate
-	//랜덤 구현 실패, 별로 변형이 없음, 그냥 원형으로 해야하는 것으로 보임.
-	//단 각도의 approximation을 90도로 잡고 min과 max의 차이를 크게 잡으면 꽤 멋진 대칭 조형물이 나옴
-
-	/*
-	수정이 매우 어려움 이 함수를 리펙토링시 주의 요망
-	사용법은 제작자 이호민에게 문의
-	*/
-	int min = 127, max = 127;
-	const double pi = 3.14159265358979;
-	const double radian = pi / 18000;
-
-	for (double q = 0; q < 9000; q++) {
-		//0도 부터 90도까지를 정의
-		int tmp_random = create_random_number(min, max);
-		//printf("%llf %llf\n", cos(q * radian), sin(q * radian));
-		double repec_tmp_sin = cos(q * radian) * tmp_random == 0 ? 1 : cos(q * radian) * tmp_random;
-		double repec_tmp_cos = sin(q * radian) * tmp_random == 0 ? 1 : sin(q * radian) * tmp_random;
-		if (cos(q * radian) > sin(q * radian)) {
-			int tmpzp = z;
-			int tmpzm = z;
-			double tmpx = x;
-			//printf("1 %llf %llf\n", cos(q * radian) * tmp_random, cos(q * radian) * tmp_random / sin(q * radian) * tmp_random);
-			for (double i = x; i < x + cos(q * radian) * tmp_random; i += cos(q * radian) * tmp_random / repec_tmp_cos) {
-				locateWater(createWater(), int(i), y, tmpzp);
-				locateWater(createWater(), int(tmpx), y, tmpzm);
-				locateWater(createWater(), int(tmpx), y, tmpzp);
-				locateWater(createWater(), int(i), y, tmpzm);
-				++tmpzp;
-				--tmpzm;
-				tmpx -= cos(q * radian) * tmp_random / repec_tmp_cos;
-				//printf("1-1\n");
-			}
-		}
-		else if (cos(q * radian) < sin(q * radian)) {
-			int tmpxp = x;
-			int tmpxm = x;
-			double tmpz = z;
-			//printf("2 %llf %llf\n", sin(q * radian) * tmp_random, sin(q * radian) * tmp_random / cos(q * radian) * tmp_random);
-			for (double i = z; i < z + sin(q * radian) * tmp_random; i += sin(q * radian) * tmp_random / repec_tmp_sin) {
-				locateWater(createWater(), tmpxp, y, int(i));
-				locateWater(createWater(), tmpxm, y, int(tmpz));
-				locateWater(createWater(), tmpxp, y, int(tmpz));
-				locateWater(createWater(), tmpxm, y, int(i));
-				++tmpxp;
-				--tmpxm;
-				tmpz -= sin(q * radian) * tmp_random / repec_tmp_sin;
-				//printf("1-2\n");
-			}
-		}
-	}
-
-}
-
 //공원이 만들어지는 공간을 초기화하는 함수
 void reset_park_position(int x, int y, int z) {
 	for (int i = y - 2; i < y + 50; i++) {
@@ -256,7 +267,8 @@ void park(int x, int y, int z) {
 	//호수를 만드는 함수를 적용
 	//x, z 좌표는 호수의 중심입니다.
 	//현재는 공원의 중심에 호수가 생성되도록 x, z좌표가 설정되어있습니다.
-	park_lake(x + 63, y, z + 63, 20, 20);
+	park_lake(x + 63, y, z + 63, 23, 23);
+	locate_park_tree(x + 63, y + 1, z + 63);
 
 	//좌표를 선택하는 반복문입니다.
 	++y;

@@ -55,7 +55,7 @@ int main() {
 	*/
 
 	//이 변수를 조정하면 길과 건물의 변수 모두 통일되게 조정된다.
-	int allx = 0, ally = 4, allz = 0;
+	int allx = 3000, ally = 4, allz = 1000;
 	//이변수는 x, z축의 블럭 수를 지정하는 변수입니다.
 	//이 변수만 조정하면 전체적으로 적용되게 됩니다.
 	int Bblockx = 5, Bblockz = 10;
@@ -85,7 +85,7 @@ int main() {
 	for (int i = 0; i < Bblockx/2; i++) {
 		z = tmpz;
 		for (int j = 0; j < Bblockz/2; j++) {
-			if (!create_random_number(0, 15)) {
+			if (!create_random_number(0, 10)) {
 				reset_park_position(x, y, z);
 				park(x, y, z);
 			}
