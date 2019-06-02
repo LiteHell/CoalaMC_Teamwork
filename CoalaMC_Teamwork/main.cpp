@@ -31,31 +31,9 @@ void locate_building_block(int x, int y, int z, int n) {
 }
 
 int main() {
-	/*
-	createBuilding_StoneShrine(100, 3, 100);
-	createBuilding_ConcreteModern(150, 3, 150);
-	return 0;
-	*테스트 완료.
-	*/
-
-	/*
-	LHM_building_1(100, 4, 100, 4);
-	LHM_building_2(150, 4, 150, 4);
-	LHM_room(0, 0, 0, 41, 25, 25);
-	create_road(0, 0, 10, 10);
-	park_lake(600, 3, 600, 30, 30);
-	//*$@테스트 완료, 집 잘 생성됨, 문 방향 잘 바뀜@$*
-	*/
-
-	/*
-	park_tree_1(10, 4, 10);
-	park_tree_2(20, 4, 10);
-	park_tree_3(30, 4, 10);
-	park_tree_4(40, 4, 10);
-	*/
-
+	
 	//이 변수를 조정하면 길과 건물의 변수 모두 통일되게 조정된다.
-	int allx = 1300, ally = 4, allz = 1000;
+	int allx = 0, ally = 4, allz = 0;
 	//이변수는 x, z축의 블럭 수를 지정하는 변수입니다.
 	//이 변수만 조정하면 전체적으로 적용되게 됩니다.
 	int Bblockx = 1, Bblockz = 5;

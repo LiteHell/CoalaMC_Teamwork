@@ -55,13 +55,17 @@ void locate_tree_road(int x, int y, int z) {
 }
 
 void locate_light_road(int x, int y, int z) {
-	for (int i = x - 1; i < x + 61; i += 7) {
-		road_tree(i, y + 1, z - 1);
-		road_tree(i, y + 1, z + 60);
+	for (int i = x + 2; i < x + 56; i += 7) {
+		locateBlock(block[31], i, y, z - 1);
+		locateBlock(block[31], i, y, z + 60);
+		locateBlock(block[31], i + 1, y, z - 1);
+		locateBlock(block[31], i + 1, y, z + 60);
 	}
-	for (int i = z - 1; i < z + 61; i += 7) {
-		road_tree(x - 1, y + 1, i);
-		road_tree(x + 60, y + 1, i);
+	for (int i = z + 2; i < z + 56; i += 7) {
+		locateBlock(block[31], x - 1, y, i);
+		locateBlock(block[31], x + 60, y, i);
+		locateBlock(block[31], x - 1, y, i + 1);
+		locateBlock(block[31], x + 60, y, i + 1);
 	}
 }
 
@@ -78,40 +82,68 @@ void building_block_1(int x, int y, int z) {
 	locate_fence(x, y, z);
 	locate_tree_road(x, y, z);
 	create_ground(x, y, z);
+	locate_light_road(x, y, z);
 
 	LHM_building_1(x, y, z, 1);
 	locateBlock(block[0], x - 1, y + 1, z + 7);
 	locateBlock(block[0], x - 1, y + 1, z + 8);
 
-	createBuilding_ConcreteModern(x + 39, y + 1, z - 1);
+	createBuilding_ConcreteModern(x + 39, y + 1, z + 1);
 
-	createBuilding_HAPPY(x + 47, y - 3, z + 31);
+	createBuilding_HAPPY(x + 47, y, z + 31);
+	locateBlock(block[0], x + 60, y + 1, z + 35);
+	locateBlock(block[0], x + 60, y + 1, z + 36);
+
+	createBuilding_JGH(x + 1, y + 1, z + 38);
+	locateBlock(block[0], x + 11, y + 1, z + 60);
+
+	LHM_building_2(x + 25, y, z + 45, 2);
+	locateBlock(block[0], x + 31, y + 1, z + 60);
+	locateBlock(block[0], x + 32, y + 1, z + 60);
+
+	createBuilding_MARINA(x - 3, y, z + 19);
+
+	LHM_building_2(x + 45, y, z + 16, 3);
+	locateBlock(block[0], x + 60, y + 1, z + 22);
+	locateBlock(block[0], x + 60, y + 1, z + 23);
 }
 
 void building_block_2(int x, int y, int z) {
 	//locateBeacon(createBeacon(), x, y, z);
 	locate_fence(x, y, z);
 	locate_tree_road(x, y, z);
-	LHM_building_2(x, y, z, 1);
+	create_ground(x, y, z);
+	locate_light_road(x, y, z);
+
+
 }
 
 void building_block_3(int x, int y, int z) {
 	//locateBeacon(createBeacon(), x, y, z);
 	locate_fence(x, y, z);
 	locate_tree_road(x, y, z);
-	createBuilding_MARINA(x, y, z);
+	create_ground(x, y, z);
+	locate_light_road(x, y, z);
+
+	
 }
 
 void building_block_4(int x, int y, int z) {
 	//locateBeacon(createBeacon(), x, y, z);
 	locate_fence(x, y, z);
 	locate_tree_road(x, y, z);
-	createBuilding_HAPPY(x, y, z);
+	create_ground(x, y, z);
+	locate_light_road(x, y, z);
+
+	
 }
 
 void building_block_5(int x, int y, int z) {
 	//locateBeacon(createBeacon(), x, y, z);
 	locate_fence(x, y, z);
 	locate_tree_road(x, y, z);
-	createBuilding_JGH(x, y, z);
+	create_ground(x, y, z);
+	locate_light_road(x, y, z);
+
+	
 }
