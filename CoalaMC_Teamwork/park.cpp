@@ -278,6 +278,7 @@ void park(int x, int y, int z) {
 	//x, z 좌표는 호수의 중심입니다.
 	//현재는 공원의 중심에 호수가 생성되도록 x, z좌표가 설정되어있습니다.
 	park_lake(x + 63, y, z + 63, 23, 23);
+	park_tree(x, y, z);
 	locate_park_tree(x + 63, y + 1, z + 63);
 
 	//좌표를 선택하는 반복문입니다.

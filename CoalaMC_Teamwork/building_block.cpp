@@ -125,7 +125,7 @@ void building_block_3(int x, int y, int z) {
 	create_ground(x, y, z);
 	locate_light_road(x, y, z);
 	
-	LHM_building_1(x, y, z);
+	LHM_building_1(x, y, z, 1);
 
 	locateBlock(block[0], x - 1, y + 1, z + 7);
 
