@@ -5,7 +5,7 @@
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 #pragma comment(lib, "CoalaMOD.lib")
 
-//빌??블?�?� 최?� 5개 ?�상 만?�어서 ?�용한??
+//빌딩 블럭은 최소 5개 이상 만들어서 사용한다.
 
 void road_tree(int x, int y, int z) {
 	int wood_random = create_random_number(0, 5);
@@ -31,7 +31,7 @@ void road_tree(int x, int y, int z) {
 }
 
 void locate_fence(int x, int y, int z) {
-	//?�타리�? 만?�?� ?�수
+	//울타리를 만드는 함수
 	for (int i = x - 1; i < x + 61; i++) {
 		locateFence(fence[0], i, y + 1, z - 1);
 		locateFence(fence[0], i, y + 1, z + 60);
@@ -43,7 +43,7 @@ void locate_fence(int x, int y, int z) {
 }
 
 void locate_tree_road(int x, int y, int z) {
-	//?�무�? 만?�?� ?�수
+	//나무를 만드는 함수
 	for (int i = x - 1; i < x + 61; i+=7) {
 		road_tree(i, y + 1, z - 1);
 		road_tree(i, y + 1, z + 60);
