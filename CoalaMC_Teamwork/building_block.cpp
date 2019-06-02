@@ -5,7 +5,7 @@
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 #pragma comment(lib, "CoalaMOD.lib")
 
-//ºôµù ºí·°Àº ÃÖ¼Ò 5°³ ÀÌ»ó ¸¸µé¾î¼­ »ç¿ëÇÑ´Ù.
+//ë¹Œë”© ë¸”ëŸ­ì€ ìµœì†Œ 5ê°œ ì´ìƒ ë§Œë“¤ì–´ì„œ ì‚¬ìš©í•œë‹¤.
 
 void road_tree(int x, int y, int z) {
 	int wood_random = create_random_number(0, 5);
@@ -31,7 +31,7 @@ void road_tree(int x, int y, int z) {
 }
 
 void locate_fence(int x, int y, int z) {
-	//¿ïÅ¸¸®¸¦ ¸¸µå´Â ÇÔ¼ö
+	//ìš¸íƒ€ë¦¬ë¥¼ ë§Œë“œëŠ” í•¨ìˆ˜
 	for (int i = x - 1; i < x + 61; i++) {
 		locateFence(fence[0], i, y + 1, z - 1);
 		locateFence(fence[0], i, y + 1, z + 60);
@@ -43,7 +43,7 @@ void locate_fence(int x, int y, int z) {
 }
 
 void locate_tree_road(int x, int y, int z) {
-	//³ª¹«¸¦ ¸¸µå´Â ÇÔ¼ö
+	//ë‚˜ë¬´ë¥¼ ë§Œë“œëŠ” í•¨ìˆ˜
 	for (int i = x - 1; i < x + 61; i+=7) {
 		road_tree(i, y + 1, z - 1);
 		road_tree(i, y + 1, z + 60);
@@ -135,8 +135,26 @@ void building_block_3(int x, int y, int z) {
 	locate_tree_road(x, y, z);
 	create_ground(x, y, z);
 	locate_light_road(x, y, z);
-
 	
+	LHM_building_1(x, y, z, 1);
+	locateBlock(block[0], x - 1, y + 1, z + 7);
+	locateBlock(block[0], x - 1, y + 1, z + 8);
+
+	LHM_building_2(x + 28, y, z, 4); 
+	locateBlock(block[0], x + 35, y + 1, z - 1);
+	locateBlock(block[0], x + 36, y + 1, z - 1);
+
+	LHM_building_2(x + 45, y, z, 3);
+	locateBlock(block[0], x + 60, y + 1, z + 7);
+
+	createBuilding_ConcreteModern(x + 39, y + 1, z + 18);
+
+	createBuilding_StoneShrine(x + 26, y + 1, z + 21);
+
+	createBuilding_JGH(x + 1, y + 1, z + 18);
+	locateBlock(block[0], x - 1, y + 1, z + 28);
+
+	createBuilding_MARINA(x - 2, y, z + 43);
 }
 
 void building_block_4(int x, int y, int z) {
@@ -146,6 +164,26 @@ void building_block_4(int x, int y, int z) {
 	create_ground(x, y, z);
 	locate_light_road(x, y, z);
 
+	createBuilding_JGH(x + 5, y + 1, z + 5);
+	locateBlock(block[0], x - 1, y + 1, z + 7);
+	locateBlock(block[0], x - 1, y + 1, z + 8);
+
+	createBuilding_ConcreteModern(x + 31, y + 1, z + 5);
+	
+	createBuilding_HAPPY(x + 27, y, z + 31);
+
+	LHM_building_2(x + 44, y, z + 31, 3);
+	locateBlock(block[0], x + 60, y + 1, z + 37);
+	locateBlock(block[0], x + 60, y + 1, z + 38);
+
+	createBuilding_JGH_SECOND(x + 1, y + 1, z + 35);
+	locateBlock(block[0], x + 11, y + 1, z + 60);
+	
+	locateBlock(block[0], x + 31, y + 1, z + 60);
+	locateBlock(block[0], x + 32, y + 1, z + 60);
+	
+	locateBlock(block[0], x + 60, y + 1, z + 22);
+	locateBlock(block[0], x + 60, y + 1, z + 23);
 	
 }
 
