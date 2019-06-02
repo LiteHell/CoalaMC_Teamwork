@@ -54,11 +54,38 @@ void locate_tree_road(int x, int y, int z) {
 	}
 }
 
+void locate_light_road(int x, int y, int z) {
+	for (int i = x - 1; i < x + 61; i += 7) {
+		road_tree(i, y + 1, z - 1);
+		road_tree(i, y + 1, z + 60);
+	}
+	for (int i = z - 1; i < z + 61; i += 7) {
+		road_tree(x - 1, y + 1, i);
+		road_tree(x + 60, y + 1, i);
+	}
+}
+
+void create_ground(int x, int y, int z) {
+	for (int i = x; i < x + 60; i++) {
+		for (int j = z; j < z + 60; j++) {
+			locateBlock(block[8], i, y, j);
+		}
+	}
+}
+
 void building_block_1(int x, int y, int z) {
 	//locateBeacon(createBeacon(), x, y, z);
 	locate_fence(x, y, z);
 	locate_tree_road(x, y, z);
+	create_ground(x, y, z);
+
 	LHM_building_1(x, y, z, 1);
+	locateBlock(block[0], x - 1, y + 1, z + 7);
+	locateBlock(block[0], x - 1, y + 1, z + 8);
+
+	createBuilding_ConcreteModern(x + 39, y + 1, z - 1);
+
+	createBuilding_HAPPY(x + 47, y - 3, z + 31);
 }
 
 void building_block_2(int x, int y, int z) {

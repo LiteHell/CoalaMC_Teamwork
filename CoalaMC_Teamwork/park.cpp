@@ -110,6 +110,12 @@ void select_tree(int x, int y, int z, int n) {
 }
 
 //나무를 만드는 함수
+void park_tree(int x, int y, int z) {
+
+}
+
+//나무를 만드는 함수
+//일시적으로 폐기
 void locate_park_tree(int x, int y, int z) {
 	//using polar coordinate
 	//랜덤 구현 실패, 별로 변형이 없음, 그냥 원형으로 해야하는 것으로 보임.
