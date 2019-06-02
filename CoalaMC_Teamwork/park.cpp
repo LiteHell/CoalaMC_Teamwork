@@ -110,12 +110,34 @@ void select_tree(int x, int y, int z, int n) {
 }
 
 //나무를 만드는 함수
+//폐기
 void park_tree(int x, int y, int z) {
+	for (int i = x; i < x + 28; i++) {
+		for (int j = z; j < z + 28; j++) {
+			locateBeacon(createBeacon(), x, y, z);
+		}
+	}
+	
+	for (int i = x; i < x + 28; i++) {
+		for (int j = z + 71; j < z + 99; j++) {
+			locateBeacon(createBeacon(), x, y, z);
+		}
+	}
 
+	for (int i = x + 71; i < x + 99; i++) {
+		for (int j = z; j < z + 28; j++) {
+			locateBeacon(createBeacon(), x, y, z);
+		}
+	}
+
+	for (int i = x + 71; i < x + 99; i++) {
+		for (int j = z + 71; j < z + 99; j++) {
+			locateBeacon(createBeacon(), x, y, z);
+		}
+	}
 }
 
 //나무를 만드는 함수
-//일시적으로 폐기
 void locate_park_tree(int x, int y, int z) {
 	//using polar coordinate
 	//랜덤 구현 실패, 별로 변형이 없음, 그냥 원형으로 해야하는 것으로 보임.
@@ -252,8 +274,8 @@ void park_lake(int x, int y, int z, int min, int max) {
 //공원이 만들어지는 공간을 초기화하는 함수
 void reset_park_position(int x, int y, int z) {
 	for (int i = y - 2; i < y + 50; i++) {
-		for (int j = x + 1; j < x + 126; j++) {
-			for (int k = z + 1; k < z + 126; k++) {
+		for (int j = x; j < x + 127; j++) {
+			for (int k = z; k < z + 127; k++) {
 				locateBlock(block[0], j, i, k);
 			}
 		}
@@ -278,7 +300,7 @@ void park(int x, int y, int z) {
 	//x, z 좌표는 호수의 중심입니다.
 	//현재는 공원의 중심에 호수가 생성되도록 x, z좌표가 설정되어있습니다.
 	park_lake(x + 63, y, z + 63, 23, 23);
-	park_tree(x, y, z);
+	//park_tree(x, y, z);
 	locate_park_tree(x + 63, y + 1, z + 63);
 
 	//좌표를 선택하는 반복문입니다.
