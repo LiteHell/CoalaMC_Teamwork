@@ -5,7 +5,7 @@
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 #pragma comment(lib, "CoalaMOD.lib")
 
-//ºôµù ºí·°Àº ÃÖ¼Ò 5°³ ÀÌ»ó ¸¸µé¾î¼­ »ç¿ëÇÑ´Ù.
+//ë¹Œë”© ë¸”ëŸ­ì€ ìµœì†Œ 5ê°œ ì´ìƒ ë§Œë“¤ì–´ì„œ ì‚¬ìš©í•œë‹¤.
 
 void road_tree(int x, int y, int z) {
 	int wood_random = create_random_number(0, 5);
@@ -31,7 +31,7 @@ void road_tree(int x, int y, int z) {
 }
 
 void locate_fence(int x, int y, int z) {
-	//¿ïÅ¸¸®¸¦ ¸¸µå´Â ÇÔ¼ö
+	//ìš¸íƒ€ë¦¬ë¥¼ ë§Œë“œëŠ” í•¨ìˆ˜
 	for (int i = x - 1; i < x + 61; i++) {
 		locateFence(fence[0], i, y + 1, z - 1);
 		locateFence(fence[0], i, y + 1, z + 60);
@@ -43,7 +43,7 @@ void locate_fence(int x, int y, int z) {
 }
 
 void locate_tree_road(int x, int y, int z) {
-	//³ª¹«¸¦ ¸¸µå´Â ÇÔ¼ö
+	//ë‚˜ë¬´ë¥¼ ë§Œë“œëŠ” í•¨ìˆ˜
 	for (int i = x - 1; i < x + 61; i+=7) {
 		road_tree(i, y + 1, z - 1);
 		road_tree(i, y + 1, z + 60);
@@ -124,7 +124,34 @@ void building_block_3(int x, int y, int z) {
 	locate_tree_road(x, y, z);
 	create_ground(x, y, z);
 	locate_light_road(x, y, z);
+	
+	LHM_building_1(x, y, z);
 
+	locateBlock(block[0], x - 1, y + 1, z + 7);
+
+	locateBlock(block[0], x - 1, y + 1, z + 8);
+
+	LHM_building_2(x + 28, y, z, 2); 
+
+	locateBlock(block[0], x + 34, y + 1, z + 15);
+
+	locateBlock(block[0], x + 35, y + 1, z + 15);
+
+	LHM_building_2(x + 45, y, z, 2);
+
+	locateBlock(block[0], x + 51, y + 1, z + 15);
+
+	locateBlock(block[0], x + 52, y + 1, z + 15);
+
+	createBuilding_ConcreteModern(x + 35, y + 1, z + 18);
+
+	createBuilding_StoneShrine(x + 33, y, z + 32);
+
+	createBuilding_JGH(x+4, y, z+18);
+
+	locateBlock(block[0], x + 14, y + 1, z + 30);
+
+	createBuilding_MARINA(x + 2, y, 43);
 	
 }
 
