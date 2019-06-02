@@ -126,33 +126,24 @@ void building_block_3(int x, int y, int z) {
 	locate_light_road(x, y, z);
 	
 	LHM_building_1(x, y, z, 1);
-
 	locateBlock(block[0], x - 1, y + 1, z + 7);
-
 	locateBlock(block[0], x - 1, y + 1, z + 8);
 
-	LHM_building_2(x + 28, y, z, 2); 
+	LHM_building_2(x + 28, y, z, 4); 
+	locateBlock(block[0], x + 35, y + 1, z - 1);
+	locateBlock(block[0], x + 36, y + 1, z - 1);
 
-	locateBlock(block[0], x + 34, y + 1, z + 15);
+	LHM_building_2(x + 45, y, z, 3);
+	locateBlock(block[0], x + 60, y + 1, z + 7);
 
-	locateBlock(block[0], x + 35, y + 1, z + 15);
+	createBuilding_ConcreteModern(x + 39, y + 1, z + 18);
 
-	LHM_building_2(x + 45, y, z, 2);
+	createBuilding_StoneShrine(x + 26, y + 1, z + 21);
 
-	locateBlock(block[0], x + 51, y + 1, z + 15);
+	createBuilding_JGH(x + 1, y + 1, z + 18);
+	locateBlock(block[0], x - 1, y + 1, z + 28);
 
-	locateBlock(block[0], x + 52, y + 1, z + 15);
-
-	createBuilding_ConcreteModern(x + 35, y + 1, z + 18);
-
-	createBuilding_StoneShrine(x + 33, y, z + 32);
-
-	createBuilding_JGH(x+4, y, z+18);
-
-	locateBlock(block[0], x + 14, y + 1, z + 30);
-
-	createBuilding_MARINA(x + 2, y, 43);
-	
+	createBuilding_MARINA(x - 2, y, z + 43);
 }
 
 void building_block_4(int x, int y, int z) {

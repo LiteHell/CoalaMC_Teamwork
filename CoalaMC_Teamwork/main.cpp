@@ -33,7 +33,7 @@ void locate_building_block(int x, int y, int z, int n) {
 int main() {
 	
 	//이 변수를 조정하면 길과 건물의 변수 모두 통일되게 조정된다.
-	int allx = 10000, ally = 4, allz = 3000;
+	int allx = 10300, ally = 4, allz = 3000;
 	//이변수는 x, z축의 블럭 수를 지정하는 변수입니다.
 	//이 변수만 조정하면 전체적으로 적용되게 됩니다.
 	int Bblockx = 1, Bblockz = 5;
