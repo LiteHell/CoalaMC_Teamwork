@@ -110,29 +110,33 @@ void select_tree(int x, int y, int z, int n) {
 }
 
 //나무를 만드는 함수
-//폐기
 void park_tree(int x, int y, int z) {
-	for (int i = x; i < x + 28; i++) {
-		for (int j = z; j < z + 28; j++) {
-			locateBeacon(createBeacon(), x, y, z);
+	++y;
+	for (int i = x; i < x + 28; i+=7) {
+		for (int j = z; j < z + 28; j+=7) {
+			//locateBeacon(createBeacon(), i, y, j);
+			select_tree(i, y, j, create_random_number(1, 4));
 		}
 	}
 	
-	for (int i = x; i < x + 28; i++) {
-		for (int j = z + 71; j < z + 99; j++) {
-			locateBeacon(createBeacon(), x, y, z);
+	for (int i = x; i < x + 28; i+=7) {
+		for (int j = z + 105; j < z + 133; j+=7) {
+			//locateBeacon(createBeacon(), i, y, j);
+			select_tree(i, y, j, create_random_number(1, 4));
 		}
 	}
 
-	for (int i = x + 71; i < x + 99; i++) {
-		for (int j = z; j < z + 28; j++) {
-			locateBeacon(createBeacon(), x, y, z);
+	for (int i = x + 105; i < x + 133; i+=7) {
+		for (int j = z; j < z + 28; j+=7) {
+			//locateBeacon(createBeacon(), i, y, j);
+			select_tree(i, y, j, create_random_number(1, 4));
 		}
 	}
 
-	for (int i = x + 71; i < x + 99; i++) {
-		for (int j = z + 71; j < z + 99; j++) {
-			locateBeacon(createBeacon(), x, y, z);
+	for (int i = x + 105; i < x + 133; i+=7) {
+		for (int j = z + 105; j < z + 133; j+=7) {
+			//locateBeacon(createBeacon(), i, y, j);
+			select_tree(i, y, j, create_random_number(1, 4));
 		}
 	}
 }
@@ -195,6 +199,18 @@ void locate_park_tree(int x, int y, int z) {
 		}
 	}
 
+}
+
+//주위에 나무를 만드는 함수
+void locate_tree_around(int x, int y, int z) {
+	for (int i = x - 1; i < x + 128; i += 7) {
+		select_tree(i, y + 1, z - 1, create_random_number(1, 4));
+		select_tree(i, y + 1, z + 127, create_random_number(1, 4));
+	}
+	for (int i = z - 1; i < z + 128; i += 7) {
+		select_tree(x - 1, y + 1, i, create_random_number(1, 4));
+		select_tree(x + 127, y + 1, i, create_random_number(1, 4));
+	}
 }
 
 //호수를 만드는 함수
@@ -273,9 +289,17 @@ void park_lake(int x, int y, int z, int min, int max) {
 
 //공원이 만들어지는 공간을 초기화하는 함수
 void reset_park_position(int x, int y, int z) {
-	for (int i = y - 2; i < y + 50; i++) {
+	for (int i = y - 2; i < y + 1; i++) {
 		for (int j = x; j < x + 127; j++) {
 			for (int k = z; k < z + 127; k++) {
+				locateBlock(block[0], j, i, k);
+			}
+		}
+	}
+
+	for (int i = y + 1; i < y + 50; i++) {
+		for (int j = x - 4; j < x + 131; j++) {
+			for (int k = z - 4; k < z + 131; k++) {
 				locateBlock(block[0], j, i, k);
 			}
 		}
@@ -293,6 +317,9 @@ void park(int x, int y, int z) {
 		for (int k = z; k < z + 127; k++) {
 			locateBlock(block[8], j, y - 1, k);
 			locateBlock(block[8], j, y, k);
+			if (!create_random_number(0, 5)) {
+				locateFlower(flower[create_random_number(0, 16)], j, y + 1, k);
+			}
 		}
 	}
 
@@ -300,14 +327,33 @@ void park(int x, int y, int z) {
 	//x, z 좌표는 호수의 중심입니다.
 	//현재는 공원의 중심에 호수가 생성되도록 x, z좌표가 설정되어있습니다.
 	park_lake(x + 63, y, z + 63, 23, 23);
-	//park_tree(x, y, z);
+	park_tree(x, y, z);
 	locate_park_tree(x + 63, y + 1, z + 63);
+	locate_tree_around(x, y, z);
+
+	locateWater(createWater(), x + 63, y + 7, z + 63);
+	locateWater(createWater(), x + 62, y + 6, z + 63);
+	locateWater(createWater(), x + 64, y + 6, z + 63);
+	locateWater(createWater(), x + 63, y + 6, z + 62);
+	locateWater(createWater(), x + 63, y + 6, z + 64);
+	for (int i = y; i < y + 6; i++) {
+		locateWater(createWater(), x + 61, i, z + 63);
+		locateWater(createWater(), x + 65, i, z + 63);
+		locateWater(createWater(), x + 63, i, z + 61);
+		locateWater(createWater(), x + 63, i, z + 65);
+		locateWater(createWater(), x + 64, i, z + 64);
+		locateWater(createWater(), x + 64, i, z + 62);
+		locateWater(createWater(), x + 62, i, z + 62);
+		locateWater(createWater(), x + 62, i, z + 64);
+	}
 
 	//좌표를 선택하는 반복문입니다.
+	/*
 	++y;
 	for (int i = x; i < x + 127; i++) {
 		for (int j = z; j < z + 127; j++) {
 
 		}
 	}
+	*/
 }

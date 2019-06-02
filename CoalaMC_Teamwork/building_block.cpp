@@ -153,18 +153,19 @@ void building_block_4(int x, int y, int z) {
 	create_ground(x, y, z);
 	locate_light_road(x, y, z);
 
-	createBuilding_JGH(x + 5, y, z + 5);
+	createBuilding_JGH(x + 5, y + 1, z + 5);
 	locateBlock(block[0], x - 1, y + 1, z + 7);
 	locateBlock(block[0], x - 1, y + 1, z + 8);
 
 	createBuilding_ConcreteModern(x + 31, y + 1, z + 5);
 	
 	createBuilding_HAPPY(x + 27, y, z + 31);
-	LHM_building_2(x + 44, y, z + 31);
-	locateBlock(block[0], x + 60, y + 1, z + 35);
-	locateBlock(block[0], x + 60, y + 1, z + 36);
 
-	createBuilding_JGH_SECOND(x + 1, y, z + 35);
+	LHM_building_2(x + 44, y, z + 31, 3);
+	locateBlock(block[0], x + 60, y + 1, z + 37);
+	locateBlock(block[0], x + 60, y + 1, z + 38);
+
+	createBuilding_JGH_SECOND(x + 1, y + 1, z + 35);
 	locateBlock(block[0], x + 11, y + 1, z + 60);
 	
 	locateBlock(block[0], x + 31, y + 1, z + 60);
