@@ -5,7 +5,7 @@
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 #pragma comment(lib, "CoalaMOD.lib")
 
-//빌딩 블럭은 최소 5개 이상 만들어서 사용한다.
+//빌??블?�?� 최?� 5개 ?�상 만?�어서 ?�용한??
 
 void road_tree(int x, int y, int z) {
 	int wood_random = create_random_number(0, 5);
@@ -31,7 +31,7 @@ void road_tree(int x, int y, int z) {
 }
 
 void locate_fence(int x, int y, int z) {
-	//울타리를 만드는 함수
+	//?�타리�? 만?�?� ?�수
 	for (int i = x - 1; i < x + 61; i++) {
 		locateFence(fence[0], i, y + 1, z - 1);
 		locateFence(fence[0], i, y + 1, z + 60);
@@ -43,7 +43,7 @@ void locate_fence(int x, int y, int z) {
 }
 
 void locate_tree_road(int x, int y, int z) {
-	//나무를 만드는 함수
+	//?�무�? 만?�?� ?�수
 	for (int i = x - 1; i < x + 61; i+=7) {
 		road_tree(i, y + 1, z - 1);
 		road_tree(i, y + 1, z + 60);
@@ -153,6 +153,25 @@ void building_block_4(int x, int y, int z) {
 	create_ground(x, y, z);
 	locate_light_road(x, y, z);
 
+	createBuilding_JGH(x + 5, y, z + 5);
+	locateBlock(block[0], x - 1, y + 1, z + 7);
+	locateBlock(block[0], x - 1, y + 1, z + 8);
+
+	createBuilding_ConcreteModern(x + 31, y + 1, z + 5);
+	
+	createBuilding_HAPPY(x + 27, y, z + 31);
+	LHM_building_2(x + 44, y, z + 31);
+	locateBlock(block[0], x + 60, y + 1, z + 35);
+	locateBlock(block[0], x + 60, y + 1, z + 36);
+
+	createBuilding_JGH_SECOND(x + 1, y, z + 35);
+	locateBlock(block[0], x + 11, y + 1, z + 60);
+	
+	locateBlock(block[0], x + 31, y + 1, z + 60);
+	locateBlock(block[0], x + 32, y + 1, z + 60);
+	
+	locateBlock(block[0], x + 60, y + 1, z + 22);
+	locateBlock(block[0], x + 60, y + 1, z + 23);
 	
 }
 
