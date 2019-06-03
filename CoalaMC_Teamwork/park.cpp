@@ -346,6 +346,9 @@ void park(int x, int y, int z) {
 		locateWater(createWater(), x + 62, i, z + 62);
 		locateWater(createWater(), x + 62, i, z + 64);
 	}
+	for (int i = y + 1; i < y + 5; i++) {
+		locateBlock(block[31], x + 63, i, z + 63);
+	}
 
 	//좌표를 선택하는 반복문입니다.
 	/*
