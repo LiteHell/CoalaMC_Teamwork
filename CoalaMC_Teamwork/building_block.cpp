@@ -198,5 +198,24 @@ void building_block_5(int x, int y, int z) {
 	create_ground(x, y, z);
 	locate_light_road(x, y, z);
 
-	
+	LHM_building_2(x + 23, y, z + 44, 2);
+	locateBlock(block[0], x + 29, y + 1, z + 60);
+	locateBlock(block[0], x + 30, y + 1, z + 60);
+
+	createBuilding_ConcreteModern(x + 39, y + 1, z + 49);
+
+	createBuilding_JGH_SECOND(x + 1, y + 1, z + 37);
+	locateBlock(block[0], x + 11, y + 1, z + 60);
+
+	createBuilding_MARINA(x - 3, y, z + 19);
+
+	createBuilding_HAPPY(x + 47, y, z + 16);
+	locateBlock(block[0], x + 60, y + 1, z + 20);
+	locateBlock(block[0], x + 60, y + 1, z + 21);
+
+	LHM_building_1(x + 35, y, z, 4);
+	locateBlock(block[0], x + 52, y + 1, z - 1);
+	locateBlock(block[0], x + 53, y + 1, z - 1);
+
+	createBuilding_ConcreteModern(x + 2, y + 1, z + 2);
 }
