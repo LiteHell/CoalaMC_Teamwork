@@ -184,12 +184,12 @@ extern FlowerPotID my_flower_pot_dark_oak;					//13		167
 /*
 extern MobID my_mob_stray,							        //0			168
 extern MobID my_mob_husk,							        //1			169
-extern MobID my_mob_zombie_villager,					        //2			170
+extern MobID my_mob_zombie_villager,					    //2			170
 extern MobID my_mob_evocation_illager,				        //3			171
-extern MobID my_mob_vex,								        //4			172
-extern MobID my_mob_vindication_illager,				        //5			173
+extern MobID my_mob_vex,								    //4			172
+extern MobID my_mob_vindication_illager,				    //5			173
 extern MobID my_mob_illusion_illager,				        //6			174
-extern MobID my_mob_creeper,							        //7			175
+extern MobID my_mob_creeper,							    //7			175
 extern MobID my_mob_skeleton,						        //8			176
 extern MobID my_mob_spider,							        //9			177
 extern MobID my_mob_giant,							        //10		178
@@ -198,7 +198,7 @@ extern MobID my_mob_slime,							        //12		180
 extern MobID my_mob_ghast,							        //13		181
 extern MobID my_mob_zombie_pigman,					        //14		182
 extern MobID my_mob_enderman,						        //15		183
-extern MobID my_mob_cave_spider,						        //16		184
+extern MobID my_mob_cave_spider,					        //16		184
 extern MobID my_mob_silverfish,						        //17		185
 extern MobID my_mob_blaze,							        //18		186
 extern MobID my_mob_magma_cube,						        //19		187
@@ -207,20 +207,20 @@ extern MobID my_mob_wither,							        //21		189
 extern MobID my_mob_witch,							        //22		190
 extern MobID my_mob_endermite,						        //23		191
 extern MobID my_mob_guardian,						        //24		192
-extern MobID my_mob_shulker,							        //25		193
+extern MobID my_mob_shulker,						        //25		193
 extern MobID my_mob_skeleton_horse,					        //26		194
 extern MobID my_mob_zombie_horse,					        //27		195
 extern MobID my_mob_donkey,							        //28		196
 extern MobID my_mob_mule,							        //29		197
-extern MobID my_mob_bat,								        //30		198
-extern MobID my_mob_pig,								        //31		199
+extern MobID my_mob_bat,							        //30		198
+extern MobID my_mob_pig,							        //31		199
 extern MobID my_mob_sheep,							        //32		200
-extern MobID my_mob_cow,								        //33		201
-extern MobID my_mob_chicken,							        //34		202
+extern MobID my_mob_cow,							        //33		201
+extern MobID my_mob_chicken,						        //34		202
 extern MobID my_mob_squid,							        //35		203
 extern MobID my_mob_wolf,							        //36		204
 extern MobID my_mob_mooshroom,						        //37		205
-extern MobID my_mob_snowman,							        //38		206
+extern MobID my_mob_snowman,						        //38		206
 extern MobID my_mob_ocelot,							        //39		207
 extern MobID my_mob_villager_golem,					        //40		208
 extern MobID my_mob_horse,							        //41		209
@@ -230,7 +230,7 @@ extern MobID my_mob_llama,							        //44		212
 extern MobID my_mob_parrot,							        //45		213
 extern MobID my_mob_villager,						        //46		214
 extern MobID my_mob_elder_guardian,					        //47		215
-extern MobID my_mob_wither_skeleton,					        //48		216
+extern MobID my_mob_wither_skeleton,				        //48		216
 */
 
 extern BlockID block[60];

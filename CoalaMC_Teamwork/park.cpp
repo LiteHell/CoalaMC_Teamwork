@@ -319,7 +319,7 @@ void park(int x, int y, int z) {
 			locateBlock(block[8], j, y - 1, k);
 			locateBlock(block[8], j, y, k);
 			if (!create_random_number(0, 5)) {
-				locateFlower(flower[create_random_number(0, 16)], j, y + 1, k);
+				locateFlower(flower[create_random_number(0, 15)], j, y + 1, k);
 			}
 		}
 	}
