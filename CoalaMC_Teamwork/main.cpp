@@ -33,7 +33,7 @@ void locate_building_block(int x, int y, int z, int n) {
 int main() {
 	
 	//이 변수를 조정하면 길과 건물의 변수 모두 통일되게 조정된다.
-	int allx = 0, ally = 4, allz = 0;
+	int allx = 2000, ally = 4, allz = 0;
 	//이변수는 x, z축의 블럭 수를 지정하는 변수입니다.
 	//이 변수만 조정하면 전체적으로 적용되게 됩니다.
 	int Bblockx = 11, Bblockz = 11;
@@ -72,6 +72,6 @@ int main() {
 		x += 134;
 	}
 	
-	//createBuilding_Tall_ConcreteModern(allx + 67 * (Bblockx / 2), ally, allz + 67 * (Bblockz / 2));
+	//createBuilding_Tall_ConcreteModern(allx + 67 * (Bblockx / 2) + 7, ally, allz + 67 * (Bblockz / 2) + 7);
 
 }

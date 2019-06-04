@@ -165,9 +165,8 @@ void locate_park_tree(int x, int y, int z) {
 			int tmpzp = z + 35;
 			int tmpzm = z - 35;
 			double tmpx = x;
-			//printf("1 %llf %llf\n", cos(q * radian) * tmp_random, cos(q * radian) * tmp_random / sin(q * radian) * tmp_random);
 			for (double i = x + 35; i < x + cos(q * radian) * tmp_random; i += cos(q * radian) * tmp_random / repec_tmp_cos) {
-				if (!create_random_number(0, 2)) {
+				if (!create_random_number(0, 10)) {
 					select_tree(int(i), y, tmpzp, create_random_number(1, 4));
 					select_tree(int(tmpx), y, tmpzm, create_random_number(1, 4));
 					select_tree(int(tmpx), y, tmpzp, create_random_number(1, 4));
@@ -176,16 +175,14 @@ void locate_park_tree(int x, int y, int z) {
 				++tmpzp;
 				--tmpzm;
 				tmpx -= cos(q * radian) * tmp_random / repec_tmp_cos;
-				//printf("1-1\n");
 			}
 		}
 		else if (cos(q * radian) < sin(q * radian)) {
 			int tmpxp = x + 35;
 			int tmpxm = x - 35;
 			double tmpz = z;
-			//printf("2 %llf %llf\n", sin(q * radian) * tmp_random, sin(q * radian) * tmp_random / cos(q * radian) * tmp_random);
 			for (double i = z + 35; i < z + sin(q * radian) * tmp_random; i += sin(q * radian) * tmp_random / repec_tmp_sin) {
-				if (!create_random_number(0, 5)) {
+				if (!create_random_number(0, 10)) {
 					select_tree(tmpxp, y, int(i), create_random_number(1, 4));
 					select_tree(tmpxm, y, int(tmpz), create_random_number(1, 4));
 					select_tree(tmpxp, y, int(tmpz), create_random_number(1, 4));
@@ -194,7 +191,6 @@ void locate_park_tree(int x, int y, int z) {
 				++tmpxp;
 				--tmpxm;
 				tmpz -= sin(q * radian) * tmp_random / repec_tmp_sin;
-				//printf("1-2\n");
 			}
 		}
 	}
@@ -250,7 +246,6 @@ void park_lake(int x, int y, int z, int min, int max) {
 				++tmpzp;
 				--tmpzm;
 				tmpx -= cos(q * radian) * tmp_random / repec_tmp_cos;
-				//printf("1-1\n");
 			}
 		}
 		else if (cos(q * radian) < sin(q * radian)) {
@@ -270,7 +265,6 @@ void park_lake(int x, int y, int z, int min, int max) {
 				++tmpxp;
 				--tmpxm;
 				tmpz -= sin(q * radian) * tmp_random / repec_tmp_sin;
-				//printf("1-2\n");
 			}
 		}
 	}

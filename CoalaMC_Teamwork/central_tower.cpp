@@ -1,5 +1,6 @@
 #include <CoalaMOD.h>
 #include "utils.h"
+#include "LHM_constants.h"
 #pragma comment(lib, "CoalaMOD.lib")
 
 void createBuilding_Tall_ConcreteModern(int x, int y, int z) {
@@ -8,6 +9,14 @@ void createBuilding_Tall_ConcreteModern(int x, int y, int z) {
 	ConcreteID grayConcrete = createConcrete(COLOR_GRAY, true);
 	BlockID grass = createBlock(BLOCK_GRASS);
 	BlockID glass = createBlock(BLOCK_GLASS);
+
+	for (int i = y; i < y + 50; i++) {
+		for (int j = x; j < x + 60; j++) {
+			for (int k = z; k < z + 60; k++) {
+				locateBlock(block[0], j, i, k);
+			}
+		}
+	}
 
 	// ¹Ù´Ú
 	const int groundY = y - 1;
