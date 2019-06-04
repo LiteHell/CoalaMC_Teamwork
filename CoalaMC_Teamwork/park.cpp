@@ -315,6 +315,7 @@ void park(int x, int y, int z) {
 	//잔디블록으로 바닥을 체우는 함수입니다.
 	for (int j = x; j < x + 127; j++) {
 		for (int k = z; k < z + 127; k++) {
+			locateBlock(block[8], j, y - 2, k);
 			locateBlock(block[8], j, y - 1, k);
 			locateBlock(block[8], j, y, k);
 			if (!create_random_number(0, 5)) {
