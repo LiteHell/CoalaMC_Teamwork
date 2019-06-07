@@ -32,12 +32,29 @@ void locate_building_block(int x, int y, int z, int n) {
 
 int main() {
 	
+	/*
+	주의사항
+	현재는 입력값이 없는 상태입니다. 입력을 받고싶으면 scanf가 있는 주석을 해제해 주세요.
+	마을의 크기를 입력할 때 주의해야 합니다. 마을의 크기가 지나치게 크면 25 * 25이상 일때 빌드가 실패할 수 있습니다.
+	마을의 크기를 너무 크게 잡을 때 빌드가 굉장히 오래걸립니다.
+	추천하는 크기는 10 * 10의 크기입니다.
+	*/
+
 	//이 변수를 조정하면 길과 건물의 변수 모두 통일되게 조정된다.
-	int allx = 2000, ally = 4, allz = 0;
+	int allx = 0, ally = 4, allz = 0;
 	//이변수는 x, z축의 블럭 수를 지정하는 변수입니다.
 	//이 변수만 조정하면 전체적으로 적용되게 됩니다.
-	int Bblockx = 11, Bblockz = 11;
+	int Bblockx = 10, Bblockz = 10;
 	
+	/*
+	printf("마을이 시작할 좌표를 입력해주세요.\n");
+	printf("마을은 입력된 좌표로 부터 + 방향으로 생성됩니다.\n");
+	scanf("%d %d %d", &allx, &ally, &allz);
+	printf("마을의 크기를 각각 x방향, y방향으로 입력해주세요.\n");
+	printf("입력받은 값은 각 축에 60 * 60크기의 블럭을 생성하는 수 입니다.\n");
+	scanf("%d %d", &Bblockx, &Bblockz);
+	*/
+
 	//도로를 먼저 생성한 후 건물들을 생성한다.
 	create_road(allx, ally, allz, Bblockx, Bblockz);
 
