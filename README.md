@@ -10,7 +10,7 @@
 4. 60 * 60의 공간에 5가지의 건물 '블럭'을 랜덤으로 선택해 넣어줍니다.
 5. 이것으로 랜덤으로 건물이 생성되는 아주 거대한 마을을 제작할 수 있습니다.
 
-[![동영상](https://img.youtube.com/vi/KZv6yaYpt9c/hqdefault.jpg)](https://youtu.be/KZv6yaYpt9c)
+[![동영상](https://img.youtube.com/TDk1b0SmLzY/hqdefault.jpg)](https://youtu.be/TDk1b0SmLzY)
 
 # 이호민이 맡은 건물
 
