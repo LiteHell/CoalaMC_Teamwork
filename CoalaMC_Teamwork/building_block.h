@@ -1,5 +1,6 @@
 #pragma once
 
+void locate_building_block(int x, int y, int z, int n);
 void road_tree(int x, int y, int z);
 void locate_fence(int x, int y, int z);
 void locate_tree_road(int x, int y, int z);

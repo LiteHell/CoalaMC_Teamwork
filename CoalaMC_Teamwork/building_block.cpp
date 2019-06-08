@@ -219,3 +219,16 @@ void building_block_5(int x, int y, int z) {
 
 	createBuilding_ConcreteModern(x + 2, y + 1, z + 2);
 }
+
+void locate_building_block(int x, int y, int z, int n) {
+	if (n == 1)
+		building_block_1(x, y, z);
+	if (n == 2)
+		building_block_2(x, y, z);
+	if (n == 3)
+		building_block_3(x, y, z);
+	if (n == 4)
+		building_block_4(x, y, z);
+	if (n == 5)
+		building_block_5(x, y, z);
+}

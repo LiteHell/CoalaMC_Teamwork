@@ -17,19 +17,6 @@
 //한 블록의 가로 세로는 60 * 60칸이다.
 //길의 폭은 칸이며 건물의 둘레에 울타리를 설치한다.
 
-void locate_building_block(int x, int y, int z, int n) {
-	if (n == 1)
-		building_block_1(x, y, z);
-	if (n == 2)
-		building_block_2(x, y, z);
-	if (n == 3)
-		building_block_3(x, y, z);
-	if (n == 4)
-		building_block_4(x, y, z);
-	if (n == 5)
-		building_block_5(x, y, z);
-}
-
 int main() {
 	
 	/*
@@ -80,7 +67,7 @@ int main() {
 	for (int i = 0; i < Bblockx/2 - 1; i++) {
 		z = tmpz;
 		for (int j = 0; j < Bblockz/2 - 1; j++) {
-			if (!create_random_number(0, 10)) {
+			if (!create_random_number(0, 7)) {
 				reset_park_position(x, y, z);
 				park(x, y, z);
 			}
